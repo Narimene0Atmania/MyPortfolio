@@ -28,12 +28,14 @@ Visit `http://localhost:8000`.
 
 ## What's built
 
-- Full desktop: wallpaper + grid, 4 desktop icons, 4 windows (about.txt, projects/, contact.exe,
-  resume.pdf), taskbar with start menu, live clock, sticky note, "take a break?" dialog.
+- Full desktop: wallpaper + grid, 5 desktop icons, 5 windows (about.txt, skills.dll, projects/,
+  resume.pdf, contact.exe), taskbar with start menu, live clock, sticky note, "take a break?"
+  dialog.
 - Window manager: focus/z-order, minimize, close, taskbar toggling, start-menu integration —
   all in `resources/js/app.js` (`Alpine.data('desktop', ...)`).
-- Responsive (<768px): icons fold to a 2-col grid, section buttons fold into the start menu,
-  taskbar window buttons collapse to icon-only squares, windows become full-screen sheets.
+- Mobile (<768px): a separate layout, not a responsive fold of the desktop chrome — four
+  scrollable panels (about, projects, resume, contact — skills folds into the about panel)
+  behind a persistent bottom tab bar with 4 tabs.
 - Working contact form: validates, saves to `contact_messages`, and emails
   `config('portfolio.contact_email')` (via `MAIL_MAILER`, currently `log` — see below).
 

@@ -9,7 +9,7 @@ return [
 
     'about' => [
         'role' => 'Software Engineer & Full-Stack Developer',
-        'bio' => 'I\'m a software engineer with a Master\'s in Software Engineering, and before I write any code I like to actually understand the problem — what\'s really needed, how the pieces fit together — then build it out in short Agile cycles instead of one big reveal at the end. Day to day that means Laravel and React on the web, Flutter on mobile. I\'m also pretty neutral about AI tools like Claude Code — happy to use them when they help me ship faster, not because I need them to think for me.',
+        'bio' => 'I\'m a software engineer with a Master\'s in Software Engineering, and before I write any code I like to actually understand the problem — what\'s really needed, how the pieces fit together — then build it out in short Agile cycles instead of one big reveal at the end. Day to day that means Laravel and React on the web, Flutter on mobile, and AI tools like Claude Code wherever they genuinely speed up development.',
         'banner_alt' => 'pixel-art sky with satellites',
         'status' => 'open to work',
     ],
@@ -31,7 +31,7 @@ return [
     ],
 
     'resume' => [
-        'role_summary' => 'software engineer · requirements analyst · 4 yrs',
+        'role_summary' => 'software engineer · requirements analyst · 2 yrs',
         'roles_label' => 'roles',
         'roles_text' => 'requirements analyst · systems designer · software engineer · full stack developer (web) · flutter developer',
         'stack_label' => 'stack',

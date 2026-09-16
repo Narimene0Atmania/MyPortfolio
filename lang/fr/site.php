@@ -9,7 +9,7 @@ return [
 
     'about' => [
         'role' => 'Ingénieure Logicielle & Développeuse Full-Stack',
-        'bio' => 'Je suis ingénieure logicielle, titulaire d\'un Master en Génie Logiciel, et avant d\'écrire la moindre ligne de code j\'aime vraiment comprendre le problème — ce dont on a besoin, comment les pièces s\'articulent — puis avancer par cycles Agile courts plutôt qu\'une grosse livraison unique à la fin. Au quotidien ça veut dire Laravel et React côté web, Flutter côté mobile. Je suis aussi plutôt neutre sur les outils d\'IA comme Claude Code : je les utilise volontiers quand ils m\'aident à livrer plus vite, pas pour réfléchir à ma place.',
+        'bio' => 'Je suis ingénieure logicielle, titulaire d\'un Master en Génie Logiciel, et avant d\'écrire la moindre ligne de code j\'aime vraiment comprendre le problème — ce dont on a besoin, comment les pièces s\'articulent — puis avancer par cycles Agile courts plutôt qu\'une grosse livraison unique à la fin. Au quotidien ça veut dire Laravel et React côté web, Flutter côté mobile, et des outils d\'IA comme Claude Code partout où ils accélèrent vraiment le développement.',
         'banner_alt' => 'ciel en pixel art avec des satellites',
         'status' => 'ouverte aux opportunités',
     ],
@@ -31,7 +31,7 @@ return [
     ],
 
     'resume' => [
-        'role_summary' => 'ingénieure logicielle · analyste des besoins · 4 ans',
+        'role_summary' => 'ingénieure logicielle · analyste des besoins · 2 ans',
         'roles_label' => 'rôles',
         'roles_text' => 'analyste des besoins · conceptrice système · ingénieure logicielle · développeuse full-stack (web) · développeuse flutter',
         'stack_label' => 'stack',
