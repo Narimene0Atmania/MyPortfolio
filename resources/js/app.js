@@ -5,6 +5,10 @@ window.Alpine = Alpine;
 
 const WINDOW_KEYS = ['about', 'skills', 'projects', 'contact', 'resume'];
 
+// small breathing room kept between a window and the left/right/top edges —
+// windows are clamped to stop here rather than going flush to the edge
+const EDGE_MARGIN = 12;
+
 const I18N = window.PORTFOLIO_I18N ?? {
     invalid: 'please check the form.',
     error: 'something went wrong. try again?',
@@ -20,7 +24,7 @@ Alpine.data('desktop', () => ({
         contact: { open: true, min: false },
         resume: { open: false, min: false },
     },
-    order: ['contact', 'projects', 'about', 'skills'],
+    order: ['contact', 'projects', 'skills', 'about'],
     startOpen: false,
     dialogClosed: false,
     showSticky: true,
@@ -121,10 +125,26 @@ Alpine.data('desktop', () => ({
     // --- window positioning + dragging ------------------------------------
     winStyle(key, startInline, startTop, width, delay) {
         const pos = this.positions[key];
+        const topPx = pos ? pos.y : parseFloat(startTop);
         return {
-            insetInlineStart: pos ? pos.x + 'px' : startInline,
+            // default (never-dragged) position is clamped so the window's
+            // right edge can't pass the viewport's right edge (minus a small
+            // margin) at narrow widths — width stays fixed (never shrinks),
+            // so instead the window just can't sit as far over as its
+            // designed %, down to EDGE_MARGIN from the edge if it's wider
+            // than the viewport. A dragged position is already clamped by
+            // onDragMove.
+            insetInlineStart: pos
+                ? pos.x + 'px'
+                : `max(${EDGE_MARGIN}px, min(${startInline}, calc(100vw - ${width} - ${EDGE_MARGIN}px)))`,
             top: pos ? pos.y + 'px' : startTop,
             width,
+            // cap height relative to THIS window's own top offset (not a flat
+            // viewport number) — a window starting further down the page has
+            // less room before the taskbar, and this budget has to reflect
+            // that, or it silently overflows past the visible area regardless
+            // of viewport height. 60px clears the 44px taskbar plus a margin.
+            maxHeight: `calc(100vh - ${topPx}px - 60px)`,
             zIndex: this.zIndex(key),
             ...(delay ? { animationDelay: delay } : {}),
         };
@@ -178,14 +198,18 @@ Alpine.data('desktop', () => ({
         const nextX = d.originX + (d.rtl ? -dx : dx);
         const nextY = d.originY + dy;
 
-        // keep at least a grabbable strip of the titlebar on screen
-        const minVisible = 120;
-        const maxX = Math.max(0, d.surfaceWidth - minVisible);
-        const minX = Math.min(0, minVisible - d.width);
+        // full containment, minus a small breathing-room margin — a window
+        // can't be dragged past the left or right edge at all (not even
+        // leaving a sliver hanging off, like before). If the window is wider
+        // than the surface, it just can't go further in that direction:
+        // stops at EDGE_MARGIN from the left, same idea as the vertical
+        // clamp below.
+        const maxX = Math.max(EDGE_MARGIN, d.surfaceWidth - d.width - EDGE_MARGIN);
+        const minX = EDGE_MARGIN;
 
         this.positions[d.key] = {
             x: Math.min(maxX, Math.max(minX, nextX)),
-            y: Math.max(0, nextY),
+            y: Math.max(EDGE_MARGIN, nextY),
         };
     },
 
@@ -322,12 +346,14 @@ Alpine.data('desktop', () => ({
     },
 }));
 
-Alpine.data('mobile', () => ({
+Alpine.data('mobile', (initialTab = 'about') => ({
     // --- state -------------------------------------------------------
     // Per design_handoff_mobile_nav: the whole nav store is just `tab`.
     // No drag state, no z-order, no window map, no boot flag — those are
     // desktop-only. Contact-form state is kept because the panel is functional.
-    tab: 'about',
+    // initialTab lets a direct visit to /projects/{slug} land on the
+    // projects panel instead of always defaulting to about.
+    tab: initialTab,
     form: { name: '', email: '', message: '' },
     formErrors: {},
     formStatus: null,

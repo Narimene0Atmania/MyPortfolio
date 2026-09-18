@@ -28,6 +28,7 @@ return [
         'empty_title' => 'projects coming soon',
         'empty_subtitle' => 'this folder is being organized — real project write-ups will land here shortly.',
         'item_count' => '{0} 0 items|{1} 1 item|[2,*] :count items',
+        'no_screenshot' => 'no screenshot yet',
     ],
 
     'resume' => [

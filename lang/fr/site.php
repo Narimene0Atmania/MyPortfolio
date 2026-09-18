@@ -28,6 +28,7 @@ return [
         'empty_title' => 'projets à venir',
         'empty_subtitle' => 'ce dossier est en cours d\'organisation — les fiches projets arriveront bientôt.',
         'item_count' => '{0} 0 élément|{1} 1 élément|[2,*] :count éléments',
+        'no_screenshot' => 'pas encore de capture',
     ],
 
     'resume' => [

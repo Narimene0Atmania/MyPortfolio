@@ -42,6 +42,24 @@
   --shadow-card: 0 3px 10px -4px rgba(107, 80, 158, 0.3);
   --shadow-card-hover: 0 10px 20px -8px rgba(107, 80, 158, 0.4);
 
+  /* projects handoff (design_handoff_projects) */
+  --card-face-idx-a: #FDFBFF;
+  --card-face-idx-b: #F5F0FD;
+  --summary: #6D5F8C;
+  --shadow-card-hover-lg: 0 12px 24px -9px rgba(107, 80, 158, 0.45);
+  --status-green-bg: #E3F6EF;
+  --status-green-border: #A9DDD0;
+  --status-green-text: #2F6B59;
+  --status-green-dot: #4DBB98;
+  --status-blue-bg: #EEF3FD;
+  --status-blue-border: #A3C2E6;
+  --status-blue-text: #2F5480;
+  --status-blue-dot: #6FB1DA;
+  --status-grey-bg: #F3F0FA;
+  --status-grey-border: #CFC3EA;
+  --status-grey-text: #5B4A85;
+  --status-grey-dot: #9A8BC4;
+
   /* mobile nav handoff (design_handoff_mobile_nav) */
   --nav-face-a: #F9F5FF;
   --nav-face-b: #E8DEFA;
@@ -120,7 +138,19 @@ button {
 .desktop {
   position: relative;
   height: 100vh;
-  min-height: 800px;
+  /* no min-height floor — the taskbar is pinned to this box's bottom edge,
+     so forcing the box taller than the real viewport would push the
+     taskbar off-screen on short windows. Each window's own max-height
+     (set inline by winStyle(), relative to its own top offset) keeps it
+     clear of the taskbar, so vertical scroll is never needed.
+     The canvas itself never scrolls, in either direction — that's not how
+     a desktop works. Windows keep their full fixed width (see winStyle()
+     width args) and may extend past the edge or overlap at narrow
+     viewports; dragging a window by its titlebar (already supported) is
+     how you reach the rest of it, same as a real OS. A scrollable canvas
+     was tried and reverted — with overflow-x:auto but no vertical overflow,
+     Chrome redirects an ordinary vertical wheel scroll into horizontal
+     scroll, which reads as "it still scrolls when it shouldn't". */
   overflow: hidden;
   background-color: #B9A5E4;
   background-image:
@@ -206,6 +236,13 @@ button {
 
 .window {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* windows keep their full fixed width regardless of viewport (see the
+     winStyle() width args in desktop.blade.php). Height is capped per-window
+     by the inline max-height winStyle() sets — relative to THIS window's own
+     top offset, not a flat number — so .well below scrolls internally once
+     content exceeds it, and no window can extend past the taskbar. */
   background: var(--chrome);
   border: 1.5px solid var(--ink);
   border-radius: 12px;
@@ -220,6 +257,7 @@ button {
 }
 
 .window__titlebar {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -286,6 +324,7 @@ button {
 }
 
 .window__menu {
+  flex-shrink: 0;
   display: flex;
   gap: 16px;
   padding: 5px 10px;
@@ -301,10 +340,16 @@ button {
 }
 
 .well {
+  /* flex child of .window: fills remaining height under the titlebar/menu
+     and scrolls its own content once the window hits its max-height cap,
+     rather than the whole window (or the desktop canvas) growing forever */
+  flex: 1;
+  min-height: 0;
   background: var(--well);
   border: 1.5px solid rgba(90, 62, 138, 0.3);
   border-radius: 9px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--sunken), 0 2px 10px rgba(107, 80, 158, 0.14);
 }
 
@@ -485,7 +530,11 @@ button {
   border-radius: 7px;
   font-family: 'VT323', monospace;
   font-size: 17px;
-  color: #FFFFFF;
+  /* #2F2447, not white — white numerals over these pastel faces measure
+     1.7:1 to 2.4:1 (near-invisible on the pink/blue faces), under the 4.5:1
+     minimum. #2F2447 measures ~12:1. Same faces are reused by the project
+     detail view's feature cards, so the fix applies everywhere at once. */
+  color: #2F2447;
 }
 
 .diff-card--1 .diff-card__num { background: linear-gradient(#F2B4D4, #E98FBD); box-shadow: 0 2px 0 #D379A6; }
@@ -511,6 +560,7 @@ button {
    ========================================================================== */
 
 .projects__pathbar {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -573,29 +623,53 @@ button {
   max-width: 320px;
 }
 
-.projects__grid {
-  padding: 16px;
+/* shared well wrapper for both the index grid and the detail view —
+   container-type lets the card-grid and detail-section collapses below
+   respond to the actual window width (desktop) or panel width (mobile
+   reuses the same partials without this wrapper; see the .mobile overrides
+   further down) rather than the viewport */
+.projects__well {
+  container-type: inline-size;
+}
+
+/* ---------- index: card grid ---------- */
+
+.projects__grid-new {
+  padding: 14px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@container (max-width: 560px) {
+  .projects__grid-new { grid-template-columns: 1fr; }
+}
+
+.mobile .projects__grid-new {
+  grid-template-columns: 1fr;
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 11px;
+  overflow: hidden;
+  background: linear-gradient(170deg, var(--card-face-idx-a), var(--card-face-idx-b));
+  border: 1.5px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover-lg);
 }
 
 .project-card__thumb {
-  height: 88px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 96px;
+  border-bottom: 1.5px solid var(--card-border);
   overflow: hidden;
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  color: rgba(61, 50, 102, 0.55);
 }
 
 .project-card__thumb img {
@@ -604,35 +678,341 @@ button {
   object-fit: cover;
 }
 
-.project-card__thumb--1 { background: linear-gradient(160deg, #B9A9E8, #F2B8DC 60%, #F8D9C8); }
-.project-card__thumb--2 { background: linear-gradient(150deg, #A9E2DA, #B9A9E8); }
-.project-card__thumb--3 { background: linear-gradient(135deg, #F8D9C8, #C9BAEC); }
+.project-card__body {
+  padding: 13px 14px 15px;
+}
+
+.project-card__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
 
 .project-card__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.2;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--ink-strong);
 }
 
-.project-card__desc {
-  font-size: 12.5px;
-  line-height: 1.45;
-  color: rgba(61, 50, 102, 0.82);
-}
-
-.project-card__tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+.project-card__year {
+  flex: none;
   font-family: 'VT323', monospace;
   font-size: 13px;
-  line-height: 1;
+  color: var(--accent-violet);
 }
 
-.tag { padding: 3px 7px; border-radius: 8px; }
-.tag--lavender { background: rgba(157, 143, 214, 0.3); }
-.tag--pink { background: rgba(242, 184, 220, 0.5); }
-.tag--mint { background: rgba(169, 226, 218, 0.6); }
+.project-card__summary {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--summary);
+  text-wrap: pretty;
+}
+
+.project-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+/* smaller chip size for index cards — same .chip--* tint variants, not a
+   second chip system */
+.chip--sm {
+  font-size: 13px;
+  padding: 3px 9px;
+  border-radius: 14px;
+}
+
+/* placeholder thumbnail (no screenshot yet) — a diagonal hatch with a
+   caption chip. Ink sits on a white chip deliberately: dark text directly
+   on the hatch was failing contrast. */
+.project-card__thumb,
+.project-detail__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(157, 143, 214, 0.18),
+    rgba(157, 143, 214, 0.18) 6px,
+    transparent 6px,
+    transparent 14px
+  ), var(--well);
+}
+
+.project-card__placeholder-tag,
+.project-detail__placeholder-tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #41325F;
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+}
+
+/* ---------- detail view ---------- */
+
+.project-detail__hero {
+  height: 200px;
+  border-bottom: 1.5px solid var(--card-border);
+}
+
+.project-detail__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail__header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-detail__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink-strong);
+}
+
+.project-detail__meta {
+  margin-top: 7px;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: var(--accent-violet);
+}
+
+.status-pill {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+}
+
+.status-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-pill--green { background: var(--status-green-bg); border-color: var(--status-green-border); color: var(--status-green-text); }
+.status-pill--green .status-pill__dot { background: var(--status-green-dot); }
+.status-pill--blue { background: var(--status-blue-bg); border-color: var(--status-blue-border); color: var(--status-blue-text); }
+.status-pill--blue .status-pill__dot { background: var(--status-blue-dot); }
+.status-pill--grey { background: var(--status-grey-bg); border-color: var(--status-grey-border); color: var(--status-grey-text); }
+.status-pill--grey .status-pill__dot { background: var(--status-grey-dot); }
+
+.project-detail__body {
+  margin: 18px 24px 0;
+  display: grid;
+  grid-template-columns: 5px 1fr;
+  gap: 14px;
+}
+
+.project-detail__body-rule {
+  border-radius: 3px;
+  background: linear-gradient(#F2B4D4, #B49AE4);
+}
+
+.project-detail__body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-body);
+  text-wrap: pretty;
+}
+
+.project-detail__facts {
+  padding: 22px 24px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@container (max-width: 480px) {
+  .project-detail__facts { grid-template-columns: 1fr; }
+}
+
+.mobile .project-detail__facts {
+  grid-template-columns: 1fr;
+}
+
+.fact-card {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(165deg, var(--card-face-a), var(--card-face-b));
+  border: 1.5px solid var(--card-border);
+}
+
+.fact-card__label {
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+}
+
+.fact-card__value {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-body);
+}
+
+.project-detail__features {
+  padding: 24px 24px 0;
+}
+
+/* .diff-card / .skills__head / .skills__list are the about window's
+   differentiator-card components, reused here rather than building a
+   second card system — see design_handoff_projects's explicit instruction */
+.project-detail__feature-list {
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.project-detail__screens {
+  padding: 24px 24px 0;
+}
+
+.project-detail__screens-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@container (max-width: 480px) {
+  .project-detail__screens-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.mobile .project-detail__screens-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-detail__screen {
+  height: 104px;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1.5px solid var(--card-border);
+}
+
+.project-detail__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-detail__footer {
+  padding: 24px 24px 26px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-detail__private-note {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 320px;
+}
+
+.btn-project {
+  padding: 9px 20px;
+  border-radius: 9px;
+  border: 1.5px solid;
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-project--live {
+  border-color: #C96E98;
+  background: linear-gradient(#FFDBEA, #F6B7D3);
+  color: #7C2F57;
+  box-shadow: 0 3px 0 #DD9AB8, inset 0 1px 0 #FFF;
+}
+
+.btn-project--source {
+  border-color: #8D7AB8;
+  background: linear-gradient(#F7F3FE, #E6DCF9);
+  color: #3F3159;
+  box-shadow: 0 3px 0 #B0A0D8;
+}
+
+.btn-project--live:active,
+.btn-project--source:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 currentColor;
+}
+
+.btn-project--next {
+  margin-inline-start: auto;
+  border-color: #8D7AB8;
+  background: rgba(255, 255, 255, 0.7);
+  color: #4A3A6D;
+}
+
+.btn-project--next:hover {
+  background: #FFFFFF;
+}
+
+.project-card:focus-visible,
+.btn-project:focus-visible,
+.projects__back:focus-visible,
+.mobile-back:focus-visible {
+  outline: 2.5px solid var(--accent-violet);
+  outline-offset: 2px;
+}
+
+/* ---------- projects/ toolbar back button (desktop pathbar) ---------- */
+
+.projects__back {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px 2px 6px;
+  border-radius: 5px;
+  background: linear-gradient(#F7F2FF, #E2D8F8);
+  border: 1.5px solid #8D7AB8;
+  box-shadow: inset 0 1px 0 #FFF;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: #3F3159;
+  text-decoration: none;
+}
+
+.projects__back:hover {
+  background: #FFFFFF;
+}
+
+/* mobile equivalent — no toolbar/pathbar on mobile, so the back link sits
+   inline at the top of the panel instead */
+.mobile-back {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: var(--accent-violet);
+  text-decoration: none;
+}
 
 /* ==========================================================================
    contact.exe
@@ -1116,10 +1496,26 @@ button {
   display: flex;
   gap: 6px;
   min-width: 0;
-  overflow: hidden;
+  /* scroll rather than silently clip — hidden overflow was dropping open
+     windows' taskbar buttons (e.g. contact.exe) with no indication they
+     existed, once .taskbar__sections + the lang switcher + clock left it
+     too little room at "half window" widths */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.taskbar__windows::-webkit-scrollbar {
+  height: 4px;
+}
+
+.taskbar__windows::-webkit-scrollbar-thumb {
+  background: rgba(74, 61, 115, 0.35);
+  border-radius: 2px;
 }
 
 .taskbar__win-btn {
+  flex-shrink: 0;
   cursor: pointer;
   height: 32px;
   padding: 0 12px;
@@ -1941,6 +2337,16 @@ button {
   font-family: 'Cairo', 'Karla', sans-serif;
 }
 
+/* directional arrows (back/next links) — mirror in place under RTL rather
+   than swapping the character per-locale in every Blade template */
+.i-flip {
+  display: inline-block;
+}
+
+[dir="rtl"] .i-flip {
+  transform: scaleX(-1);
+}
+
 [dir="rtl"] body,
 [dir="rtl"] .desktop {
   font-family: 'Cairo', 'Karla', sans-serif;
@@ -1972,7 +2378,14 @@ button {
 [dir="rtl"] .taskbar,
 [dir="rtl"] .taskbar__lang-btn,
 [dir="rtl"] .start-menu__rail-label,
-[dir="rtl"] .start-menu__list {
+[dir="rtl"] .start-menu__list,
+[dir="rtl"] .project-card__year,
+[dir="rtl"] .project-detail__meta,
+[dir="rtl"] .fact-card__label,
+[dir="rtl"] .status-pill,
+[dir="rtl"] .projects__back,
+[dir="rtl"] .mobile-back,
+[dir="rtl"] .btn-project {
   font-family: 'Cairo', 'Karla', sans-serif;
   font-weight: 600;
 }

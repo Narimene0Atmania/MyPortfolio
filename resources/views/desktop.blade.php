@@ -108,14 +108,14 @@
     {{-- ============ window: projects/ ============ --}}
     <div class="window"
          :class="{ 'window--focused': isFocused('projects') }"
-         :style="winStyle('projects', '48%', '52px', 'clamp(520px, 34vw, 720px)', '60ms')"
+         :style="winStyle('projects', '48%', '52px', '720px', '60ms')"
          x-show="isOpenVisible('projects')"
          x-transition:leave.opacity.scale.96.duration.180ms
          @click="focus('projects')"
          data-screen-label="projects window">
         <div class="window__titlebar" :class="{ 'window__titlebar--focused': isFocused('projects') }"
              @pointerdown="startDrag('projects', $event)">
-            <span>projects/</span>
+            <span>projects/{{ $activeProject['slug'] ?? '' }}</span>
             <div class="window__btns">
                 <button type="button" class="window__btn" aria-label="minimize" @click.stop="minimize('projects')">_</button>
                 <button type="button" class="window__btn window__btn--max" aria-label="maximize" tabindex="-1">&#9633;</button>
@@ -123,20 +123,34 @@
             </div>
         </div>
         <div class="projects__pathbar">
-            <span>c:/narimene/projects/</span><span>{{ trans_choice('site.projects.item_count', 0) }}</span>
+            @if ($activeProject)
+                <a href="{{ route('projects.index') }}" class="projects__back"><span class="i-flip">&larr;</span> {{ __('projects.back') }}</a>
+            @endif
+            <span>c:/narimene/projects/{{ $activeProject ? $activeProject['slug'].'/' : '' }}</span>
+            <span>{{ $activeProject ? $activeProject['year'] : trans_choice('site.projects.item_count', count($projects)) }}</span>
         </div>
-        <div class="well projects__empty">
-            <div class="projects__empty-folder" aria-hidden="true"></div>
-            <div class="projects__empty-title">{{ __('site.projects.empty_title') }}</div>
-            <div class="projects__empty-subtitle">{{ __('site.projects.empty_subtitle') }}</div>
-            <div class="projects__empty-bar" aria-hidden="true"></div>
-        </div>
+        @if (count($projects) === 0)
+            <div class="well projects__empty">
+                <div class="projects__empty-folder" aria-hidden="true"></div>
+                <div class="projects__empty-title">{{ __('site.projects.empty_title') }}</div>
+                <div class="projects__empty-subtitle">{{ __('site.projects.empty_subtitle') }}</div>
+                <div class="projects__empty-bar" aria-hidden="true"></div>
+            </div>
+        @elseif ($activeProject)
+            <div class="well projects__well">
+                @include('partials.project-detail', ['project' => $activeProject, 'projects' => $projects])
+            </div>
+        @else
+            <div class="well projects__well">
+                @include('partials.projects-index', ['projects' => $projects])
+            </div>
+        @endif
     </div>
 
     {{-- ============ window: contact.exe ============ --}}
     <div class="window"
          :class="{ 'window--focused': isFocused('contact') }"
-         :style="winStyle('contact', '11%', '428px', 'clamp(340px, 24vw, 410px)', '120ms')"
+         :style="winStyle('contact', '11%', '428px', '410px', '120ms')"
          x-show="isOpenVisible('contact')"
          x-transition:leave.opacity.scale.96.duration.180ms
          @click="focus('contact')"
@@ -183,7 +197,7 @@
     {{-- ============ window: about.txt ============ --}}
     <div class="window"
          :class="{ 'window--focused': isFocused('about') }"
-         :style="winStyle('about', '22%', '136px', '{{ app()->getLocale() === 'ar' ? 'clamp(420px, 34vw, 610px)':'clamp(420px, 34vw, 580px)'}}')"
+         :style="winStyle('about', '22%', '136px', '{{ app()->getLocale() === 'ar' ? '610px' : '580px' }}')"
          x-show="isOpenVisible('about')"
          x-transition:leave.opacity.scale.96.duration.180ms
          @click="focus('about')"
@@ -223,7 +237,7 @@
     {{-- ============ window: skills.dll ============ --}}
     <div class="window"
          :class="{ 'window--focused': isFocused('skills') }"
-         :style="winStyle('skills', '53%', '360px', '{{ app()->getLocale() === 'fr' ? 'clamp(440px, 32vw, 600px)' : 'clamp(400px, 28vw, 500px)' }}', '90ms')"
+         :style="winStyle('skills', '53%', '360px', '{{ app()->getLocale() === 'fr' ? '600px' : '500px' }}', '90ms')"
          x-show="isOpenVisible('skills')"
          x-transition:leave.opacity.scale.96.duration.180ms
          @click="focus('skills')"
@@ -413,7 +427,7 @@
 @php
     [$mobileFirstName, $mobileLastName] = array_pad(explode(' ', config('portfolio.name'), 2), 2, null);
 @endphp
-<div class="mobile" x-data="mobile()">
+<div class="mobile" x-data="mobile('{{ $activeProject ? 'projects' : 'about' }}')">
 
     <div class="mobile-scroll" x-ref="scroller" data-screen-label="mobile scroll container">
 
@@ -444,16 +458,26 @@
 
         {{-- ============ panel: projects ============ --}}
         <div class="mobile-panel" x-show="tab === 'projects'" style="padding: 26px 22px 132px">
-            <div class="mobile-eyebrow">projects/</div>
-            <h1 class="mobile-heading">Projects</h1>
-            <div class="mobile-meta">{{ trans_choice('site.projects.item_count', 0) }}</div>
+            @if ($activeProject)
+                <a href="{{ route('projects.index') }}" class="mobile-back"><span class="i-flip">&larr;</span> {{ __('projects.back') }}</a>
+                <div class="mobile-eyebrow">projects/{{ $activeProject['slug'] }}</div>
+                @include('partials.project-detail', ['project' => $activeProject, 'projects' => $projects])
+            @else
+                <div class="mobile-eyebrow">projects/</div>
+                <h1 class="mobile-heading">Projects</h1>
+                <div class="mobile-meta">{{ trans_choice('site.projects.item_count', count($projects)) }}</div>
 
-            <div class="mobile-empty">
-                <div class="mobile-empty__icon" aria-hidden="true"></div>
-                <div class="mobile-empty__title">{{ __('site.projects.empty_title') }}</div>
-                <div class="mobile-empty__subtitle">{{ __('site.projects.empty_subtitle') }}</div>
-                <div class="mobile-empty__bar" aria-hidden="true"><span></span></div>
-            </div>
+                @if (count($projects) === 0)
+                    <div class="mobile-empty">
+                        <div class="mobile-empty__icon" aria-hidden="true"></div>
+                        <div class="mobile-empty__title">{{ __('site.projects.empty_title') }}</div>
+                        <div class="mobile-empty__subtitle">{{ __('site.projects.empty_subtitle') }}</div>
+                        <div class="mobile-empty__bar" aria-hidden="true"><span></span></div>
+                    </div>
+                @else
+                    @include('partials.projects-index', ['projects' => $projects])
+                @endif
+            @endif
         </div>
 
         {{-- ============ panel: resume ============ --}}
