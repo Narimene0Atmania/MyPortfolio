@@ -30,7 +30,7 @@
 </head>
 <body>
 <div class="desktop"
-     x-data="desktop()"
+     x-data="desktop('{{ request()->routeIs('projects.*') ? 'projects' : '' }}')"
      @keydown.escape.window="startOpen = false"
      @click.away="startOpen = false"
      data-screen-label="desktop v2">
@@ -102,6 +102,19 @@
                 <circle cx="33" cy="12" r="6" fill="#A9E2DA" stroke="#4A3D73" stroke-width="1.5"/>
             </svg>
             <span class="desktop-icon__label">contact.exe</span>
+        </button>
+
+        <button type="button" class="desktop-icon" @click="focus('changelog')">
+            <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+                <rect x="9" y="7" width="24" height="30" fill="#FBF9FE" stroke="#4A3D73" stroke-width="1.5"/>
+                <rect x="15" y="4" width="12" height="6" rx="1.5" fill="#A9E2DA" stroke="#4A3D73" stroke-width="1.5"/>
+                <path d="M13 17l2 2 4-4" stroke="#4DBB98" stroke-width="1.5" fill="none"/>
+                <path d="M22 18h8" stroke="#9D8FD6" stroke-width="1.5"/>
+                <path d="M13 25l2 2 4-4" stroke="#4DBB98" stroke-width="1.5" fill="none"/>
+                <path d="M22 26h8" stroke="#9D8FD6" stroke-width="1.5"/>
+                <path d="M13 33h6" stroke="#C9BAEC" stroke-width="1.5"/>
+            </svg>
+            <span class="desktop-icon__label">changelog.txt</span>
         </button>
     </div>
 
@@ -192,6 +205,55 @@
                 </button>
             </div>
         </form>
+    </div>
+
+    {{-- ============ window: changelog.txt ============ --}}
+    <div class="window"
+         :class="{ 'window--focused': isFocused('changelog') }"
+         :style="winStyle('changelog', '38%', '110px', '700px', '150ms')"
+         x-show="isOpenVisible('changelog')"
+         x-transition:leave.opacity.scale.96.duration.180ms
+         @click="focus('changelog')"
+         data-screen-label="changelog window">
+        <div class="window__titlebar" :class="{ 'window__titlebar--focused': isFocused('changelog') }"
+             @pointerdown="startDrag('changelog', $event)">
+            <span>changelog.txt</span>
+            <div class="window__btns">
+                <button type="button" class="window__btn" aria-label="minimize" @click.stop="minimize('changelog')">_</button>
+                <button type="button" class="window__btn window__btn--max" aria-label="maximize" tabindex="-1">&#9633;</button>
+                <button type="button" class="window__btn" aria-label="close" @click.stop="close('changelog')">x</button>
+            </div>
+        </div>
+        <div class="well changelog__well" dir="ltr">
+            <div class="changelog__head">
+                <h2 class="changelog__heading">{{ __('changelog.heading') }}</h2>
+                <p class="changelog__subheading">{{ __('changelog.subheading') }}</p>
+            </div>
+            <div class="changelog__table-wrap">
+                <table class="changelog-table">
+                    <thead>
+                        <tr>
+                            <th>{{ __('changelog.col_issue') }}</th>
+                            <th>{{ __('changelog.col_solution') }}</th>
+                            <th>{{ __('changelog.col_details') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($changelogItems as $item)
+                            <tr>
+                                <td>{{ $item['issue'] }}</td>
+                                <td>{{ $item['solution'] }}</td>
+                                <td>{{ $item['details'] }}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="changelog-table__empty">{{ __('changelog.empty') }}</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     {{-- ============ window: about.txt ============ --}}
@@ -379,6 +441,7 @@
             <button type="button" class="taskbar__section-btn" @click="focus('projects')">{{ __('site.taskbar.sections.projects') }}</button>
             <button type="button" class="taskbar__section-btn" @click="focus('resume')">{{ __('site.taskbar.sections.resume') }}</button>
             <button type="button" class="taskbar__section-btn" @click="focus('contact')">{{ __('site.taskbar.sections.contact') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('changelog')">{{ __('site.taskbar.sections.changelog') }}</button>
         </div>
 
         <div class="taskbar__divider"></div>
@@ -389,6 +452,7 @@
             <button type="button" class="taskbar__win-btn" :class="{ 'taskbar__win-btn--active': isFocused('projects') }" x-show="win.projects.open" @click="taskbarClick('projects')">projects/</button>
             <button type="button" class="taskbar__win-btn" :class="{ 'taskbar__win-btn--active': isFocused('resume') }" x-show="win.resume.open" @click="taskbarClick('resume')">resume.pdf</button>
             <button type="button" class="taskbar__win-btn" :class="{ 'taskbar__win-btn--active': isFocused('contact') }" x-show="win.contact.open" @click="taskbarClick('contact')">contact.exe</button>
+            <button type="button" class="taskbar__win-btn" :class="{ 'taskbar__win-btn--active': isFocused('changelog') }" x-show="win.changelog.open" @click="taskbarClick('changelog')">changelog.txt</button>
         </div>
 
         <div class="taskbar__lang" role="group" aria-label="{{ __('site.lang_switcher.label') }}">
@@ -415,6 +479,7 @@
                 <button type="button" class="start-menu__item" @click="focus('projects')">projects/</button>
                 <button type="button" class="start-menu__item" @click="focus('resume')">resume.pdf</button>
                 <button type="button" class="start-menu__item" @click="focus('contact')">contact.exe</button>
+                <button type="button" class="start-menu__item" @click="focus('changelog')">changelog.txt</button>
                 <div class="start-menu__divider"></div>
                 <a class="start-menu__item" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.start_menu.email') }}</a>
                 <a class="start-menu__item" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.start_menu.github') }}</a>
@@ -427,7 +492,7 @@
 @php
     [$mobileFirstName, $mobileLastName] = array_pad(explode(' ', config('portfolio.name'), 2), 2, null);
 @endphp
-<div class="mobile" x-data="mobile('{{ $activeProject ? 'projects' : 'about' }}')">
+<div class="mobile" x-data="mobile('{{ request()->routeIs('projects.*') ? 'projects' : 'about' }}')">
 
     <div class="mobile-scroll" x-ref="scroller" data-screen-label="mobile scroll container">
 

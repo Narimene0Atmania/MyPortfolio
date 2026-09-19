@@ -64,7 +64,7 @@ return [
         ],
 
         'loai-atmania' => [
-            'title' => 'Loai Atmania — Portfolio Consultant IA',
+            'title' => 'Portfolio Consultant IA',
             'hero_alt' => 'La page d\'accueil sombre au style tableau de bord du portfolio, avec une carte de profil, un panneau de statistiques système en direct, et trois cartes de résultats d\'automatisation.',
             'summary' => 'Un portfolio sombre et orienté données pour un consultant en infrastructure IA.',
             'scope' => 'projet client',

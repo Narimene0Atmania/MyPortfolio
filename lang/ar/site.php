@@ -86,6 +86,7 @@ return [
             'projects' => 'المشاريع',
             'resume' => 'السيرة',
             'contact' => 'تواصل',
+            'changelog' => 'السجل',
         ],
     ],
 

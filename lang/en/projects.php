@@ -66,7 +66,7 @@ return [
         ],
 
         'loai-atmania' => [
-            'title' => 'Loai Atmania — AI Consultant Portfolio',
+            'title' => 'AI Consultant Portfolio',
             'hero_alt' => 'The portfolio\'s dark dashboard-styled homepage, with an operator profile card, a live-looking system stats panel, and three automation result cards.',
             'summary' => 'A dark, data-driven portfolio for an AI infrastructure consultant.',
             'scope' => 'client project',

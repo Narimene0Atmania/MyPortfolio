@@ -1130,6 +1130,109 @@ button {
 .contact__status--err { color: #B23B62; }
 
 /* ==========================================================================
+   changelog.txt
+   ========================================================================== */
+
+.changelog__well {
+  display: flex;
+  flex-direction: column;
+}
+
+.changelog__head {
+  flex-shrink: 0;
+  padding: 18px 20px 16px;
+}
+
+.changelog__heading {
+  margin: 0;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--accent-violet);
+}
+
+.changelog__subheading {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+.changelog__table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  /* no top padding here, deliberately — a scroll container's top padding
+     combined with a sticky child is a genuine cross-browser inconsistency:
+     content that should be scrolled fully behind the sticky header can
+     still paint through in that padding band. The visual gap is added via
+     .changelog__head's own bottom padding instead. */
+  padding: 0 20px 20px;
+}
+
+.changelog-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+/* sticky on <thead> as one unit, not on each <th> independently — three
+   separately-stuck cells left seams between them that scrolled row text
+   could show through. Sticking the whole header row is the reliable,
+   widely-supported fix. */
+.changelog-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.changelog-table th {
+  background: linear-gradient(var(--title-a), var(--title-b));
+  color: var(--ink-strong);
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-align: start;
+  padding: 8px 12px;
+  border-bottom: 1.5px solid var(--card-border);
+}
+
+.changelog-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--ink-body);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.changelog-table td:first-child {
+  font-weight: 700;
+  color: var(--ink-strong);
+  width: 22%;
+}
+
+.changelog-table td:nth-child(2) {
+  width: 24%;
+}
+
+.changelog-table tbody tr:nth-child(even) {
+  background: var(--card-face-b);
+}
+
+.changelog-table tbody tr:nth-child(odd) {
+  background: var(--card-face-a);
+}
+
+.changelog-table__empty {
+  text-align: center;
+  padding: 32px 12px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ==========================================================================
    resume.pdf
    ========================================================================== */
 
@@ -1188,8 +1291,14 @@ button {
 
 .dialog {
   position: absolute;
-  inset-inline-start: 81.25%;
-  top: 478px;
+  /* anchored like .notif (bottom-right, fixed offset) rather than a
+     percentage-based inset-inline-start + fixed width — that combination
+     was the same kind of border overflow the windows had before their
+     edge-margin fix. A fixed offset from the corner can't run off-screen,
+     and the two share this slot since they're now mutually exclusive
+     (see dialogVisible in app.js). */
+  inset-inline-end: 24px;
+  bottom: 60px;
   width: 280px;
   background: var(--chrome);
   border: 1.5px solid var(--ink);
@@ -1402,7 +1511,11 @@ button {
   background: var(--pink-light);
   box-shadow: 0 20px 36px -14px rgba(72, 44, 118, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.7);
   transform: rotate(-2deg);
-  z-index: 4;
+  /* was 4 — windows range from z-index 2 (least-recently-focused) upward,
+     so the sticky note could end up rendering ON TOP of whichever window
+     is currently at the back of the focus order. 1 (matching .desktop-icons)
+     keeps it pinned behind every window, always, regardless of focus. */
+  z-index: 1;
 }
 
 .sticky-note__tape {

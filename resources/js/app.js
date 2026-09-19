@@ -3,11 +3,36 @@ import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
 
-const WINDOW_KEYS = ['about', 'skills', 'projects', 'contact', 'resume'];
+const WINDOW_KEYS = ['about', 'skills', 'projects', 'contact', 'resume', 'changelog'];
 
 // small breathing room kept between a window and the left/right/top edges —
 // windows are clamped to stop here rather than going flush to the edge
 const EDGE_MARGIN = 12;
+
+// Every /projects/{slug} click is a full server-rendered page load, not a
+// client-side route change — so Alpine re-inits desktop() from scratch each
+// time. Without this, that reset closed windows, undid drag positions, and
+// dropped focus back to whatever the hardcoded defaults are, every single
+// navigation. sessionStorage survives across those reloads (same mechanism
+// already used for the boot splash and resume-notification dismissal) but
+// clears when the tab actually closes, so a fresh session still starts clean.
+const WINDOW_STATE_KEY = 'desktopWindowState';
+
+function loadWindowState(defaults) {
+    try {
+        const saved = JSON.parse(sessionStorage.getItem(WINDOW_STATE_KEY));
+        if (!saved || typeof saved !== 'object') return defaults;
+        return {
+            win: { ...defaults.win, ...(saved.win && typeof saved.win === 'object' ? saved.win : {}) },
+            order: Array.isArray(saved.order) && saved.order.length
+                ? saved.order.filter((k) => WINDOW_KEYS.includes(k))
+                : defaults.order,
+            positions: saved.positions && typeof saved.positions === 'object' ? saved.positions : {},
+        };
+    } catch (e) {
+        return defaults;
+    }
+}
 
 const I18N = window.PORTFOLIO_I18N ?? {
     invalid: 'please check the form.',
@@ -15,26 +40,41 @@ const I18N = window.PORTFOLIO_I18N ?? {
     network: 'network error. try again?',
 };
 
-Alpine.data('desktop', () => ({
+Alpine.data('desktop', (focusedWindow = '') => {
+    const defaults = {
+        win: {
+            about: { open: true, min: false },
+            skills: { open: true, min: false },
+            projects: { open: true, min: false },
+            contact: { open: true, min: false },
+            resume: { open: false, min: false },
+            changelog: { open: false, min: false },
+        },
+        order: ['contact', 'projects', 'skills', 'about'],
+        positions: {},
+    };
+    const restored = loadWindowState(defaults);
+
+    return {
     // --- state -------------------------------------------------------
-    win: {
-        about: { open: true, min: false },
-        skills: { open: true, min: false },
-        projects: { open: true, min: false },
-        contact: { open: true, min: false },
-        resume: { open: false, min: false },
-    },
-    order: ['contact', 'projects', 'skills', 'about'],
+    win: restored.win,
+    // last entry in `order` is the focused/topmost window (see isFocused()
+    // and zIndex() below)
+    order: restored.order,
     startOpen: false,
     dialogClosed: false,
     showSticky: true,
-    showDialog: true,
+    // was `true` — popped up instantly on every load, before any scrolling
+    // could plausibly have happened, contradicting its own "you have been
+    // scrolling for a while" copy. Now an idle timer (see initDialog()).
+    showDialog: false,
+    dialogActivityEvents: ['mousemove', 'mousedown', 'keydown', 'touchstart', 'wheel'],
     now: new Date(),
     clock: '',
     dateStr: '',
 
     // drag + boot
-    positions: {},
+    positions: restored.positions,
     dragging: null,
     booted: false,
     bootFading: false,
@@ -54,11 +94,43 @@ Alpine.data('desktop', () => ({
         this.onDragMove = this.onDragMove.bind(this);
         this.onDragEnd = this.onDragEnd.bind(this);
 
+        // persist window state across the full page reloads every
+        // /projects/{slug} navigation causes (see loadWindowState() above).
+        // Registered BEFORE the forced-focus mutation below, or that specific
+        // mutation would happen before anything is watching it and never
+        // actually get saved.
+        this.$watch('win', () => this.persistWindowState());
+        this.$watch('order', () => this.persistWindowState());
+        this.$watch('positions', () => this.persistWindowState());
+
+        // only force a window forward when the route itself implies one
+        // (a /projects/{slug} visit) — restored/default state stands as-is
+        // otherwise, rather than always snapping back to "about"
+        if (focusedWindow) {
+            this.win[focusedWindow] = { ...this.win[focusedWindow], open: true, min: false };
+            this.order = [...this.order.filter((w) => w !== focusedWindow), focusedWindow];
+        }
+
         this.tick();
         this.timer = setInterval(() => this.tick(), 1000);
         this.initBoot();
         this.initCursorTrail();
         this.initNotif();
+        this.initDialog();
+    },
+
+    persistWindowState() {
+        try {
+            sessionStorage.setItem(WINDOW_STATE_KEY, JSON.stringify({
+                win: this.win,
+                order: this.order,
+                positions: this.positions,
+            }));
+        } catch (e) {
+            // sessionStorage unavailable (private mode, quota, etc.) — the
+            // desktop still works, it just won't remember state across a
+            // full page navigation
+        }
     },
 
     destroy() {
@@ -66,6 +138,11 @@ Alpine.data('desktop', () => ({
         clearTimeout(this.bootFadeTimer);
         clearTimeout(this.bootDoneTimer);
         clearTimeout(this.notifTimer);
+        clearTimeout(this.dialogTimer);
+        if (this.resetDialogIdle) {
+            this.dialogActivityEvents.forEach((evt) => window.removeEventListener(evt, this.resetDialogIdle));
+            window.removeEventListener('scroll', this.resetDialogIdle, true);
+        }
         cancelAnimationFrame(this.trailFrame);
         this.stopDrag();
     },
@@ -90,7 +167,14 @@ Alpine.data('desktop', () => ({
 
     close(w) {
         this.win[w] = { open: false, min: false };
-        this.order = this.order.filter((x) => x !== w);
+        // deliberately NOT removed from `order` — the window plays a 180ms
+        // fade/scale leave transition (x-transition:leave), and dropping it
+        // out of `order` here immediately zeroed its zIndex(), so it visibly
+        // sank behind every other window right as the animation started
+        // instead of just fading in place. isFocused() already excludes
+        // closed windows on its own (`&& i.open`), and focus() re-dedupes
+        // this array whenever the window is reopened, so nothing relies on
+        // a closed window actually being absent from `order`.
     },
 
     taskbarClick(w) {
@@ -295,12 +379,34 @@ Alpine.data('desktop', () => ({
         this.trailFrame = requestAnimationFrame(step);
     },
 
+    // --- "take a break?" dialog ---------------------------------------------
+    initDialog() {
+        // idle timer, not a flat delay — fires 50s after the *last* activity,
+        // so it only ever shows up once the page has genuinely gone still,
+        // rather than ambushing someone mid-scroll 50s after they landed
+        const reset = () => {
+            clearTimeout(this.dialogTimer);
+            this.dialogTimer = setTimeout(() => { this.showDialog = true; }, 50000);
+        };
+        this.resetDialogIdle = reset;
+
+        this.dialogActivityEvents.forEach((evt) => window.addEventListener(evt, reset));
+        // scroll doesn't bubble to window by default — capture it instead so
+        // scrolling inside a window's .well still counts as activity
+        window.addEventListener('scroll', reset, true);
+
+        reset();
+    },
+
     closeDialog() {
         this.dialogClosed = true;
     },
 
     get dialogVisible() {
-        return this.showDialog && !this.dialogClosed;
+        // shares the resume notification's bottom-right slot, so it waits
+        // for that to be gone (dismissed or never shown) rather than
+        // stacking on top of it
+        return this.showDialog && !this.dialogClosed && !this.showNotif;
     },
 
     // --- contact form ---------------------------------------------------
@@ -344,7 +450,8 @@ Alpine.data('desktop', () => ({
             this.formSubmitting = false;
         }
     },
-}));
+    };
+});
 
 Alpine.data('mobile', (initialTab = 'about') => ({
     // --- state -------------------------------------------------------

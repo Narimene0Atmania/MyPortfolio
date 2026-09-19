@@ -86,6 +86,7 @@ return [
             'projects' => 'projets',
             'resume' => 'cv',
             'contact' => 'contact',
+            'changelog' => 'journal',
         ],
     ],
 
