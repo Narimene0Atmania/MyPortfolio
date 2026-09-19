@@ -53,15 +53,15 @@ return [
         'mealplannari' => [
             'title' => 'Meal Plannari',
             'hero_alt' => 'The meal browsing page, showing a grid of meal cards with photos, calories, macros, price, prep time, and shopping status for each.',
-            'summary' => 'Meal planning, calorie tracking, and the grocery list it generates.',
+            'summary' => 'Meal planning, calorie tracking, and a pantry-aware shopping badge for every recipe.',
             'scope' => 'personal project',
-            'body' => 'Meal-planning apps usually stop at the plan, leaving you to build the grocery list yourself and track calories somewhere else entirely. Meal Plannari connects the three — plan a week of meals, watch the calorie count as you go, and get a grocery list generated straight from what you planned.',
+            'body' => 'Paid calorie-tracking apps rarely let you build your own recipes, and there\'s no way to tell if tonight\'s plan needs a shopping trip or not. Meal Plannari fixes both: a week of meals with nutrition and price computed live from a shared ingredient database, your own recipes kept private or submitted to a moderated catalog, and a per-meal badge for whether it\'s pantry-ready or needs a store run.',
             'role' => 'concept, design, build',
             'timeline' => 'ongoing personal project',
             'features' => [
-                ['Weekly meal planner', 'lay out meals for the week in one view.'],
-                ['Auto-generated grocery list', 'built directly from your planned meals, not a separate step.'],
-                ['Calorie tracking', 'see where you stand as you plan, not after the fact.'],
+                ['Nutrition computed from ingredients', 'calories, macros, and price for every meal are derived live from a shared per-ingredient database, not entered by hand — change one ingredient and every meal using it updates.'],
+                ['Build & submit your own recipes', 'bilingual recipes with steps and ingredients, kept private or sent to an admin moderation queue to join the public catalog.'],
+                ['Pantry-ready shopping badge', 'a per-meal indicator based on what share of the recipe is pantry staples versus what you\'d actually need to buy.'],
             ],
         ],
 

@@ -62,18 +62,17 @@ return [
         ],
         [
             'slug' => 'mealplannari',
-            'year' => '2024',
+            'year' => '2026',
             'status_key' => 'in_use',
             'status_tone' => 'blue',
-            // stack says flutter/dart per earlier conversation, but this
-            // screenshot is clearly a browser web app (nav bar, hover cards)
-            // — flagged for you, see chat
-            'stack' => 'flutter · dart',
-            'chips' => ['flutter'],
+            'stack' => 'laravel · react · typescript',
+            'chips' => ['laravel', 'react', 'ts'],
             'hero' => 'images/projects/mealplannari-hero.webp',
             'screens' => [],
             'links' => [
-                'live' => null,
+                // static snapshot of the real app, logged in as a seeded demo
+                // user — see public/demos/mealplannari/ (captured, not live)
+                'live' => '/demos/mealplannari/home.html',
                 'source' => null,
             ],
             'private_source' => false,

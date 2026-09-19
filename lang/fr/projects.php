@@ -51,15 +51,15 @@ return [
         'mealplannari' => [
             'title' => 'Meal Plannari',
             'hero_alt' => 'La page de parcours des repas, montrant une grille de fiches repas avec photo, calories, macros, prix, temps de préparation et statut des courses pour chacune.',
-            'summary' => 'Planification des repas, suivi des calories, et la liste de courses qui en découle.',
+            'summary' => 'Planification des repas, suivi des calories, et un badge « prêt sans courses » pour chaque recette.',
             'scope' => 'projet personnel',
-            'body' => 'Les applications de planification de repas s\'arrêtent souvent au plan, laissant à l\'utilisateur le soin de construire lui-même la liste de courses et de suivre les calories ailleurs. Meal Plannari relie les trois — planifiez une semaine de repas, suivez le compte de calories au fil de l\'eau, et obtenez une liste de courses générée directement à partir de ce que vous avez planifié.',
+            'body' => 'Les applications de suivi calorique payantes ne permettent presque jamais de créer ses propres recettes, et rien n\'indique si le plan du soir nécessite un saut au magasin. Meal Plannari règle les deux : une semaine de repas dont la nutrition et le prix sont calculés en direct à partir d\'une base d\'ingrédients partagée, vos propres recettes gardées privées ou soumises à une file de modération pour rejoindre le catalogue public, et un badge par repas indiquant s\'il est prêt avec le garde-manger ou s\'il faut faire des courses.',
             'role' => 'concept, design, développement',
             'timeline' => 'projet personnel en cours',
             'features' => [
-                ['Planificateur hebdomadaire', 'organisez les repas de la semaine en une seule vue.'],
-                ['Liste de courses automatique', 'générée directement à partir des repas planifiés, pas une étape à part.'],
-                ['Suivi des calories', 'voyez où vous en êtes en planifiant, pas après coup.'],
+                ['Nutrition calculée à partir des ingrédients', 'calories, macros et prix de chaque repas sont dérivés en direct d\'une base d\'ingrédients partagée, jamais saisis à la main — changez un ingrédient et chaque repas qui l\'utilise se met à jour.'],
+                ['Créer et soumettre ses propres recettes', 'recettes bilingues avec étapes et ingrédients, gardées privées ou envoyées à une file de modération admin pour rejoindre le catalogue public.'],
+                ['Badge « prêt sans courses »', 'un indicateur par repas basé sur la part de la recette composée d\'ingrédients de base déjà présents, face à ce qu\'il faut vraiment acheter.'],
             ],
         ],
 
