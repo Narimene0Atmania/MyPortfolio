@@ -453,6 +453,39 @@ Alpine.data('desktop', (focusedWindow = '') => {
     };
 });
 
+// project-detail screenshot gallery — shared by the desktop window and the
+// mobile panel (project-detail.blade.php includes it in both). Lightbox
+// markup is teleported to <body> (see x-teleport in the blade), so it isn't
+// affected by this component's own position: fixed escaping the window's
+// clipped/animated ancestor is otherwise unreliable.
+Alpine.data('gallery', (screens = []) => ({
+    screens,
+    lightbox: null,
+
+    open(i) {
+        this.lightbox = i;
+    },
+
+    close() {
+        this.lightbox = null;
+    },
+
+    next() {
+        this.lightbox = (this.lightbox + 1) % this.screens.length;
+    },
+
+    prev() {
+        this.lightbox = (this.lightbox + this.screens.length - 1) % this.screens.length;
+    },
+
+    onKey(event) {
+        if (this.lightbox === null) return;
+        if (event.key === 'Escape') this.close();
+        if (event.key === 'ArrowRight') this.next();
+        if (event.key === 'ArrowLeft') this.prev();
+    },
+}));
+
 Alpine.data('mobile', (initialTab = 'about') => ({
     // --- state -------------------------------------------------------
     // Per design_handoff_mobile_nav: the whole nav store is just `tab`.

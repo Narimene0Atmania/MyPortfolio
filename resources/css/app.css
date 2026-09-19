@@ -910,12 +910,95 @@ button {
   border-radius: 9px;
   overflow: hidden;
   border: 1.5px solid var(--card-border);
+  /* it's a <button> (click-to-enlarge), not a <div> — reset the defaults */
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  font: inherit;
+  display: block;
+  transition: transform 120ms ease-out;
+}
+
+.project-detail__screen:hover,
+.project-detail__screen:focus-visible {
+  transform: translateY(-2px);
 }
 
 .project-detail__screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ---------- screenshot lightbox (teleported to <body>, see gallery() in
+   app.js) — genuinely full-viewport, not scoped to the small window, which
+   is the whole point of it existing instead of a window-maximize toggle ---------- */
+
+[x-cloak] { display: none !important; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(29, 20, 51, 0.86);
+  padding: 56px;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-window);
+  object-fit: contain;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#EFE7FB, #D6C9F0);
+  border: 1.5px solid var(--border-strong);
+  color: var(--ink);
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  background: #FFFFFF;
+}
+
+.lightbox__close {
+  top: 20px;
+  inset-inline-end: 20px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.lightbox__nav--prev { inset-inline-start: 20px; }
+.lightbox__nav--next { inset-inline-end: 20px; }
+
+@media (max-width: 640px) {
+  .lightbox { padding: 16px; }
+  .lightbox__nav { width: 38px; height: 38px; }
 }
 
 .project-detail__footer {

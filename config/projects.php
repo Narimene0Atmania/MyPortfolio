@@ -27,7 +27,17 @@ return [
             'stack' => 'laravel · flutter · mysql',
             'chips' => ['laravel', 'flutter'],
             'hero' => 'images/projects/buscatcher-hero.webp',
-            'screens' => [],
+            'screens' => [
+                'images/projects/buscatcher/sos-alert.webp',
+                'images/projects/buscatcher/statistics.png',
+                'images/projects/buscatcher/complaints-management.png',
+                'images/projects/buscatcher/complaints-list.png',
+                'images/projects/buscatcher/complaint-detail.png',
+                'images/projects/buscatcher/driver-scores.png',
+                'images/projects/buscatcher/driver-scores-table.png',
+                'images/projects/buscatcher/add-bus-stop.webp',
+                'images/projects/buscatcher/route-preview.webp',
+            ],
             'links' => [
                 'live' => null,
                 // graduation project — university-owned code, source stays private
