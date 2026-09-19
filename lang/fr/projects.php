@@ -7,7 +7,7 @@ return [
 
     'back' => 'retour',
     'next' => 'projet suivant',
-    'live' => 'voir le site',
+    'live' => 'voir la démo',
     'source' => 'code source',
     'private_note' => 'le code source est privé — propriété de l\'université, issu de mon projet de fin d\'études.',
 
@@ -67,14 +67,14 @@ return [
             'title' => 'Portfolio Consultant IA',
             'hero_alt' => 'La page d\'accueil sombre au style tableau de bord du portfolio, avec une carte de profil, un panneau de statistiques système en direct, et trois cartes de résultats d\'automatisation.',
             'summary' => 'Un portfolio sombre et orienté données pour un consultant en infrastructure IA.',
-            'scope' => 'projet client',
-            'body' => 'Un consultant avait besoin d\'un portfolio qui se lit comme une preuve, pas comme un CV — la preuve que l\'automatisation tient réellement la route en production. Le résultat est une page sombre au style tableau de bord : statistiques système en direct, métriques d\'automatisation avant/après, et répartition des compétences dès le premier écran, plutôt qu\'une biographie.',
+            'scope' => 'projet freelance',
+            'body' => 'Ce portfolio devait se lire comme une preuve, pas comme un CV — la preuve que l\'automatisation tient réellement la route en production. Le résultat est une console fixe, façon HUD, en plein écran sans défilement : une séquence de démarrage au chargement, puis six onglets — accueil, capacités, réalisations, processus, stack, contact — accessibles via une barre d\'icônes en bas, avec des statistiques système en direct et des métriques d\'automatisation avant/après en guise de biographie.',
             'role' => 'design, développement',
-            'timeline' => 'projet client',
+            'timeline' => 'projet freelance',
             'features' => [
-                ['Panneau système en direct', 'compteurs animés de disponibilité, de flux de travail et d\'heures économisées, qui rendent les gains d\'automatisation mesurables.'],
-                ['Cartes de résultats avant/après', 'trois cartes de cas d\'automatisation — tri des factures, routage des prospects, copilote support — chacune montrant un gain chiffré concret.'],
-                ['Navigation basse persistante', 'une barre d\'action fixe gardant compétences, réalisations et un bouton « réserver un appel » toujours accessibles.'],
+                ['Un style pensé pour le métier', 'séquence de démarrage, sorties façon terminal, vocabulaire opérateur/agent — elle reflète le produit réel : des agents IA qui pilotent de l\'infrastructure.'],
+                ['Deux mises en page pensées séparément', 'sous 1024px, le site bascule vers une mise en page défilante entièrement différente, pas une version bureau réduite — construite à partir des mêmes données.'],
+                ['Navigation HUD à six onglets', 'une barre d\'icônes fixe — accueil, capacités, réalisations, processus, stack, contact — avec un bouton « réserver un appel » toujours accessible.'],
             ],
         ],
 

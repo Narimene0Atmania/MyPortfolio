@@ -22,6 +22,11 @@
             <h1 class="project-detail__title">{{ $project['title'] }}</h1>
             <div class="project-detail__meta">{{ $project['year'] }} · {{ $project['scope'] }} · {{ $project['stack'] }}</div>
         </div>
+        @if (! empty($project['links']['live']))
+            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener" class="status-pill status-pill--live">
+                <span class="status-pill__dot" aria-hidden="true"></span>{{ __('projects.live') }}
+            </a>
+        @endif
     </div>
 
     <div class="project-detail__body">
@@ -88,9 +93,6 @@
     @endif
 
     <div class="project-detail__footer">
-        @if (! empty($project['links']['live']))
-            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener" class="btn-project btn-project--live">{{ __('projects.live') }}</a>
-        @endif
         @if (! empty($project['links']['source']))
             <a href="{{ $project['links']['source'] }}" target="_blank" rel="noopener" class="btn-project btn-project--source">{{ __('projects.source') }}</a>
         @elseif ($project['private_source'])

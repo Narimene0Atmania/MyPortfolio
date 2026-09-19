@@ -83,13 +83,14 @@ return [
             'year' => '2025',
             'status_key' => 'shipped',
             'status_tone' => 'green',
-            // stack unconfirmed — placeholder pending real details
-            'stack' => 'html · css · javascript',
-            'chips' => ['js'],
+            'stack' => 'react · typescript · vite',
+            'chips' => ['react', 'ts'],
             'hero' => 'images/projects/loai-atmania-hero.webp',
             'screens' => [],
             'links' => [
-                'live' => null, // unconfirmed
+                // static-data build of the real frontend, not a live backend —
+                // see public/demos/loai-atmania/ (built from LouisPortfolio.zip)
+                'live' => '/demos/loai-atmania/',
                 'source' => null,
             ],
             'private_source' => false,

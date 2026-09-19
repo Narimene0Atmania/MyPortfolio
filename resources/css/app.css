@@ -816,6 +816,23 @@ button {
 .status-pill--grey { background: var(--status-grey-bg); border-color: var(--status-grey-border); color: var(--status-grey-text); }
 .status-pill--grey .status-pill__dot { background: var(--status-grey-dot); }
 
+/* the one status pill that's actually a link (to the live demo) rather than
+   a static badge — same pink used by the site's other "live" affordances */
+.status-pill--live {
+  border-color: #C96E98;
+  background: linear-gradient(#FFDBEA, #F6B7D3);
+  color: #7C2F57;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.status-pill--live .status-pill__dot { background: #7C2F57; }
+
+.status-pill--live:hover { background: linear-gradient(#FFE6F0, #F9C4DA); }
+
+.status-pill--live:active { transform: translateY(1px); }
+
 .project-detail__body {
   margin: 18px 24px 0;
   display: grid;
@@ -1027,13 +1044,6 @@ button {
   transition: transform 0.1s;
 }
 
-.btn-project--live {
-  border-color: #C96E98;
-  background: linear-gradient(#FFDBEA, #F6B7D3);
-  color: #7C2F57;
-  box-shadow: 0 3px 0 #DD9AB8, inset 0 1px 0 #FFF;
-}
-
 .btn-project--source {
   border-color: #8D7AB8;
   background: linear-gradient(#F7F3FE, #E6DCF9);
@@ -1041,7 +1051,6 @@ button {
   box-shadow: 0 3px 0 #B0A0D8;
 }
 
-.btn-project--live:active,
 .btn-project--source:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 currentColor;
@@ -1060,6 +1069,7 @@ button {
 
 .project-card:focus-visible,
 .btn-project:focus-visible,
+.status-pill--live:focus-visible,
 .projects__back:focus-visible,
 .mobile-back:focus-visible {
   outline: 2.5px solid var(--accent-violet);

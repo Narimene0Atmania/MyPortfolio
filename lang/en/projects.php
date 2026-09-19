@@ -9,7 +9,7 @@ return [
 
     'back' => 'back',
     'next' => 'next project',
-    'live' => 'live site',
+    'live' => 'live demo',
     'source' => 'source',
     'private_note' => 'source is private — university-owned code from my graduation project.',
 
@@ -69,14 +69,14 @@ return [
             'title' => 'AI Consultant Portfolio',
             'hero_alt' => 'The portfolio\'s dark dashboard-styled homepage, with an operator profile card, a live-looking system stats panel, and three automation result cards.',
             'summary' => 'A dark, data-driven portfolio for an AI infrastructure consultant.',
-            'scope' => 'client project',
-            'body' => 'A consultant needed a portfolio that reads as evidence, not a résumé — proof the automation work actually holds up in production. The result is a dark, dashboard-styled landing page: live-looking system stats, before/after automation metrics, and a capability breakdown sit above the fold instead of a bio.',
+            'scope' => 'freelance project',
+            'body' => 'This portfolio needed to read as evidence, not a résumé — proof the automation work actually holds up in production. The result is a fixed, single-viewport HUD-style console: a boot sequence on load, then six tabs — home, capabilities, work, process, stack, contact — switched via a bottom tile nav, with live-looking system stats and before/after automation metrics standing in for a bio.',
             'role' => 'design, build',
-            'timeline' => 'client project',
+            'timeline' => 'freelance project',
             'features' => [
-                ['Live system panel', 'animated uptime, workflow, and hours-saved counters that make the automation claims feel measurable.'],
-                ['Before/after result cards', 'three automation case cards — invoice triage, lead routing, support copilot — each showing a concrete metric shift.'],
-                ['Persistent bottom nav', 'a fixed action bar keeping capabilities, work, and a "book a call" CTA always reachable.'],
+                ['Styled to match the work', 'boot sequence, terminal output, operator/agent language — it mirrors the actual product: AI agents running infrastructure.'],
+                ['Two purpose-built layouts', 'under 1024px the site swaps to an entirely different scrolling layout, not a shrunk-down desktop — built from the same underlying data.'],
+                ['Six-tab HUD nav', 'a fixed bottom tile nav — home, capabilities, work, process, stack, contact — plus a persistent "book a call" CTA that\'s always one click away.'],
             ],
         ],
 

@@ -5,7 +5,7 @@
     narrow widths either way.
 --}}
 @php
-    $chipVariants = ['laravel' => 'pink', 'php' => 'lavender', 'react' => 'blue', 'js' => 'yellow', 'rest api' => 'mint', 'flutter' => 'blue', 'vue' => 'mint'];
+    $chipVariants = ['laravel' => 'pink', 'php' => 'lavender', 'react' => 'blue', 'js' => 'yellow', 'ts' => 'mint', 'rest api' => 'mint', 'flutter' => 'blue', 'vue' => 'mint'];
 @endphp
 <a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
     <div class="project-card__thumb">
