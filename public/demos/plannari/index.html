@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plannari — live demo</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #2A2130;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 24px;
+  }
+  .label {
+    color: #D9CBE0;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    max-width: 360px;
+    line-height: 1.5;
+  }
+  .label a { color: #F0C9DE; }
+  .phone {
+    position: relative;
+    width: 390px;
+    height: 844px;
+    max-height: 88vh;
+    background: #111;
+    border-radius: 46px;
+    padding: 14px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+  }
+  .phone__screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #FAF3EC;
+  }
+  .phone__screen iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .phone__notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 26px;
+    background: #111;
+    border-radius: 0 0 16px 16px;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="phone" id="phone">
+    <div class="phone__notch" aria-hidden="true"></div>
+    <div class="phone__screen">
+      <iframe src="../plannari-app/index.html" title="Plannari live demo" loading="eager"></iframe>
+    </div>
+  </div>
+  <p class="label">
+    Plannari is a phone app — framed here at phone size so it renders the way it's
+    designed to. Nothing you do here is saved after you leave.
+  </p>
+
+  <script>
+    // On an actual phone, the frame is pointless overhead — send it straight
+    // to the real full-screen app instead of a phone-shaped box inside a
+    // smaller phone screen.
+    (function () {
+      var isSmallScreen = window.innerWidth <= 480 || window.innerHeight <= 700;
+      var isTouchPrimary = matchMedia('(pointer: coarse)').matches;
+      if (isSmallScreen && isTouchPrimary) {
+        location.replace('../plannari-app/index.html');
+      }
+    })();
+  </script>
+
+
+
+<style>
+@keyframes __bc_back_pulse { 0%,100%{ box-shadow:0 4px 18px rgba(216,58,122,.55),0 0 0 0 rgba(216,58,122,.5); } 50%{ box-shadow:0 4px 22px rgba(216,58,122,.75),0 0 0 8px rgba(216,58,122,0); } }
+#__bc_back_pill { animation: __bc_back_pulse 2.2s ease-in-out infinite; }
+#__bc_back_pill:hover { animation: none; transform: scale(1.04); }
+</style>
+<a id="__bc_back_pill" href="/projects/plannari" style="position:fixed;bottom:16px;left:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:26px;background:#D83A7A;border:2px solid #fff;color:#fff;font:700 15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 4px 18px rgba(216,58,122,.55);transition:transform .15s;">&larr; back to portfolio</a>
+
+</body>
+</html>

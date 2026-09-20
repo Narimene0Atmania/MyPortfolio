@@ -21,41 +21,40 @@ return [
     'items' => [
         [
             'slug' => 'buscatcher',
-            'year' => '2025',
+            'year' => '2026',
             'status_key' => 'shipped',
             'status_tone' => 'green',
             'stack' => 'laravel · flutter · mysql',
             'chips' => ['laravel', 'flutter'],
             'hero' => 'images/projects/buscatcher-hero.webp',
-            'screens' => [
-                'images/projects/buscatcher/sos-alert.webp',
-                'images/projects/buscatcher/statistics.png',
-                'images/projects/buscatcher/complaints-management.png',
-                'images/projects/buscatcher/complaints-list.png',
-                'images/projects/buscatcher/complaint-detail.png',
-                'images/projects/buscatcher/driver-scores.png',
-                'images/projects/buscatcher/driver-scores-table.png',
-                'images/projects/buscatcher/add-bus-stop.webp',
-                'images/projects/buscatcher/route-preview.webp',
-            ],
+            // screens gallery emptied in favor of the live demo — images stay
+            // on disk under images/projects/buscatcher/ in case they're ever
+            // needed again, just not referenced here
+            'screens' => [],
             'links' => [
-                'live' => null,
-                // graduation project — university-owned code, source stays private
-                'source' => null,
+                // static snapshot of the real admin dashboard, seeded demo data,
+                // live map mocked via a service worker interpolating buses along
+                // their real routes — see public/demos/buscatcher/
+                'live' => '/demos/buscatcher/dashboard.html',
+                'source' => null, // not public yet
             ],
-            'private_source' => true,
+            'private_source' => false,
         ],
         [
             'slug' => 'plannari',
-            'year' => '2024',
+            'year' => '2026',
             'status_key' => 'shipped',
             'status_tone' => 'green',
-            'stack' => 'flutter · dart',
-            'chips' => ['flutter'],
+            'stack' => 'flutter · laravel · mysql',
+            'chips' => ['flutter', 'laravel'],
             'hero' => 'images/projects/plannari-hero.webp',
+            'sketch' => 'images/projects/plannari/design-sketch.jpg',
             'screens' => [],
             'links' => [
-                'live' => null,
+                // Flutter web build + a service-worker-mocked API — see
+                // public/demos/plannari-app/mock-sw.js. Framed at phone size
+                // on desktop by public/demos/plannari/index.html.
+                'live' => '/demos/plannari/',
                 'source' => null, // repo not yet public
             ],
             'private_source' => false,

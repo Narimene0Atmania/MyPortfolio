@@ -650,8 +650,8 @@ button {
 }
 
 .project-card {
+  position: relative;
   display: block;
-  text-decoration: none;
   color: inherit;
   border-radius: 11px;
   overflow: hidden;
@@ -666,7 +666,17 @@ button {
   box-shadow: var(--shadow-card-hover-lg);
 }
 
+/* stretched link: covers the whole card so it stays click-anywhere, while
+   the live-demo pill (a separate real link) sits above it via z-index and
+   still gets its own click instead of falling through to this one */
+.project-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .project-card__thumb {
+  position: relative;
   height: 96px;
   border-bottom: 1.5px solid var(--card-border);
   overflow: hidden;
@@ -833,6 +843,17 @@ button {
 
 .status-pill--live:active { transform: translateY(1px); }
 
+/* same pill, as a small overlay badge on the index-card thumbnail */
+.status-pill--card {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 8px;
+  padding: 3px 9px;
+  font-size: 11px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
 .project-detail__body {
   margin: 18px 24px 0;
   display: grid;
@@ -851,6 +872,65 @@ button {
   line-height: 1.6;
   color: var(--ink-body);
   text-wrap: pretty;
+}
+
+/* a project's original concept sketch, shown alongside the body copy — not
+   part of the screens gallery, since it's process, not product */
+.project-detail__sketch {
+  margin: 16px 24px 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--well);
+  border: 1.5px solid var(--card-border);
+}
+
+.project-detail__sketch-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.project-detail__sketch-thumb {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  display: block;
+  width: 100%;
+  transition: transform 120ms ease-out;
+}
+
+.project-detail__sketch-thumb:hover,
+.project-detail__sketch-thumb:focus-visible {
+  transform: translateY(-2px);
+}
+
+.project-detail__sketch img {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+@container (max-width: 480px) {
+  .project-detail__sketch-pair { grid-template-columns: 1fr; }
+}
+
+.mobile .project-detail__sketch-pair {
+  grid-template-columns: 1fr;
+}
+
+.project-detail__sketch figcaption {
+  margin-top: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: var(--accent-violet);
+  text-align: center;
 }
 
 .project-detail__facts {
@@ -973,6 +1053,26 @@ button {
   object-fit: contain;
 }
 
+/* sketch-vs-final: both images enlarged side by side, desktop only (see
+   sketchCompare() in app.js — mobile uses .lightbox__img one at a time) */
+.lightbox__pair {
+  display: flex;
+  gap: 24px;
+  max-width: 100%;
+  max-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__pair img {
+  max-width: 44vw;
+  max-height: 85vh;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-window);
+  object-fit: contain;
+}
+
 .lightbox__close,
 .lightbox__nav {
   position: fixed;
@@ -1016,6 +1116,8 @@ button {
 @media (max-width: 640px) {
   .lightbox { padding: 16px; }
   .lightbox__nav { width: 38px; height: 38px; }
+  .lightbox__pair { flex-direction: column; }
+  .lightbox__pair img { max-width: 90vw; max-height: 44vh; }
 }
 
 .project-detail__footer {
@@ -1631,6 +1733,123 @@ button {
 }
 
 /* ==========================================================================
+   Nari/ logo — see docs/design_handoff_logo/README.md for the full spec.
+   Direction "2b": the folder tab doubles as a titlebar, one silhouette
+   reads as both. Three parts (tab, 2x2 pixel square, body+wordmark), two
+   sizes (large / small — the pixel square drops out at small), and a
+   reversed color scheme for dark grounds.
+   ========================================================================== */
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0;
+}
+
+.logo__tab {
+  display: flex;
+  align-items: center;
+  border: 2px solid #5D4A92;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.logo__pixel {
+  display: grid;
+  grid-template-columns: repeat(2, 5px);
+  grid-auto-rows: 5px;
+  gap: 1.5px;
+}
+
+.logo__pixel span:nth-child(1) { background: #9A7DD8; }
+.logo__pixel span:nth-child(2) { background: #E7DFFA; }
+.logo__pixel span:nth-child(3) { background: #E7DFFA; }
+.logo__pixel span:nth-child(4) { background: #8FC9E8; }
+
+.logo__body {
+  border: 2px solid #5D4A92;
+  box-sizing: border-box;
+}
+
+.logo__wordmark {
+  display: inline-block;
+  font-family: 'VT323', monospace;
+  white-space: nowrap;
+}
+
+.logo__slash {
+  color: #7E62C4;
+}
+
+/* large (48px+ wordmark) — headers, splash, about page */
+.logo--large .logo__tab {
+  width: 76px;
+  padding: 4px 8px 3px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(#CDBCEE, #B49AE4);
+}
+
+.logo--large .logo__body {
+  padding: 14px 22px 16px;
+  border-radius: 0 10px 10px 10px;
+  background: linear-gradient(165deg, #FDFBFF, #F2EBFC);
+  box-shadow: 0 12px 24px -11px rgba(72, 44, 118, 0.55), inset 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.logo--large .logo__wordmark {
+  font-size: 64px;
+  line-height: 0.82;
+  color: #2F2447;
+}
+
+/* small (32px total height) — taskbar, nav, inline. No pixel square: at 5px
+   per cell inside a 16px tab it turns to mush. */
+.logo--small .logo__tab {
+  width: 16px;
+  height: 5px;
+  border-width: 1px;
+  border-radius: 3px 3px 0 0;
+  background: #B49AE4;
+}
+
+.logo--small .logo__body {
+  padding: 1px 6px 3px;
+  border-width: 1px;
+  border-radius: 0 5px 5px 5px;
+  background: #FDFBFF;
+}
+
+.logo--small .logo__wordmark {
+  font-size: 19px;
+  line-height: 0.85;
+  color: #2F2447;
+}
+
+/* reversed — on dark grounds (#3A2D5C and darker). Colors swap; the outline
+   goes from dark to light, since a dark outline dissolves into a dark
+   background. */
+.logo--reversed .logo__tab {
+  border-width: 1.5px;
+  border-color: #E7DFFA;
+  background: #9A7DD8;
+}
+
+.logo--reversed .logo__body {
+  border-width: 1.5px;
+  border-color: #E7DFFA;
+  background: #2F2447;
+}
+
+.logo--reversed .logo__wordmark {
+  color: #F6F2FD;
+}
+
+.logo--reversed .logo__slash {
+  color: #CDBCEE;
+}
+
+/* ==========================================================================
    Taskbar
    ========================================================================== */
 
@@ -1656,16 +1875,23 @@ button {
 .taskbar__start {
   cursor: pointer;
   height: 32px;
-  padding: 0 14px;
   display: flex;
   align-items: center;
-  gap: 7px;
-  background: var(--chrome);
-  box-shadow: var(--raised);
-  border: 1px solid var(--ink);
+  background: none;
+  border: none;
+  padding: 0;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  transition: transform 0.1s;
+}
+
+.taskbar__start:hover {
+  transform: translateY(-1px);
+}
+
+.taskbar__start:active {
+  transform: translateY(0.5px);
 }
 
 .taskbar__divider {
@@ -2564,6 +2790,11 @@ button {
 [dir="rtl"] .projects__empty-subtitle {
   font-family: 'Cairo', 'Karla', sans-serif;
   line-height: 1.85;
+}
+
+[dir="rtl"] .status-pill--card {
+  right: auto;
+  left: 8px;
 }
 
 [dir="rtl"] .window__titlebar,

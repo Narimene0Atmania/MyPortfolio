@@ -1,0 +1,1286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="http://127.0.0.1:8030/assets/" dir="ltr" data-skin="default" data-base-url="http://127.0.0.1:8030" data-framework="laravel" data-bs-theme="dark" data-template="vertical-menu-template"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>
+        Ratings Dashboard | Bus Catcher
+    </title>
+    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5, bootstrap 5 free, free admin template">
+    <meta property="og:title" content="Materio Bootstrap 5 HTML + Laravel Admin Template by ThemeSelection">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+    <meta property="og:image" content="https://ts-assets.b-cdn.net/ts-assets/materio/materio-bootstrap-laravel-admin-template/marketing/materio-bootstrap-laravel-admin-template-smm.png">
+    <meta property="og:description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta property="og:site_name" content="ThemeSelection">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- laravel CRUD token -->
+    <meta name="csrf-token" content="jdJR2NaS86y91A6ckcB2IVys0AWoZ9Pu1Gz0PZsW">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+
+    <!-- Apply theme immediately to prevent white flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme-mode');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
+    <!-- Favicon -->
+            <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+    
+    <!-- Include Styles -->
+    <!-- BEGIN: Theme CSS-->
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  /* Force Outfit font to override any compiled Bootstrap/Theme styles */
+  body, html, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, span, p, div, a, button, input, select, textarea, label, li, ul, ol, th, td, pre, code, .btn, .form-control, .dropdown-item, .nav-link {
+    font-family: 'Outfit', sans-serif !important;
+  }
+</style>
+
+<!-- Font Awesome Icons (for admin views) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- Fonts Icons (Materio - Remix Icons via Iconify) -->
+<link rel="preload" as="style" href="build/assets/iconify-gmF8Ppqf.css"><link rel="stylesheet" href="build/assets/iconify-gmF8Ppqf.css">
+<!-- BEGIN: Vendor CSS-->
+<link rel="preload" as="style" href="build/assets/node-waves-VJmmnFRE.css"><link rel="stylesheet" href="build/assets/node-waves-VJmmnFRE.css">
+
+<!-- Core CSS -->
+<link rel="preload" as="style" href="build/assets/core-Dlin8M9s.css"><link rel="preload" as="style" href="build/assets/demo-B9Pxs1C6.css"><link rel="stylesheet" href="build/assets/core-Dlin8M9s.css"><link rel="stylesheet" href="build/assets/demo-B9Pxs1C6.css">
+<!-- Dark Theme CSS -->
+<link rel="stylesheet" href="assets/css/dark-theme.css">
+
+<!-- Vendor Styles -->
+<link rel="preload" as="style" href="build/assets/perfect-scrollbar-D1VS3Q33.css"><link rel="stylesheet" href="build/assets/perfect-scrollbar-D1VS3Q33.css">
+<!-- Page Styles -->
+
+<!-- app CSS -->
+<link rel="preload" as="style" href="build/assets/app-DeNs1JBR.css"><link rel="stylesheet" href="build/assets/app-DeNs1JBR.css"><!-- END: app CSS-->
+    <!-- Include Scripts for customizer, helper, analytics, config -->
+    <!-- laravel style -->
+<link rel="modulepreload" as="script" href="build/assets/helpers-xuwOQqll.js"><script type="module" src="build/assets/helpers-xuwOQqll.js"></script>
+<!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+<link rel="modulepreload" as="script" href="build/assets/config-CQjA4MVn.js"><script type="module" src="build/assets/config-CQjA4MVn.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async="" defer src="https://buttons.github.io/buttons.js"></script><style type="text/css">
+.layout-menu-fixed .layout-navbar-full .layout-menu,
+.layout-page {
+  padding-top: 0px !important;
+}
+.content-wrapper {
+  padding-bottom: 0px !important;
+}</style><style>
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+        .card, .navbar, .sidebar, .menu-inner, input, textarea, select, table {
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+    </style></head>
+
+<body>
+    <!-- Layout Content -->
+    <div class="layout-wrapper layout-content-navbar ">
+    <div class="layout-container">
+
+                <aside id="layout-menu" class="layout-menu menu-vertical menu" data-bg-class="null">
+
+    <!-- ! Hide app brand if navbar-full -->
+    <div class="app-brand demo">
+        <a href="#" class="app-brand-link">
+                            <span class="app-brand-logo demo me-1">
+                    <span class="text-primary">
+  <svg width="30" height="24" viewbox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="white" fill-opacity="0.15"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="white" fill-opacity="0.3"></path>
+  </svg>
+</span>
+                </span>
+                        <span class="app-brand-text demo menu-text fw-semibold ms-2">Bus Catcher</span>
+        </a>
+
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1 ps">
+                        
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="dashboard.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-home-smile-line"></i>
+                                <div>Dashboard</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Management</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="students.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-line"></i>
+                                <div>Students</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="bus-stops.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-user-line"></i>
+                                <div>Bus Stops</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="buses.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-bus-line"></i>
+                                <div>Buses</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="drivers.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-steering-2-line"></i>
+                                <div>Drivers</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="operators.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-settings-line"></i>
+                                <div>Operators</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="devices.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-router-line"></i>
+                                <div>Devices</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="routes.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Routes</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="routes.html" class="menu-link">
+                    <div>All Routes</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="#" class="menu-link">
+                    <div>Create Route</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="trips.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Trips</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="trips.html" class="menu-link">
+                    <div>Management</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="journey-logs.html" class="menu-link">
+                    <div>Journey Logs</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="deviations.html" class="menu-link">
+                    <div>Deviations</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Tracking &amp; Reports</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="tracking.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-line"></i>
+                                <div>Live Tracking</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="statistics-month.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-pie-chart-2-line"></i>
+                                <div>Statistics</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="reports.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-bar-chart-line"></i>
+                                <div>Reports</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="reports.html" class="menu-link">
+                    <div>Overview</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="complaints.html" class="menu-link">
+                    <div>Complaints</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item active">
+        <a href="ratings.html" class="menu-link">
+                    <div>Ratings</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="driver-scores.html" class="menu-link">
+                    <div>Driver Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="bus-scores.html" class="menu-link">
+                    <div>Bus Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="route-stats.html" class="menu-link">
+                    <div>Route Statistics</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="emails.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-mail-send-line"></i>
+                                <div>Emails</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="notifications.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-notification-line"></i>
+                                <div>Notifications</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Settings</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="settings.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-settings-3-line"></i>
+                                <div>Settings</div>
+                            </a>
+
+            
+                    </li>
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
+
+</aside>
+        
+
+        <!-- Layout page -->
+        <div class="layout-page">
+
+            
+            
+
+            <!-- BEGIN: Navbar-->
+            <div id="navbar-app" data-v-app=""><nav class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar"><div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none"><a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)"><i class="icon-base ri ri-menu-line icon-md"></i></a></div><div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"><ul class="navbar-nav flex-row align-items-center ms-auto"><li class="nav-item navbar-dropdown dropdown-notifications dropdown me-3"><a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="icon-base ri ri-notification-2-line icon-md"></i><span class="position-absolute top-0 start-100 translate-middle badge badge-center rounded-pill bg-danger"><span>7</span></span></a><ul class="dropdown-menu dropdown-menu-end p-0"><li class="dropdown-header border-bottom py-3 px-4"><div class="d-flex justify-content-between align-items-center"><h6 class="mb-0">Notifications</h6><a href="javascript:void(0);" onclick="markAllNotificationsAsRead(event)" class="small text-primary">Mark all as read</a></div></li><li class="dropdown-divider m-0"><li class="dropdown-item border-bottom notification-item" data-notification-id="79" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/79'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-bus-2-line text-success icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128652; Trip Started</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R11-BUS-07 started its journey on trip #7.</small><small class="text-muted">20 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="76" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/76'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#8505;&#65039; System Notice</h6><small class="d-block text-body-secondary mb-1">Routine status update for bus TLE-R5-BUS-08.</small><small class="text-muted">16 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="77" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/77'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">Speed Limit Exceeded</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-02 exceeded the configured speed limit.</small><small class="text-muted">13 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="80" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/80'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-map-pin-line text-info icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128205; Bus Approaching Stop</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-06 is approaching the next stop on trip #8.</small><small class="text-muted">12 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="78" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/78'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128226; Service Announcement</h6><small class="d-block text-body-secondary mb-1">Schedule adjustments may apply this week due to maintenance work.</small><small class="text-muted">12 hours from now</small></div></div></li><li class="dropdown-divider m-0"><li class="dropdown-header border-top py-3 px-4"><a href="notifications.html" class="text-primary small">View all notifications</a></li></ul></li><li data-v-621cb8d4="" class="nav-item me-3" title="AI Assistant"><button data-v-621cb8d4="" class="nav-link" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: none; cursor: pointer;"><i data-v-621cb8d4="" class="icon-base ri ri-chat-3-line icon-md" style="color: rgb(102, 102, 102);"></i><!----></button></li><li class="nav-item navbar-dropdown me-3"><a class="nav-link p-0" href="javascript:void(0);" id="theme-toggle-btn" title="Switch to Light Mode"><i class="icon-base ri icon-md ri-moon-line" id="theme-toggle-icon"></i></a></li><li class="nav-item navbar-dropdown dropdown-user dropdown"><a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="rounded-circle"></div></a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="javascript:void(0);"><div class="d-flex"><div class="flex-shrink-0 me-3"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="w-px-40 h-auto rounded-circle"></div></div><div class="flex-grow-1"><h6 class="mb-0">Mohamed Benbrahim</h6><small class="text-body-secondary">University admin</small></div></div></a></li><li><div class="dropdown-divider my-1"></div></li><li><a class="dropdown-item" href="#"><i class="icon-base ri ri-user-3-line icon-md me-3"></i><span>My Profile</span></a></li><li><a class="dropdown-item" href="settings.html"><i class="icon-base ri ri-settings-4-line icon-md me-4"></i><span>Settings</span></a></li><li><div class="dropdown-divider my-1"></div></li><li><div class="d-grid px-4 pt-2 pb-1"><form method="POST" action="http://127.0.0.1:8030/university/logout" style="display: contents;"><input type="hidden" name="_token" autocomplete="off" value="jdJR2NaS86y91A6ckcB2IVys0AWoZ9Pu1Gz0PZsW"> <button type="submit" class="btn btn-danger d-flex w-100 justify-content-center align-items-center" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none;"><small class="align-middle">Logout</small><i class="ri ri-logout-box-r-line ms-2 icon-xs"></i></button></form></div></li></ul></li></ul></div></nav></div>
+            <!-- END: Navbar-->
+
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+
+                <!-- Content -->
+                                    <div class="container-xxl flex-grow-1 container-p-y">
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-bold mb-1"><i class="fas fa-star me-2"></i>Ratings Dashboard</h4>
+        <p class="text-muted mb-0">View and analyze student ratings</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="#" class="btn btn-outline-secondary">
+            <i class="fas fa-download me-1"></i>Export
+        </a>
+        <a href="#" class="btn btn-outline-primary">
+            <i class="fas fa-chart-bar me-1"></i>Bus Performance
+        </a>
+    </div>
+</div>
+
+<!-- Overall Stats -->
+<div class="row mb-4 g-3">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted small fw-semibold text-uppercase mb-1">Average Rating</div>
+                <div class="h3 mb-0">3.45/5.0</div>
+                <small class="text-muted">Total: 80 ratings</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-success small fw-semibold text-uppercase mb-1">Excellent</div>
+                <div class="h3 mb-0 text-success">2</div>
+                <small class="text-muted">4.5+ stars</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-warning small fw-semibold text-uppercase mb-1">Average</div>
+                <div class="h3 mb-0 text-warning">0</div>
+                <small class="text-muted">2.5&ndash;3.5 stars</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-danger small fw-semibold text-uppercase mb-1">Poor</div>
+                <div class="h3 mb-0 text-danger">0</div>
+                <small class="text-muted">Below 2.5 stars</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Metric Averages -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Metric Averages</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-4">
+                                                        <div class="col-md-4 col-lg-2">
+                    <div class="bg-light p-3 rounded border text-center" style="min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h6 class="mb-3 fw-semibold" style="font-size: 13px;">Arrival Time Accuracy</h6>
+                            <div style="font-size: 28px; font-weight: bold; color: #2c3e50;">0.0</div>
+                            <small class="text-muted">out of 5.0</small>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="col-md-4 col-lg-2">
+                    <div class="bg-light p-3 rounded border text-center" style="min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h6 class="mb-3 fw-semibold" style="font-size: 13px;">Service Quality</h6>
+                            <div style="font-size: 28px; font-weight: bold; color: #2c3e50;">0.0</div>
+                            <small class="text-muted">out of 5.0</small>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="col-md-4 col-lg-2">
+                    <div class="bg-light p-3 rounded border text-center" style="min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h6 class="mb-3 fw-semibold" style="font-size: 13px;">Waiting Time</h6>
+                            <div style="font-size: 28px; font-weight: bold; color: #2c3e50;">0.0</div>
+                            <small class="text-muted">out of 5.0</small>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="col-md-4 col-lg-2">
+                    <div class="bg-light p-3 rounded border text-center" style="min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h6 class="mb-3 fw-semibold" style="font-size: 13px;">Driver Professionalism</h6>
+                            <div style="font-size: 28px; font-weight: bold; color: #2c3e50;">0.0</div>
+                            <small class="text-muted">out of 5.0</small>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="col-md-4 col-lg-2">
+                    <div class="bg-light p-3 rounded border text-center" style="min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h6 class="mb-3 fw-semibold" style="font-size: 13px;">Bus Comfort &amp; Cleanliness</h6>
+                            <div style="font-size: 28px; font-weight: bold; color: #2c3e50;">0.0</div>
+                            <small class="text-muted">out of 5.0</small>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                                    <i class="fas fa-star" style="color: #e9ecef; margin: 0 2px;"></i>
+                                                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-danger" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filters</h5>
+    </div>
+    <div class="card-body">
+        <form method="GET" action="http://127.0.0.1:8030/university/ratings" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Min Rating</label>
+                <input type="number" name="rating_min" class="form-control" step="0.1" min="1" max="5" value="" placeholder="Min rating">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Max Rating</label>
+                <input type="number" name="rating_max" class="form-control" step="0.1" min="1" max="5" value="" placeholder="Max rating">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Bus</label>
+                <select name="bus_id" class="form-select">
+                    <option value="">All Buses</option>
+                                            <option value="1">Bus TLE-BUS-001</option>
+                                            <option value="2">Bus TLE-BUS-002</option>
+                                            <option value="3">Bus TLE-BUS-003</option>
+                                            <option value="13">Bus TLE-R5-BUS-01</option>
+                                            <option value="14">Bus TLE-R5-BUS-02</option>
+                                            <option value="15">Bus TLE-R5-BUS-03</option>
+                                            <option value="16">Bus TLE-R5-BUS-04</option>
+                                            <option value="17">Bus TLE-R5-BUS-05</option>
+                                            <option value="18">Bus TLE-R5-BUS-06</option>
+                                            <option value="19">Bus TLE-R5-BUS-07</option>
+                                            <option value="20">Bus TLE-R5-BUS-08</option>
+                                            <option value="21">Bus TLE-R5-BUS-09</option>
+                                            <option value="22">Bus TLE-R5-BUS-10</option>
+                                            <option value="23">Bus TLE-R6-BUS-01</option>
+                                            <option value="24">Bus TLE-R6-BUS-02</option>
+                                            <option value="25">Bus TLE-R6-BUS-03</option>
+                                            <option value="26">Bus TLE-R6-BUS-04</option>
+                                            <option value="27">Bus TLE-R6-BUS-05</option>
+                                            <option value="28">Bus TLE-R6-BUS-06</option>
+                                            <option value="29">Bus TLE-R6-BUS-07</option>
+                                            <option value="30">Bus TLE-R6-BUS-08</option>
+                                            <option value="31">Bus TLE-R6-BUS-09</option>
+                                            <option value="32">Bus TLE-R6-BUS-10</option>
+                                            <option value="33">Bus TLE-R7-BUS-01</option>
+                                            <option value="34">Bus TLE-R7-BUS-02</option>
+                                            <option value="35">Bus TLE-R7-BUS-03</option>
+                                            <option value="36">Bus TLE-R7-BUS-04</option>
+                                            <option value="37">Bus TLE-R7-BUS-05</option>
+                                            <option value="38">Bus TLE-R7-BUS-06</option>
+                                            <option value="39">Bus TLE-R7-BUS-07</option>
+                                            <option value="40">Bus TLE-R7-BUS-08</option>
+                                            <option value="41">Bus TLE-R7-BUS-09</option>
+                                            <option value="42">Bus TLE-R7-BUS-10</option>
+                                            <option value="43">Bus TLE-R8-BUS-01</option>
+                                            <option value="44">Bus TLE-R8-BUS-02</option>
+                                            <option value="45">Bus TLE-R8-BUS-03</option>
+                                            <option value="46">Bus TLE-R8-BUS-04</option>
+                                            <option value="47">Bus TLE-R8-BUS-05</option>
+                                            <option value="48">Bus TLE-R8-BUS-06</option>
+                                            <option value="49">Bus TLE-R8-BUS-07</option>
+                                            <option value="50">Bus TLE-R8-BUS-08</option>
+                                            <option value="51">Bus TLE-R8-BUS-09</option>
+                                            <option value="52">Bus TLE-R8-BUS-10</option>
+                                            <option value="53">Bus TLE-R11-BUS-01</option>
+                                            <option value="54">Bus TLE-R11-BUS-02</option>
+                                            <option value="55">Bus TLE-R11-BUS-03</option>
+                                            <option value="56">Bus TLE-R11-BUS-04</option>
+                                            <option value="57">Bus TLE-R11-BUS-05</option>
+                                            <option value="58">Bus TLE-R11-BUS-06</option>
+                                            <option value="59">Bus TLE-R11-BUS-07</option>
+                                            <option value="60">Bus TLE-R11-BUS-08</option>
+                                            <option value="61">Bus TLE-R11-BUS-09</option>
+                                            <option value="62">Bus TLE-R11-BUS-10</option>
+                                            <option value="63">Bus TLE-R12-BUS-01</option>
+                                            <option value="64">Bus TLE-R12-BUS-02</option>
+                                            <option value="65">Bus TLE-R12-BUS-03</option>
+                                            <option value="66">Bus TLE-R12-BUS-04</option>
+                                            <option value="67">Bus TLE-R12-BUS-05</option>
+                                            <option value="68">Bus TLE-R12-BUS-06</option>
+                                            <option value="69">Bus TLE-R12-BUS-07</option>
+                                            <option value="70">Bus TLE-R12-BUS-08</option>
+                                            <option value="71">Bus TLE-R12-BUS-09</option>
+                                            <option value="72">Bus TLE-R12-BUS-10</option>
+                                            <option value="73">Bus TLE-R14-BUS-01</option>
+                                            <option value="74">Bus TLE-R14-BUS-02</option>
+                                            <option value="75">Bus TLE-R14-BUS-03</option>
+                                            <option value="76">Bus TLE-R14-BUS-04</option>
+                                            <option value="77">Bus TLE-R14-BUS-05</option>
+                                            <option value="78">Bus TLE-R14-BUS-06</option>
+                                            <option value="79">Bus TLE-R14-BUS-07</option>
+                                            <option value="80">Bus TLE-R14-BUS-08</option>
+                                            <option value="81">Bus TLE-R14-BUS-09</option>
+                                            <option value="82">Bus TLE-R14-BUS-10</option>
+                                    </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">From Date</label>
+                <input type="date" name="date_from" class="form-control" value="">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">To Date</label>
+                <input type="date" name="date_to" class="form-control" value="">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search me-1"></i>Filter</button>
+                <a href="ratings.html" class="btn btn-outline-secondary ms-2">Reset</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Ratings Table -->
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Student</th><th>Bus</th><th>Route</th>
+                    <th>Overall</th><th>Arrival</th><th>Quality</th>
+                    <th>Waiting</th><th>Driver</th><th>Comfort</th>
+                    <th>Date</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td>#157</td>
+                        <td><small>Ilyes Boukhetta</small></td>
+                        <td><small>TLE-R8-BUS-06</small></td>
+                        <td><small>centre ville - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.4</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small>Sep 17, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#126</td>
+                        <td><small>Adam Smail</small></td>
+                        <td><small>TLE-R11-BUS-03</small></td>
+                        <td><small>ecole superieure - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-success">4.6</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small>Sep 17, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#133</td>
+                        <td><small>Adam Smail</small></td>
+                        <td><small>TLE-R12-BUS-10</small></td>
+                        <td><small>medecine - centrale</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.4</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small>Sep 17, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#137</td>
+                        <td><small>Hadjer Mansouri</small></td>
+                        <td><small>TLE-R6-BUS-09</small></td>
+                        <td><small>centre ville - Nouv pole</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">2.6</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small>Sep 17, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#140</td>
+                        <td><small>Dounia Touati</small></td>
+                        <td><small>TLE-R7-BUS-04</small></td>
+                        <td><small>nouv pole - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.0</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small>Sep 16, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#111</td>
+                        <td><small>Souad Bourahla</small></td>
+                        <td><small>TLE-R5-BUS-04</small></td>
+                        <td><small>centrale - nouveau pole</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.2</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small>Sep 15, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#122</td>
+                        <td><small>Ikram Larbi</small></td>
+                        <td><small>TLE-R5-BUS-03</small></td>
+                        <td><small>centrale - nouveau pole</small></td>
+                        <td>
+                                                        <span class="badge bg-info">4.2</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 15, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#123</td>
+                        <td><small>Lamia Mekideche</small></td>
+                        <td><small>TLE-R11-BUS-04</small></td>
+                        <td><small>ecole superieure - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.0</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 15, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#156</td>
+                        <td><small>Ayoub Bourahla</small></td>
+                        <td><small>TLE-R5-BUS-06</small></td>
+                        <td><small>centrale - nouveau pole</small></td>
+                        <td>
+                                                        <span class="badge bg-info">4.0</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 15, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#92</td>
+                        <td><small>Bilal Bensaid</small></td>
+                        <td><small>TLE-R11-BUS-02</small></td>
+                        <td><small>ecole superieure - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-info">4.2</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 14, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#119</td>
+                        <td><small>Mehdi Boudjemaa</small></td>
+                        <td><small>TLE-R11-BUS-04</small></td>
+                        <td><small>ecole superieure - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-info">4.0</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 14, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#124</td>
+                        <td><small>Aymen Touati</small></td>
+                        <td><small>TLE-R6-BUS-09</small></td>
+                        <td><small>centre ville - Nouv pole</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">3.2</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small>Sep 14, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#136</td>
+                        <td><small>Yacine Benali</small></td>
+                        <td><small>TLE-R8-BUS-01</small></td>
+                        <td><small>centre ville - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-info">3.6</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 14, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#81</td>
+                        <td><small>Rim Bensalah</small></td>
+                        <td><small>TLE-R6-BUS-01</small></td>
+                        <td><small>centre ville - Nouv pole</small></td>
+                        <td>
+                                                        <span class="badge bg-warning">2.8</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 1</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small>Sep 13, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>#98</td>
+                        <td><small>Ines Kasdi</small></td>
+                        <td><small>TLE-R7-BUS-08</small></td>
+                        <td><small>nouv pole - chetouene</small></td>
+                        <td>
+                                                        <span class="badge bg-info">3.6</span>
+                        </td>
+                        <td><small><i class="fas fa-star text-warning"></i> 2</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 3</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 5</small></td>
+                        <td><small><i class="fas fa-star text-warning"></i> 4</small></td>
+                        <td><small>Sep 13, 2026</small></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                        </td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-4"><nav role="navigation" aria-label="Pagination Navigation">
+
+        <div class="flex gap-2 items-center justify-between sm:hidden">
+
+                            <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-300 cursor-not-allowed leading-5 rounded-md dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600">
+                    &laquo; Previous
+                </span>
+            
+                            <a href="ratings.html" rel="next" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-800 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:hover:text-gray-200">
+                    Next &raquo;
+                </a>
+            
+        </div>
+
+        <div class="hidden sm:flex-1 sm:flex sm:gap-2 sm:items-center sm:justify-between">
+
+            <div>
+                <p class="text-sm text-gray-700 leading-5 dark:text-gray-600">
+                    Showing
+                                            <span class="font-medium">1</span>
+                        to
+                        <span class="font-medium">15</span>
+                                        of
+                    <span class="font-medium">80</span>
+                    results
+                </p>
+            </div>
+
+            <div>
+                <span class="inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
+
+                    
+                                            <span aria-disabled="true" aria-label="&amp;laquo; Previous">
+                            <span class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-not-allowed rounded-l-md leading-5 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-400" aria-hidden="true">
+                                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    
+                    
+                                            
+                        
+                        
+                                                                                                                        <span aria-current="page">
+                                        <span class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-gray-200 border border-gray-300 cursor-default leading-5 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">1</span>
+                                    </span>
+                                                                                                                                <a href="ratings.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 2">
+                                        2
+                                    </a>
+                                                                                                                                <a href="ratings.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 3">
+                                        3
+                                    </a>
+                                                                                                                                <a href="ratings.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 4">
+                                        4
+                                    </a>
+                                                                                                                                <a href="ratings.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 5">
+                                        5
+                                    </a>
+                                                                                                                                <a href="ratings.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 6">
+                                        6
+                                    </a>
+                                                                                                        
+                    
+                                            <a href="ratings.html" rel="next" class="inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md leading-5 hover:text-gray-400 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800 dark:text-gray-300 dark:hover:bg-gray-900 dark:hover:text-gray-300" aria-label="Next &amp;raquo;">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                                    </span>
+            </div>
+        </div>
+    </nav>
+</div>
+
+                    </div>
+                    <!-- / Content -->
+
+                    <!-- Footer -->
+                                        <!-- Footer-->
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl">
+        <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+            <div class="text-body">
+                                    &copy;
+                    2026
+                    <span class="footer-text me-2">Bus Catcher</span>
+                    <span class="text-muted">All rights reserved</span>
+                            </div>
+            <div class="d-none d-lg-inline-block">
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-home-smile-line me-1"></i>Dashboard
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-school-line me-1"></i>universities
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-settings-3-line me-1"></i>Settings
+                </a>
+                <a href="javascript:void(0)" class="footer-link d-none d-sm-inline-block" onclick="alert('Support: support@universitybustracking.com')">
+                    <i class="ri ri-customer-service-line me-1"></i>Support
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ Footer-->
+                                        <!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!--/ Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+                <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+                <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+        <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!--/ Layout Content -->
+
+    
+
+    <!-- Include Scripts -->
+    <!-- BEGIN: Vendor JS-->
+
+<link rel="modulepreload" as="script" href="build/assets/jquery-BLVPd0pO.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/popper-DH7wS8as.js"><link rel="modulepreload" as="script" href="build/assets/bootstrap-DGM5oX2B.js"><link rel="modulepreload" as="script" href="build/assets/node-waves-rJO3qC03.js"><script type="module" src="build/assets/jquery-BLVPd0pO.js"></script><script type="module" src="build/assets/popper-DH7wS8as.js"></script><script type="module" src="build/assets/bootstrap-DGM5oX2B.js"></script><script type="module" src="build/assets/node-waves-rJO3qC03.js"></script>
+<link rel="modulepreload" as="script" href="build/assets/perfect-scrollbar-BPWyZo71.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/menu-Bldkajpn.js"><script type="module" src="build/assets/perfect-scrollbar-BPWyZo71.js"></script><script type="module" src="build/assets/menu-Bldkajpn.js"></script>
+<!-- END: Page Vendor JS-->
+<!-- BEGIN: Theme JS-->
+<link rel="modulepreload" as="script" href="build/assets/main-B5wckTSW.js"><script type="module" src="build/assets/main-B5wckTSW.js"></script>
+<!-- END: Theme JS-->
+<!-- Pricing Modal JS-->
+<!-- END: Pricing Modal JS-->
+<!-- BEGIN: Page JS-->
+<!-- END: Page JS-->
+
+<!-- app JS -->
+<link rel="preload" as="style" href="build/assets/app-DpkoVDcM.css"><link rel="modulepreload" as="script" href="build/assets/app-B8m7fOOw.js"><link rel="modulepreload" as="script" href="build/assets/_plugin-vue_export-helper-CEJ4TrU7.js"><link rel="stylesheet" href="build/assets/app-DpkoVDcM.css"><script type="module" src="build/assets/app-B8m7fOOw.js"></script><!-- END: app JS-->
+
+<!-- Notifications JS -->
+<script src="assets/js/notifications.js"></script>
+<!-- END: Notifications JS-->
+
+<!-- Theme Toggle JS -->
+<script src="assets/js/theme-toggle.js"></script>
+<!-- END: Theme Toggle JS-->
+
+    <!-- Mobile sidebar toggle (direct capture-phase handler) -->
+    <script>
+    (function () {
+        var html = document.documentElement;
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('.layout-menu-toggle');
+            if (!btn) return;
+            if (window.innerWidth >= 1200) return;
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (html.classList.contains('layout-menu-expanded')) {
+                html.classList.remove('layout-menu-expanded');
+            } else {
+                html.classList.add('layout-menu-expanded');
+            }
+        }, true);
+    })();
+    </script>
+
+
+
+<!----><button data-v-621cb8d4="" class="admin-chatbot-fab" title="Open AI Assistant"><i data-v-621cb8d4="" class="ri ri-chat-3-line"></i></button>
+<style>
+@keyframes __bc_back_pulse { 0%,100%{ box-shadow:0 4px 18px rgba(216,58,122,.55),0 0 0 0 rgba(216,58,122,.5); } 50%{ box-shadow:0 4px 22px rgba(216,58,122,.75),0 0 0 8px rgba(216,58,122,0); } }
+#__bc_back_pill { animation: __bc_back_pulse 2.2s ease-in-out infinite; }
+#__bc_back_pill:hover { animation: none; transform: scale(1.04); }
+</style>
+<a id="__bc_back_pill" href="/projects/buscatcher" style="position:fixed;bottom:16px;left:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:26px;background:#D83A7A;border:2px solid #fff;color:#fff;font:700 15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 4px 18px rgba(216,58,122,.55);transition:transform .15s;">&larr; back to portfolio</a>
+
+</body></html>

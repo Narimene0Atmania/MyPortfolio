@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/demos/plannari-app/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="plannari">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>plannari</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!--
+    Portfolio demo note: this app normally talks to a real Laravel backend
+    (see lib/api/api_client.dart) for every single interaction — there's no
+    "just render the page" fallback. mock-sw.js intercepts those calls and
+    answers from seeded in-memory data instead, so the demo needs no server
+    at all. The app must not start until that worker is actually controlling
+    this page, or its first API calls would race past the mock and fail —
+    hence loading flutter_bootstrap.js by hand below instead of the static
+    <script> tag Flutter's own build normally puts here.
+  -->
+  <script>
+    (async () => {
+      try {
+        if ('serviceWorker' in navigator) {
+          const reg = await navigator.serviceWorker.register('mock-sw.js');
+          await navigator.serviceWorker.ready;
+
+          if (!navigator.serviceWorker.controller) {
+            // first-ever visit: the worker is active but doesn't control this
+            // document yet (that only happens on the *next* navigation) — one
+            // silent reload hands it control before Flutter's first API call
+            if (!sessionStorage.getItem('plannari-sw-reloaded')) {
+              sessionStorage.setItem('plannari-sw-reloaded', '1');
+              location.reload();
+              return;
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('mock service worker failed to register — API calls will fail', e);
+      }
+
+      const script = document.createElement('script');
+      script.src = 'flutter_bootstrap.js';
+      script.async = true;
+      document.body.appendChild(script);
+    })();
+  </script>
+
+
+
+<style>
+@keyframes __bc_back_pulse { 0%,100%{ box-shadow:0 4px 18px rgba(216,58,122,.55),0 0 0 0 rgba(216,58,122,.5); } 50%{ box-shadow:0 4px 22px rgba(216,58,122,.75),0 0 0 8px rgba(216,58,122,0); } }
+#__bc_back_pill { animation: __bc_back_pulse 2.2s ease-in-out infinite; }
+#__bc_back_pill:hover { animation: none; transform: scale(1.04); }
+</style>
+<a id="__bc_back_pill" href="/projects/plannari" style="position:fixed;top:16px;left:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:26px;background:#D83A7A;border:2px solid #fff;color:#fff;font:700 15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 4px 18px rgba(216,58,122,.55);transition:transform .15s;">&larr; back to portfolio</a>
+<script>if(window.self!==window.top){document.getElementById('__bc_back_pill').style.display='none';}</script>
+</body>
+</html>

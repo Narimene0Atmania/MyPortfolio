@@ -7,12 +7,18 @@
 @php
     $chipVariants = ['laravel' => 'pink', 'php' => 'lavender', 'react' => 'blue', 'js' => 'yellow', 'ts' => 'mint', 'rest api' => 'mint', 'flutter' => 'blue', 'vue' => 'mint'];
 @endphp
-<a href="{{ route('projects.show', $project['slug']) }}" class="project-card">
+<div class="project-card">
+    <a href="{{ route('projects.show', $project['slug']) }}" class="project-card__link" aria-label="{{ $project['title'] }}"></a>
     <div class="project-card__thumb">
         @if ($project['hero'])
             <img src="{{ asset($project['hero']) }}" alt="{{ $project['hero_alt'] ?? $project['title'] }}" loading="lazy">
         @else
             <span class="project-card__placeholder-tag">{{ __('site.projects.no_screenshot') }}</span>
+        @endif
+        @if (! empty($project['links']['live']))
+            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener" class="status-pill status-pill--live status-pill--card">
+                <span class="status-pill__dot" aria-hidden="true"></span>{{ __('projects.live') }}
+            </a>
         @endif
     </div>
     <div class="project-card__body">
@@ -27,4 +33,4 @@
             @endforeach
         </div>
     </div>
-</a>
+</div>

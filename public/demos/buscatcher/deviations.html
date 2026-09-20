@@ -1,0 +1,1700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="http://127.0.0.1:8030/assets/" dir="ltr" data-skin="default" data-base-url="http://127.0.0.1:8030" data-framework="laravel" data-bs-theme="dark" data-template="vertical-menu-template"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>
+        Deviations | Bus Catcher
+    </title>
+    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5, bootstrap 5 free, free admin template">
+    <meta property="og:title" content="Materio Bootstrap 5 HTML + Laravel Admin Template by ThemeSelection">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+    <meta property="og:image" content="https://ts-assets.b-cdn.net/ts-assets/materio/materio-bootstrap-laravel-admin-template/marketing/materio-bootstrap-laravel-admin-template-smm.png">
+    <meta property="og:description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta property="og:site_name" content="ThemeSelection">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- laravel CRUD token -->
+    <meta name="csrf-token" content="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+
+    <!-- Apply theme immediately to prevent white flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme-mode');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
+    <!-- Favicon -->
+            <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+    
+    <!-- Include Styles -->
+    <!-- BEGIN: Theme CSS-->
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  /* Force Outfit font to override any compiled Bootstrap/Theme styles */
+  body, html, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, span, p, div, a, button, input, select, textarea, label, li, ul, ol, th, td, pre, code, .btn, .form-control, .dropdown-item, .nav-link {
+    font-family: 'Outfit', sans-serif !important;
+  }
+</style>
+
+<!-- Font Awesome Icons (for admin views) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- Fonts Icons (Materio - Remix Icons via Iconify) -->
+<link rel="preload" as="style" href="build/assets/iconify-gmF8Ppqf.css"><link rel="stylesheet" href="build/assets/iconify-gmF8Ppqf.css">
+<!-- BEGIN: Vendor CSS-->
+<link rel="preload" as="style" href="build/assets/node-waves-VJmmnFRE.css"><link rel="stylesheet" href="build/assets/node-waves-VJmmnFRE.css">
+
+<!-- Core CSS -->
+<link rel="preload" as="style" href="build/assets/core-Dlin8M9s.css"><link rel="preload" as="style" href="build/assets/demo-B9Pxs1C6.css"><link rel="stylesheet" href="build/assets/core-Dlin8M9s.css"><link rel="stylesheet" href="build/assets/demo-B9Pxs1C6.css">
+<!-- Dark Theme CSS -->
+<link rel="stylesheet" href="assets/css/dark-theme.css">
+
+<!-- Vendor Styles -->
+<link rel="preload" as="style" href="build/assets/perfect-scrollbar-D1VS3Q33.css"><link rel="stylesheet" href="build/assets/perfect-scrollbar-D1VS3Q33.css">
+<!-- Page Styles -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<!-- app CSS -->
+<link rel="preload" as="style" href="build/assets/app-DeNs1JBR.css"><link rel="stylesheet" href="build/assets/app-DeNs1JBR.css"><!-- END: app CSS-->
+    <!-- Include Scripts for customizer, helper, analytics, config -->
+    <!-- laravel style -->
+<link rel="modulepreload" as="script" href="build/assets/helpers-xuwOQqll.js"><script type="module" src="build/assets/helpers-xuwOQqll.js"></script>
+<!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+<link rel="modulepreload" as="script" href="build/assets/config-CQjA4MVn.js"><script type="module" src="build/assets/config-CQjA4MVn.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async="" defer src="https://buttons.github.io/buttons.js"></script><style type="text/css">
+.layout-menu-fixed .layout-navbar-full .layout-menu,
+.layout-page {
+  padding-top: 0px !important;
+}
+.content-wrapper {
+  padding-bottom: 0px !important;
+}</style><style>
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+        .card, .navbar, .sidebar, .menu-inner, input, textarea, select, table {
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+    </style></head>
+
+<body>
+    <!-- Layout Content -->
+    <div class="layout-wrapper layout-content-navbar ">
+    <div class="layout-container">
+
+                <aside id="layout-menu" class="layout-menu menu-vertical menu" data-bg-class="null">
+
+    <!-- ! Hide app brand if navbar-full -->
+    <div class="app-brand demo">
+        <a href="#" class="app-brand-link">
+                            <span class="app-brand-logo demo me-1">
+                    <span class="text-primary">
+  <svg width="30" height="24" viewbox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="white" fill-opacity="0.15"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="white" fill-opacity="0.3"></path>
+  </svg>
+</span>
+                </span>
+                        <span class="app-brand-text demo menu-text fw-semibold ms-2">Bus Catcher</span>
+        </a>
+
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1 ps">
+                        
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="dashboard.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-home-smile-line"></i>
+                                <div>Dashboard</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Management</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="students.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-line"></i>
+                                <div>Students</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="bus-stops.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-user-line"></i>
+                                <div>Bus Stops</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="buses.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-bus-line"></i>
+                                <div>Buses</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="drivers.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-steering-2-line"></i>
+                                <div>Drivers</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="operators.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-settings-line"></i>
+                                <div>Operators</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="devices.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-router-line"></i>
+                                <div>Devices</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="routes.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Routes</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="routes.html" class="menu-link">
+                    <div>All Routes</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="#" class="menu-link">
+                    <div>Create Route</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="trips.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Trips</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="trips.html" class="menu-link">
+                    <div>Management</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="journey-logs.html" class="menu-link">
+                    <div>Journey Logs</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item active">
+        <a href="deviations.html" class="menu-link">
+                    <div>Deviations</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Tracking &amp; Reports</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="tracking.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-line"></i>
+                                <div>Live Tracking</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="statistics-month.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-pie-chart-2-line"></i>
+                                <div>Statistics</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="reports.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-bar-chart-line"></i>
+                                <div>Reports</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="reports.html" class="menu-link">
+                    <div>Overview</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="complaints.html" class="menu-link">
+                    <div>Complaints</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="ratings.html" class="menu-link">
+                    <div>Ratings</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="driver-scores.html" class="menu-link">
+                    <div>Driver Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="bus-scores.html" class="menu-link">
+                    <div>Bus Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="route-stats.html" class="menu-link">
+                    <div>Route Statistics</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="emails.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-mail-send-line"></i>
+                                <div>Emails</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="notifications.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-notification-line"></i>
+                                <div>Notifications</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Settings</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="settings.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-settings-3-line"></i>
+                                <div>Settings</div>
+                            </a>
+
+            
+                    </li>
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
+
+</aside>
+        
+
+        <!-- Layout page -->
+        <div class="layout-page">
+
+            
+            
+
+            <!-- BEGIN: Navbar-->
+            <div id="navbar-app" data-v-app=""><nav class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar"><div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none"><a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)"><i class="icon-base ri ri-menu-line icon-md"></i></a></div><div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"><ul class="navbar-nav flex-row align-items-center ms-auto"><li class="nav-item navbar-dropdown dropdown-notifications dropdown me-3"><a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="icon-base ri ri-notification-2-line icon-md"></i><span class="position-absolute top-0 start-100 translate-middle badge badge-center rounded-pill bg-danger"><span>7</span></span></a><ul class="dropdown-menu dropdown-menu-end p-0"><li class="dropdown-header border-bottom py-3 px-4"><div class="d-flex justify-content-between align-items-center"><h6 class="mb-0">Notifications</h6><a href="javascript:void(0);" onclick="markAllNotificationsAsRead(event)" class="small text-primary">Mark all as read</a></div></li><li class="dropdown-divider m-0"><li class="dropdown-item border-bottom notification-item" data-notification-id="79" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/79'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-bus-2-line text-success icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128652; Trip Started</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R11-BUS-07 started its journey on trip #7.</small><small class="text-muted">11 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="76" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/76'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#8505;&#65039; System Notice</h6><small class="d-block text-body-secondary mb-1">Routine status update for bus TLE-R5-BUS-08.</small><small class="text-muted">6 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="77" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/77'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">Speed Limit Exceeded</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-02 exceeded the configured speed limit.</small><small class="text-muted">4 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="80" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/80'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-map-pin-line text-info icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128205; Bus Approaching Stop</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-06 is approaching the next stop on trip #8.</small><small class="text-muted">3 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="78" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/78'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128226; Service Announcement</h6><small class="d-block text-body-secondary mb-1">Schedule adjustments may apply this week due to maintenance work.</small><small class="text-muted">2 hours from now</small></div></div></li><li class="dropdown-divider m-0"><li class="dropdown-header border-top py-3 px-4"><a href="notifications.html" class="text-primary small">View all notifications</a></li></ul></li><li data-v-621cb8d4="" class="nav-item me-3" title="AI Assistant"><button data-v-621cb8d4="" class="nav-link" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: none; cursor: pointer;"><i data-v-621cb8d4="" class="icon-base ri ri-chat-3-line icon-md" style="color: rgb(102, 102, 102);"></i><!----></button></li><li class="nav-item navbar-dropdown me-3"><a class="nav-link p-0" href="javascript:void(0);" id="theme-toggle-btn" title="Switch to Light Mode"><i class="icon-base ri icon-md ri-moon-line" id="theme-toggle-icon"></i></a></li><li class="nav-item navbar-dropdown dropdown-user dropdown"><a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="rounded-circle"></div></a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="javascript:void(0);"><div class="d-flex"><div class="flex-shrink-0 me-3"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="w-px-40 h-auto rounded-circle"></div></div><div class="flex-grow-1"><h6 class="mb-0">Mohamed Benbrahim</h6><small class="text-body-secondary">University admin</small></div></div></a></li><li><div class="dropdown-divider my-1"></div></li><li><a class="dropdown-item" href="#"><i class="icon-base ri ri-user-3-line icon-md me-3"></i><span>My Profile</span></a></li><li><a class="dropdown-item" href="settings.html"><i class="icon-base ri ri-settings-4-line icon-md me-4"></i><span>Settings</span></a></li><li><div class="dropdown-divider my-1"></div></li><li><div class="d-grid px-4 pt-2 pb-1"><form method="POST" action="http://127.0.0.1:8030/university/logout" style="display: contents;"><input type="hidden" name="_token" autocomplete="off" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV"> <button type="submit" class="btn btn-danger d-flex w-100 justify-content-center align-items-center" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none;"><small class="align-middle">Logout</small><i class="ri ri-logout-box-r-line ms-2 icon-xs"></i></button></form></div></li></ul></li></ul></div></nav></div>
+            <!-- END: Navbar-->
+
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+
+                <!-- Content -->
+                                    <div class="container-xxl flex-grow-1 container-p-y">
+                        
+                        <div class="container-fluid px-4 py-5" id="deviations-container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="h2">Deviations</h1>
+            <p class="text-muted">Review route deviations detected across your fleet</p>
+        </div>
+    </div>
+
+        
+    <!-- Filters -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Filters</h5>
+        </div>
+        <div class="card-body">
+            <form method="GET" class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Status</label>
+                    <select name="status" class="form-select">
+                        <option value="" selected>All</option>
+                        <option value="unreviewed">Unreviewed</option>
+                        <option value="reviewed">Reviewed</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">&nbsp;</label>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary flex-grow-1">Filter</button>
+                        <a href="deviations.html" class="btn btn-secondary">Reset</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deviations Table -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0"><i class="fas fa-route"></i> Deviation List</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-sm align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Route</th>
+                            <th>Bus</th>
+                            <th>Driver</th>
+                            <th>Started</th>
+                            <th>Duration</th>
+                            <th>Max Distance</th>
+                            <th>Location (lat, lng)</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                <tr>
+                                <td>medecine - centrale</td>
+                                <td><strong>TLE-R12-BUS-08</strong></td>
+                                <td>Farouk Rahmani</td>
+                                <td>Sep 17, 17:25</td>
+                                <td>22m 57s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87896, -1.31479</code>
+                                                                    </td>
+                                <td class="small">Facult&eacute; de m&eacute;decine</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1561)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1561/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1561/email-driver" data-driver-name="Farouk Rahmani" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>nouv pole - chetouene</td>
+                                <td><strong>TLE-R7-BUS-05</strong></td>
+                                <td>Adel Zerrouki</td>
+                                <td>Sep 17, 17:20</td>
+                                <td>22m 24s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.89313, -1.35483</code>
+                                                                    </td>
+                                <td class="small">nouveau pole universitaire (La Rocade)</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(805)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/805/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/805/email-driver" data-driver-name="Adel Zerrouki" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centrale - nouveau pole</td>
+                                <td><strong>TLE-R5-BUS-09</strong></td>
+                                <td>Youcef Meziane</td>
+                                <td>Sep 17, 16:27</td>
+                                <td>33s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87893, -1.34886</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(253)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/253/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/253/email-driver" data-driver-name="Youcef Meziane" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centre ville - chetouene</td>
+                                <td><strong>TLE-R8-BUS-07</strong></td>
+                                <td>Lotfi Yahiaoui</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td>1371 m</td>
+                                <td>
+                                                                            <code class="small">34.90259, -1.32026</code>
+                                                                    </td>
+                                <td class="small">Gare routi&egrave;re Tlemcen</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1084)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1084/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1084/email-driver" data-driver-name="Lotfi Yahiaoui" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>ecole superieure - chetouene</td>
+                                <td><strong>TLE-R11-BUS-06</strong></td>
+                                <td>Fouad Aitsi</td>
+                                <td>Sep 17, 16:10</td>
+                                <td>23m 12s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87353, -1.32854</code>
+                                                                    </td>
+                                <td class="small">CHU Tlemcen (Hopitale Tidjani)</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1339)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1339/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1339/email-driver" data-driver-name="Fouad Aitsi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centre ville - chetouene</td>
+                                <td><strong>TLE-R8-BUS-09</strong></td>
+                                <td>Boualem Selmi</td>
+                                <td>Sep 17, 15:49</td>
+                                <td>21m 52s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87932, -1.30885</code>
+                                                                    </td>
+                                <td class="small">Lycee Maliha Hamidou</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1086)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1086/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1086/email-driver" data-driver-name="Boualem Selmi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centre ville - chetouene</td>
+                                <td><strong>TLE-R8-BUS-01</strong></td>
+                                <td>Abdelhak Senoussi</td>
+                                <td>Sep 17, 15:43</td>
+                                <td>1m 0s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87352, -1.32854</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1079)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1079/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1079/email-driver" data-driver-name="Abdelhak Senoussi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>nouv pole - chetouene</td>
+                                <td><strong>TLE-R7-BUS-02</strong></td>
+                                <td>Brahim Cheriet</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td>1316 m</td>
+                                <td>
+                                                                            <code class="small">34.92697, -1.32116</code>
+                                                                    </td>
+                                <td class="small">Rond point abou techfine</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(802)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/802/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/802/email-driver" data-driver-name="Brahim Cheriet" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>nouv pole - chetouene</td>
+                                <td><strong>TLE-R7-BUS-09</strong></td>
+                                <td>Noureddine Aouadi</td>
+                                <td>Sep 17, 14:45</td>
+                                <td>2m 2s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.91518, -1.32241</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(811)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/811/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/811/email-driver" data-driver-name="Noureddine Aouadi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>medecine - centrale</td>
+                                <td><strong>TLE-R12-BUS-01</strong></td>
+                                <td>Ahmed Belkacem</td>
+                                <td>Sep 17, 14:39</td>
+                                <td>44s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87352, -1.32854</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1555)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1555/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1555/email-driver" data-driver-name="Ahmed Belkacem" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centrale - nouveau pole</td>
+                                <td><strong>TLE-R5-BUS-06</strong></td>
+                                <td>Karim Ouali</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td>2467 m</td>
+                                <td>
+                                                                            <code class="small">34.89874, -1.36119</code>
+                                                                    </td>
+                                <td class="small">Pole universitaire Imama</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(250)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/250/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/250/email-driver" data-driver-name="Karim Ouali" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centrale - nouveau pole</td>
+                                <td><strong>TLE-R5-BUS-01</strong></td>
+                                <td>Ahmed Belkacem</td>
+                                <td>Sep 17, 14:12</td>
+                                <td>32s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87893, -1.34886</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(245)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/245/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/245/email-driver" data-driver-name="Ahmed Belkacem" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centrale - nouveau pole</td>
+                                <td><strong>TLE-R5-BUS-05</strong></td>
+                                <td>Nassim Boudjemaa</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td>1514 m</td>
+                                <td>
+                                                                            <code class="small">34.86342, -1.35482</code>
+                                                                    </td>
+                                <td class="small">Pole universitaire Imama</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(248)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/248/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/248/email-driver" data-driver-name="Nassim Boudjemaa" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centrale - nouveau pole</td>
+                                <td><strong>TLE-R5-BUS-10</strong></td>
+                                <td>Said Bentaleb</td>
+                                <td>Sep 17, 13:20</td>
+                                <td>21m 22s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.89312, -1.35486</code>
+                                                                    </td>
+                                <td class="small">nouveau pole universitaire (La Rocade)</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(257)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/257/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/257/email-driver" data-driver-name="Said Bentaleb" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>medecine - centrale</td>
+                                <td><strong>TLE-R12-BUS-06</strong></td>
+                                <td>Karim Ouali</td>
+                                <td>Sep 17, 13:22</td>
+                                <td>48s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87352, -1.32854</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1559)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1559/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1559/email-driver" data-driver-name="Karim Ouali" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>nouv pole - chetouene</td>
+                                <td><strong>TLE-R7-BUS-09</strong></td>
+                                <td>Noureddine Aouadi</td>
+                                <td>Sep 17, 12:49</td>
+                                <td>21m 40s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.91517, -1.32244</code>
+                                                                    </td>
+                                <td class="small">Rond point abou techfine</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(810)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/810/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/810/email-driver" data-driver-name="Noureddine Aouadi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>Centrale - Chetouene</td>
+                                <td><strong>TLE-R14-BUS-07</strong></td>
+                                <td>Walid Maazouzi</td>
+                                <td>Sep 17, 12:47</td>
+                                <td>33s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87893, -1.34886</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1790)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1790/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1790/email-driver" data-driver-name="Walid Maazouzi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>centre ville - Nouv pole</td>
+                                <td><strong>TLE-R6-BUS-10</strong></td>
+                                <td>Amine Saidi</td>
+                                <td>Sep 17, 11:48</td>
+                                <td>1m 7s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87352, -1.32854</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(522)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/522/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/522/email-driver" data-driver-name="Amine Saidi" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>ecole superieure - chetouene</td>
+                                <td><strong>TLE-R11-BUS-02</strong></td>
+                                <td>Khaled Belmokhtar</td>
+                                <td>Sep 17, 11:32</td>
+                                <td>20m 20s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.91968, -1.30180</code>
+                                                                    </td>
+                                <td class="small">Pole universitaire chetouane</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1332)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1332/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1332/email-driver" data-driver-name="Khaled Belmokhtar" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                                                <tr>
+                                <td>medecine - centrale</td>
+                                <td><strong>TLE-R12-BUS-03</strong></td>
+                                <td>Slimane Benziane</td>
+                                <td>Sep 17, 11:19</td>
+                                <td>45s</td>
+                                <td>&mdash;</td>
+                                <td>
+                                                                            <code class="small">34.87352, -1.32854</code>
+                                                                    </td>
+                                <td class="small">&mdash;</td>
+                                <td>
+                                                                            <span class="badge bg-danger">Unreviewed</span>
+                                                                    </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                                                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="openDeviationMap(1557)" title="View map">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </button>
+                                        
+                                                                                <form method="POST" action="http://127.0.0.1:8030/university/trips/deviations/1557/review" onsubmit="return confirm('Mark this deviation as reviewed?');">
+                                            <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as reviewed">
+                                                <i class="ri ri-check-line"></i>
+                                            </button>
+                                        </form>
+                                        
+                                        <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#emailDriverModal" data-action-url="http://127.0.0.1:8030/university/trips/deviations/1557/email-driver" data-driver-name="Slimane Benziane" title="Send email note to driver">
+                                            <i class="ri ri-mail-send-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <nav role="navigation" aria-label="Pagination Navigation">
+
+        <div class="flex gap-2 items-center justify-between sm:hidden">
+
+                            <span class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-300 cursor-not-allowed leading-5 rounded-md dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600">
+                    &laquo; Previous
+                </span>
+            
+                            <a href="deviations.html" rel="next" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-800 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:hover:text-gray-200">
+                    Next &raquo;
+                </a>
+            
+        </div>
+
+        <div class="hidden sm:flex-1 sm:flex sm:gap-2 sm:items-center sm:justify-between">
+
+            <div>
+                <p class="text-sm text-gray-700 leading-5 dark:text-gray-600">
+                    Showing
+                                            <span class="font-medium">1</span>
+                        to
+                        <span class="font-medium">20</span>
+                                        of
+                    <span class="font-medium">1791</span>
+                    results
+                </p>
+            </div>
+
+            <div>
+                <span class="inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
+
+                    
+                                            <span aria-disabled="true" aria-label="&amp;laquo; Previous">
+                            <span class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-not-allowed rounded-l-md leading-5 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-400" aria-hidden="true">
+                                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    
+                    
+                                            
+                        
+                        
+                                                                                                                        <span aria-current="page">
+                                        <span class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-gray-200 border border-gray-300 cursor-default leading-5 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">1</span>
+                                    </span>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 2">
+                                        2
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 3">
+                                        3
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 4">
+                                        4
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 5">
+                                        5
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 6">
+                                        6
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 7">
+                                        7
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 8">
+                                        8
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 9">
+                                        9
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 10">
+                                        10
+                                    </a>
+                                                                                                                                
+                                                    <span aria-disabled="true">
+                                <span class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 cursor-default leading-5 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300">...</span>
+                            </span>
+                        
+                        
+                                                                    
+                        
+                        
+                                                                                                                        <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 89">
+                                        89
+                                    </a>
+                                                                                                                                <a href="deviations.html" class="inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:text-gray-300 dark:active:bg-gray-700 dark:focus:border-blue-800 hover:bg-gray-100 dark:hover:bg-gray-900" aria-label="Go to page 90">
+                                        90
+                                    </a>
+                                                                                                        
+                    
+                                            <a href="deviations.html" rel="next" class="inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md leading-5 hover:text-gray-400 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:active:bg-gray-700 dark:focus:border-blue-800 dark:text-gray-300 dark:hover:bg-gray-900 dark:hover:text-gray-300" aria-label="Next &amp;raquo;">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                                    </span>
+            </div>
+        </div>
+    </nav>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Email Driver Modal -->
+<div class="modal fade" id="emailDriverModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" id="emailDriverForm">
+                <input type="hidden" name="_token" value="BtBM7047hdIj7I3vECtXpbqWTD0AVzsCQGhH8uhV" autocomplete="off">                <div class="modal-header">
+                    <h5 class="modal-title">Email driver &mdash; <span id="emailDriverName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-control" rows="5" required="" placeholder="e.g. Please confirm why the route was not followed on this trip."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">Send Email</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Deviation map popup (vanilla overlay; no Bootstrap JS dependency) &mdash; same pattern as the journey detail page -->
+<div id="deviationMapOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:1080; align-items:center; justify-content:center;">
+    <div style="background:#fff; width:min(900px,92vw); border-radius:8px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,.4);">
+        <div class="d-flex justify-content-between align-items-center px-3 py-2 bg-warning">
+            <strong id="deviationMapTitle"><i class="fas fa-route me-2"></i>Deviation Path</strong>
+            <button type="button" class="btn-close" onclick="closeDeviationMap()" aria-label="Close"></button>
+        </div>
+        <div id="deviationMap" style="height:60vh; width:100%;"></div>
+        <div class="px-3 py-2 small text-muted" id="deviationMapMeta"></div>
+    </div>
+</div>
+
+
+
+                    </div>
+                    <!-- / Content -->
+
+                    <!-- Footer -->
+                                        <!-- Footer-->
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl">
+        <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+            <div class="text-body">
+                                    &copy;
+                    2026
+                    <span class="footer-text me-2">Bus Catcher</span>
+                    <span class="text-muted">All rights reserved</span>
+                            </div>
+            <div class="d-none d-lg-inline-block">
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-home-smile-line me-1"></i>Dashboard
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-school-line me-1"></i>universities
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-settings-3-line me-1"></i>Settings
+                </a>
+                <a href="javascript:void(0)" class="footer-link d-none d-sm-inline-block" onclick="alert('Support: support@universitybustracking.com')">
+                    <i class="ri ri-customer-service-line me-1"></i>Support
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ Footer-->
+                                        <!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!--/ Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+                <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+                <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+        <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!--/ Layout Content -->
+
+    
+
+    <!-- Include Scripts -->
+    <!-- BEGIN: Vendor JS-->
+
+<link rel="modulepreload" as="script" href="build/assets/jquery-BLVPd0pO.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/popper-DH7wS8as.js"><link rel="modulepreload" as="script" href="build/assets/bootstrap-DGM5oX2B.js"><link rel="modulepreload" as="script" href="build/assets/node-waves-rJO3qC03.js"><script type="module" src="build/assets/jquery-BLVPd0pO.js"></script><script type="module" src="build/assets/popper-DH7wS8as.js"></script><script type="module" src="build/assets/bootstrap-DGM5oX2B.js"></script><script type="module" src="build/assets/node-waves-rJO3qC03.js"></script>
+<link rel="modulepreload" as="script" href="build/assets/perfect-scrollbar-BPWyZo71.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/menu-Bldkajpn.js"><script type="module" src="build/assets/perfect-scrollbar-BPWyZo71.js"></script><script type="module" src="build/assets/menu-Bldkajpn.js"></script>
+<!-- END: Page Vendor JS-->
+<!-- BEGIN: Theme JS-->
+<link rel="modulepreload" as="script" href="build/assets/main-B5wckTSW.js"><script type="module" src="build/assets/main-B5wckTSW.js"></script>
+<!-- END: Theme JS-->
+<!-- Pricing Modal JS-->
+<!-- END: Pricing Modal JS-->
+<!-- BEGIN: Page JS-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+document.getElementById('emailDriverModal').addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const form = document.getElementById('emailDriverForm');
+    form.action = button.getAttribute('data-action-url');
+    document.getElementById('emailDriverName').textContent = button.getAttribute('data-driver-name');
+});
+
+// Each row can belong to a different journey/route, so (unlike the journey
+// detail page, which has one shared route) every deviation here carries its
+// own route polyline alongside its deviation polyline.
+const deviationData = {
+        "1561": {
+        polyline: [],
+        routePolyline: [],
+        start: {"lat":34.878955069999996,"lng":-1.3147924899999999},
+        distance: 0,
+        duration: "22m 57s",
+        address: "Facult\u00e9 de m\u00e9decine",
+    },
+        "805": {
+        polyline: [],
+        routePolyline: [[-1.355274,34.893158],[-1.35519,34.893742],[-1.355187,34.893782],[-1.355253,34.893789],[-1.355346,34.893796],[-1.355551,34.893804],[-1.355598,34.893815],[-1.355642,34.893831],[-1.355684,34.893852],[-1.355721,34.893877],[-1.35573,34.893894],[-1.355721,34.89399],[-1.355704,34.894401],[-1.355665,34.894626],[-1.355574,34.895258],[-1.355528,34.895677],[-1.355449,34.896012],[-1.35539,34.89621],[-1.355329,34.896385],[-1.355277,34.896523],[-1.355191,34.896748],[-1.355036,34.897082],[-1.354778,34.897495],[-1.354514,34.897878],[-1.354256,34.898212],[-1.354071,34.898419],[-1.353837,34.89864],[-1.353531,34.898915],[-1.353123,34.899243],[-1.352765,34.899439],[-1.352464,34.899596],[-1.352117,34.89975],[-1.351758,34.899896],[-1.351369,34.900018],[-1.350958,34.900143],[-1.350371,34.900287],[-1.350091,34.90036],[-1.34992,34.900418],[-1.349701,34.900498],[-1.34933,34.900655],[-1.348964,34.900872],[-1.348575,34.901093],[-1.348341,34.901265],[-1.348065,34.901457],[-1.347711,34.901761],[-1.347394,34.90212],[-1.346908,34.902602],[-1.346165,34.90332],[-1.345007,34.904479],[-1.344939,34.904547],[-1.34482,34.904662],[-1.344702,34.904775],[-1.344476,34.904994],[-1.343208,34.906267],[-1.342389,34.9071],[-1.341838,34.907586],[-1.341655,34.907763],[-1.341532,34.907881],[-1.341232,34.908146],[-1.340999,34.908323],[-1.340705,34.908495],[-1.340649,34.90853],[-1.340357,34.908712],[-1.339908,34.908918],[-1.339529,34.909112],[-1.339119,34.909243],[-1.338916,34.909297],[-1.338684,34.909343],[-1.338399,34.909355],[-1.338226,34.909307],[-1.338113,34.909246],[-1.337982,34.909216],[-1.337872,34.909216],[-1.337765,34.909238],[-1.337654,34.909289],[-1.337564,34.909363],[-1.337517,34.909429],[-1.337487,34.909502],[-1.337476,34.909589],[-1.337284,34.909671],[-1.337215,34.909697],[-1.337073,34.909751],[-1.336623,34.909828],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331774,34.910967],[-1.331475,34.911084],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330333,34.911731],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328612,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328255,34.913957],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325737,34.914742],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.323031,34.915092],[-1.322818,34.915101],[-1.322805,34.91509],[-1.322784,34.91508],[-1.322757,34.915076],[-1.322645,34.915076],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322455,34.91509],[-1.322447,34.915103],[-1.322445,34.915114],[-1.322288,34.915097],[-1.322213,34.915093],[-1.322145,34.915096],[-1.321382,34.915099],[-1.321074,34.915104],[-1.320154,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.315761,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.31447,34.916145],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312969,34.915846],[-1.3127,34.91573],[-1.312168,34.915488],[-1.31186,34.915383],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309731,34.915009],[-1.309451,34.915003],[-1.309199,34.914995],[-1.308895,34.914993],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.307258,34.915529],[-1.306669,34.9158],[-1.306388,34.915923],[-1.306114,34.916028],[-1.305814,34.916138],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302835,34.91709],[-1.302773,34.917097],[-1.302697,34.917116],[-1.302449,34.917189],[-1.302293,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300163,34.917868],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.299997,34.917937],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300044,34.918168],[-1.300059,34.91817],[-1.300061,34.918214],[-1.300067,34.918257],[-1.300076,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300872,34.919886],[-1.300934,34.919897],[-1.301762,34.92]],
+        start: {"lat":34.89312735,"lng":-1.35482831},
+        distance: 0,
+        duration: "22m 24s",
+        address: "nouveau pole universitaire (La Rocade)",
+    },
+        "253": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.87892951,"lng":-1.34886393},
+        distance: 0,
+        duration: "33s",
+        address: null,
+    },
+        "1084": {
+        polyline: [],
+        routePolyline: [[-1.303821,34.880956],[-1.303958,34.880886],[-1.304238,34.880763],[-1.304403,34.880697],[-1.304615,34.880628],[-1.305039,34.880506],[-1.305768,34.880334],[-1.307549,34.879745],[-1.308533,34.879433],[-1.309098,34.879233],[-1.309223,34.879162],[-1.310355,34.878702],[-1.310955,34.878469],[-1.311046,34.878429],[-1.311322,34.878279],[-1.311582,34.8781],[-1.311696,34.877929],[-1.311742,34.877752],[-1.311742,34.877571],[-1.311631,34.876577],[-1.311618,34.876299],[-1.31167,34.876168],[-1.311742,34.876034],[-1.311817,34.875981],[-1.311937,34.87592],[-1.313112,34.875585],[-1.313305,34.875491],[-1.313521,34.875375],[-1.313929,34.875117],[-1.313974,34.875122],[-1.314019,34.875116],[-1.314059,34.875098],[-1.314089,34.87507],[-1.314107,34.875036],[-1.31411,34.874999],[-1.314317,34.874938],[-1.315679,34.874865],[-1.317028,34.874769],[-1.319521,34.874628],[-1.321649,34.874493],[-1.322202,34.874444],[-1.322914,34.874359],[-1.323357,34.874278],[-1.323687,34.874253],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328312,34.873726],[-1.32852,34.873688],[-1.32908,34.873564],[-1.32933,34.873513],[-1.329692,34.873422],[-1.330154,34.87332],[-1.330159,34.873348],[-1.330173,34.87337],[-1.330144,34.873491],[-1.330136,34.873602],[-1.330141,34.873802],[-1.3302,34.874117],[-1.330233,34.874255],[-1.330426,34.874712],[-1.330626,34.875272],[-1.330706,34.875525],[-1.33081,34.875769],[-1.330967,34.876121],[-1.331012,34.876231],[-1.331199,34.876684],[-1.331465,34.877311],[-1.331547,34.877505],[-1.331633,34.877717],[-1.331677,34.877823],[-1.331802,34.878145],[-1.331916,34.878379],[-1.332078,34.8787],[-1.332305,34.87917],[-1.33242,34.879427],[-1.332497,34.87966],[-1.332556,34.879912],[-1.3327,34.880634],[-1.332745,34.881073],[-1.332723,34.881114],[-1.332717,34.881157],[-1.332561,34.881297],[-1.332438,34.881438],[-1.332325,34.881605],[-1.3322,34.88179],[-1.332108,34.881971],[-1.331905,34.882349],[-1.331809,34.882507],[-1.331685,34.882658],[-1.33158,34.882764],[-1.331806,34.883299],[-1.331904,34.883531],[-1.331955,34.883701],[-1.331974,34.883799],[-1.331971,34.883897],[-1.331945,34.883994],[-1.331894,34.88413],[-1.33172,34.884327],[-1.331219,34.884868],[-1.331135,34.884982],[-1.331098,34.885057],[-1.33108,34.885137],[-1.331079,34.885218],[-1.331097,34.885298],[-1.33114,34.885409],[-1.331354,34.885777],[-1.331426,34.886004],[-1.331445,34.88614],[-1.33144,34.886205],[-1.331435,34.886261],[-1.33139,34.886572],[-1.331379,34.886642],[-1.331228,34.88685],[-1.331095,34.887024],[-1.330884,34.887229],[-1.330623,34.887434],[-1.330399,34.88761],[-1.330253,34.887725],[-1.329606,34.888248],[-1.329466,34.888363],[-1.329155,34.888732],[-1.328816,34.88911],[-1.328532,34.889468],[-1.328257,34.889952],[-1.32822,34.889938],[-1.32818,34.889933],[-1.32814,34.889937],[-1.328102,34.88995],[-1.32807,34.889971],[-1.328046,34.889998],[-1.328037,34.890016],[-1.32803,34.890047],[-1.328032,34.890079],[-1.328045,34.890109],[-1.328067,34.890135],[-1.328083,34.890193],[-1.32809,34.890246],[-1.328095,34.890299],[-1.328097,34.890352],[-1.327851,34.890954],[-1.327777,34.891141],[-1.327611,34.891602],[-1.327138,34.892509],[-1.32686,34.892749],[-1.326751,34.892844],[-1.326533,34.893044],[-1.326376,34.893188],[-1.325973,34.893554],[-1.325691,34.893809],[-1.325672,34.893831],[-1.3256,34.893911],[-1.325407,34.894058],[-1.325353,34.894085],[-1.325324,34.894077],[-1.325293,34.894075],[-1.325241,34.894081],[-1.325194,34.894102],[-1.325157,34.894133],[-1.325135,34.894173],[-1.32513,34.894216],[-1.325134,34.89424],[-1.325144,34.894263],[-1.325159,34.894284],[-1.325183,34.894306],[-1.325237,34.894461],[-1.325317,34.894568],[-1.325351,34.894613],[-1.325421,34.894719],[-1.32551,34.89489],[-1.325704,34.895685],[-1.325769,34.895899],[-1.325784,34.895937],[-1.325889,34.896201],[-1.325923,34.896287],[-1.325968,34.89642],[-1.325978,34.896448],[-1.326182,34.896967],[-1.326534,34.897801],[-1.327079,34.899271],[-1.327227,34.899609],[-1.327284,34.899718],[-1.327352,34.899821],[-1.327448,34.89995],[-1.327598,34.900155],[-1.327794,34.900391],[-1.32804,34.900693],[-1.328149,34.900823],[-1.328861,34.901565],[-1.329342,34.902054],[-1.329633,34.902326],[-1.329884,34.90252],[-1.330142,34.902704],[-1.330467,34.902915],[-1.330894,34.903148],[-1.331274,34.903348],[-1.331367,34.903399],[-1.332171,34.903834],[-1.332428,34.903977],[-1.332645,34.904143],[-1.333027,34.90453],[-1.333064,34.904556],[-1.333056,34.904589],[-1.333059,34.904622],[-1.333071,34.904654],[-1.3331,34.904688],[-1.333139,34.904713],[-1.333186,34.904726],[-1.333241,34.904727],[-1.333316,34.90481],[-1.333555,34.905023],[-1.333683,34.905156],[-1.334343,34.905885],[-1.334636,34.906191],[-1.335783,34.907452],[-1.336416,34.908225],[-1.336175,34.90835],[-1.335175,34.908735],[-1.335219,34.90884],[-1.336085,34.909701],[-1.336088,34.909816],[-1.336069,34.909893],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331773,34.910967],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328611,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.322818,34.915101],[-1.322784,34.91508],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322444,34.915114],[-1.322288,34.915097],[-1.321382,34.915099],[-1.320153,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.31576,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312699,34.91573],[-1.312168,34.915488],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309199,34.914995],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.306387,34.915923],[-1.306114,34.916028],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302773,34.917097],[-1.302292,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300059,34.91817],[-1.300075,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300934,34.919897],[-1.301762,34.920002]],
+        start: {"lat":34.90258654,"lng":-1.32025802},
+        distance: 1371,
+        duration: "\u2014",
+        address: "Gare routi\u00e8re Tlemcen",
+    },
+        "1339": {
+        polyline: [],
+        routePolyline: [[-1.326326,34.877781],[-1.326282,34.877846],[-1.325737,34.877604],[-1.325372,34.877461],[-1.325086,34.87733],[-1.324992,34.87728],[-1.324895,34.877152],[-1.324915,34.877125],[-1.324924,34.877063],[-1.324892,34.877008],[-1.324864,34.876988],[-1.324822,34.876861],[-1.324766,34.87677],[-1.324764,34.876633],[-1.324809,34.874981],[-1.324845,34.874427],[-1.324889,34.874322],[-1.324929,34.87427],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328005,34.873718],[-1.32613,34.874024],[-1.325519,34.874081],[-1.324738,34.874131],[-1.324785,34.874421],[-1.324782,34.874676],[-1.324809,34.874981],[-1.324764,34.876633],[-1.324766,34.87677],[-1.324725,34.8769],[-1.324711,34.876991],[-1.324665,34.877037],[-1.324655,34.877067],[-1.324656,34.877104],[-1.324673,34.877138],[-1.324702,34.877167],[-1.324731,34.877182],[-1.324798,34.877193],[-1.32489,34.877564],[-1.324964,34.877758],[-1.325508,34.879033],[-1.32573,34.879687],[-1.325906,34.880125],[-1.326025,34.880478],[-1.3261,34.880757],[-1.326286,34.881071],[-1.326283,34.88165],[-1.326385,34.882254],[-1.326434,34.882627],[-1.326582,34.883677],[-1.326642,34.88429],[-1.325477,34.884418],[-1.325098,34.884504],[-1.323183,34.884758],[-1.322639,34.884842],[-1.322135,34.88493],[-1.321758,34.885023],[-1.321395,34.885097],[-1.321365,34.88506],[-1.321323,34.885051],[-1.321283,34.885064],[-1.32126,34.885095],[-1.321259,34.885114],[-1.320439,34.885283],[-1.320082,34.885319],[-1.319995,34.885318],[-1.319886,34.885304],[-1.319872,34.885291],[-1.319813,34.885265],[-1.319747,34.885271],[-1.319698,34.885301],[-1.319332,34.885483],[-1.318406,34.886071],[-1.318241,34.886211],[-1.317634,34.886561],[-1.317403,34.886754],[-1.317233,34.886885],[-1.316888,34.887212],[-1.316562,34.887501],[-1.315483,34.888503],[-1.313865,34.889958],[-1.31398,34.890229],[-1.313975,34.890471],[-1.313948,34.891021],[-1.313927,34.891246],[-1.313905,34.891378],[-1.313825,34.891615],[-1.313809,34.891712],[-1.313819,34.891826],[-1.313846,34.891963],[-1.313991,34.892209],[-1.314115,34.892346],[-1.314292,34.892495],[-1.314849,34.892856],[-1.314902,34.892897],[-1.315389,34.893161],[-1.315669,34.89325],[-1.315933,34.89332],[-1.316062,34.893344],[-1.316421,34.893454],[-1.316545,34.89352],[-1.316625,34.893582],[-1.316646,34.893629],[-1.316624,34.893689],[-1.316569,34.893782],[-1.316545,34.893877],[-1.316534,34.893974],[-1.316542,34.894191],[-1.316589,34.894502],[-1.316609,34.894763],[-1.316495,34.895154],[-1.316369,34.895468],[-1.316098,34.896208],[-1.315859,34.896661],[-1.315804,34.896843],[-1.315805,34.896987],[-1.315831,34.897397],[-1.31581,34.898026],[-1.315808,34.898392],[-1.315831,34.898566],[-1.315926,34.898826],[-1.316105,34.899139],[-1.316486,34.899887],[-1.316571,34.90001],[-1.316716,34.900151],[-1.317204,34.900578],[-1.317526,34.900877],[-1.317698,34.901088],[-1.31837,34.902091],[-1.319001,34.902892],[-1.31949,34.903477],[-1.320284,34.904251],[-1.320723,34.904665],[-1.320879,34.904797],[-1.321228,34.90503],[-1.32184,34.905499],[-1.322,34.905681],[-1.322177,34.905773],[-1.321807,34.906226],[-1.322132,34.906434],[-1.321701,34.907163],[-1.321312,34.90798],[-1.321215,34.908232],[-1.320961,34.909232],[-1.320735,34.910349],[-1.32056,34.911062],[-1.320546,34.911161],[-1.320356,34.912042],[-1.320091,34.913151],[-1.319999,34.913593],[-1.320017,34.913745],[-1.321305,34.913954],[-1.321984,34.914044],[-1.321954,34.914071],[-1.321892,34.914153],[-1.321851,34.914327],[-1.321851,34.91448],[-1.321906,34.914657],[-1.321945,34.914717],[-1.322297,34.915028],[-1.322376,34.915077],[-1.322446,34.915103],[-1.322447,34.915144],[-1.322449,34.91517],[-1.322466,34.915192],[-1.322489,34.915203],[-1.322797,34.91521],[-1.322828,34.915187],[-1.322833,34.915127],[-1.322818,34.915101],[-1.322784,34.91508],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322444,34.915114],[-1.322288,34.915097],[-1.321382,34.915099],[-1.320153,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.31576,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312699,34.91573],[-1.312168,34.915488],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309199,34.914995],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.306387,34.915923],[-1.306114,34.916028],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302773,34.917097],[-1.302292,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300059,34.91817],[-1.300075,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300934,34.919897],[-1.301762,34.920002]],
+        start: {"lat":34.873531400000005,"lng":-1.32853504},
+        distance: 0,
+        duration: "23m 12s",
+        address: "CHU Tlemcen (Hopitale Tidjani)",
+    },
+        "1086": {
+        polyline: [],
+        routePolyline: [[-1.303821,34.880956],[-1.303958,34.880886],[-1.304238,34.880763],[-1.304403,34.880697],[-1.304615,34.880628],[-1.305039,34.880506],[-1.305768,34.880334],[-1.307549,34.879745],[-1.308533,34.879433],[-1.309098,34.879233],[-1.309223,34.879162],[-1.310355,34.878702],[-1.310955,34.878469],[-1.311046,34.878429],[-1.311322,34.878279],[-1.311582,34.8781],[-1.311696,34.877929],[-1.311742,34.877752],[-1.311742,34.877571],[-1.311631,34.876577],[-1.311618,34.876299],[-1.31167,34.876168],[-1.311742,34.876034],[-1.311817,34.875981],[-1.311937,34.87592],[-1.313112,34.875585],[-1.313305,34.875491],[-1.313521,34.875375],[-1.313929,34.875117],[-1.313974,34.875122],[-1.314019,34.875116],[-1.314059,34.875098],[-1.314089,34.87507],[-1.314107,34.875036],[-1.31411,34.874999],[-1.314317,34.874938],[-1.315679,34.874865],[-1.317028,34.874769],[-1.319521,34.874628],[-1.321649,34.874493],[-1.322202,34.874444],[-1.322914,34.874359],[-1.323357,34.874278],[-1.323687,34.874253],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328312,34.873726],[-1.32852,34.873688],[-1.32908,34.873564],[-1.32933,34.873513],[-1.329692,34.873422],[-1.330154,34.87332],[-1.330159,34.873348],[-1.330173,34.87337],[-1.330144,34.873491],[-1.330136,34.873602],[-1.330141,34.873802],[-1.3302,34.874117],[-1.330233,34.874255],[-1.330426,34.874712],[-1.330626,34.875272],[-1.330706,34.875525],[-1.33081,34.875769],[-1.330967,34.876121],[-1.331012,34.876231],[-1.331199,34.876684],[-1.331465,34.877311],[-1.331547,34.877505],[-1.331633,34.877717],[-1.331677,34.877823],[-1.331802,34.878145],[-1.331916,34.878379],[-1.332078,34.8787],[-1.332305,34.87917],[-1.33242,34.879427],[-1.332497,34.87966],[-1.332556,34.879912],[-1.3327,34.880634],[-1.332745,34.881073],[-1.332723,34.881114],[-1.332717,34.881157],[-1.332561,34.881297],[-1.332438,34.881438],[-1.332325,34.881605],[-1.3322,34.88179],[-1.332108,34.881971],[-1.331905,34.882349],[-1.331809,34.882507],[-1.331685,34.882658],[-1.33158,34.882764],[-1.331806,34.883299],[-1.331904,34.883531],[-1.331955,34.883701],[-1.331974,34.883799],[-1.331971,34.883897],[-1.331945,34.883994],[-1.331894,34.88413],[-1.33172,34.884327],[-1.331219,34.884868],[-1.331135,34.884982],[-1.331098,34.885057],[-1.33108,34.885137],[-1.331079,34.885218],[-1.331097,34.885298],[-1.33114,34.885409],[-1.331354,34.885777],[-1.331426,34.886004],[-1.331445,34.88614],[-1.33144,34.886205],[-1.331435,34.886261],[-1.33139,34.886572],[-1.331379,34.886642],[-1.331228,34.88685],[-1.331095,34.887024],[-1.330884,34.887229],[-1.330623,34.887434],[-1.330399,34.88761],[-1.330253,34.887725],[-1.329606,34.888248],[-1.329466,34.888363],[-1.329155,34.888732],[-1.328816,34.88911],[-1.328532,34.889468],[-1.328257,34.889952],[-1.32822,34.889938],[-1.32818,34.889933],[-1.32814,34.889937],[-1.328102,34.88995],[-1.32807,34.889971],[-1.328046,34.889998],[-1.328037,34.890016],[-1.32803,34.890047],[-1.328032,34.890079],[-1.328045,34.890109],[-1.328067,34.890135],[-1.328083,34.890193],[-1.32809,34.890246],[-1.328095,34.890299],[-1.328097,34.890352],[-1.327851,34.890954],[-1.327777,34.891141],[-1.327611,34.891602],[-1.327138,34.892509],[-1.32686,34.892749],[-1.326751,34.892844],[-1.326533,34.893044],[-1.326376,34.893188],[-1.325973,34.893554],[-1.325691,34.893809],[-1.325672,34.893831],[-1.3256,34.893911],[-1.325407,34.894058],[-1.325353,34.894085],[-1.325324,34.894077],[-1.325293,34.894075],[-1.325241,34.894081],[-1.325194,34.894102],[-1.325157,34.894133],[-1.325135,34.894173],[-1.32513,34.894216],[-1.325134,34.89424],[-1.325144,34.894263],[-1.325159,34.894284],[-1.325183,34.894306],[-1.325237,34.894461],[-1.325317,34.894568],[-1.325351,34.894613],[-1.325421,34.894719],[-1.32551,34.89489],[-1.325704,34.895685],[-1.325769,34.895899],[-1.325784,34.895937],[-1.325889,34.896201],[-1.325923,34.896287],[-1.325968,34.89642],[-1.325978,34.896448],[-1.326182,34.896967],[-1.326534,34.897801],[-1.327079,34.899271],[-1.327227,34.899609],[-1.327284,34.899718],[-1.327352,34.899821],[-1.327448,34.89995],[-1.327598,34.900155],[-1.327794,34.900391],[-1.32804,34.900693],[-1.328149,34.900823],[-1.328861,34.901565],[-1.329342,34.902054],[-1.329633,34.902326],[-1.329884,34.90252],[-1.330142,34.902704],[-1.330467,34.902915],[-1.330894,34.903148],[-1.331274,34.903348],[-1.331367,34.903399],[-1.332171,34.903834],[-1.332428,34.903977],[-1.332645,34.904143],[-1.333027,34.90453],[-1.333064,34.904556],[-1.333056,34.904589],[-1.333059,34.904622],[-1.333071,34.904654],[-1.3331,34.904688],[-1.333139,34.904713],[-1.333186,34.904726],[-1.333241,34.904727],[-1.333316,34.90481],[-1.333555,34.905023],[-1.333683,34.905156],[-1.334343,34.905885],[-1.334636,34.906191],[-1.335783,34.907452],[-1.336416,34.908225],[-1.336175,34.90835],[-1.335175,34.908735],[-1.335219,34.90884],[-1.336085,34.909701],[-1.336088,34.909816],[-1.336069,34.909893],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331773,34.910967],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328611,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.322818,34.915101],[-1.322784,34.91508],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322444,34.915114],[-1.322288,34.915097],[-1.321382,34.915099],[-1.320153,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.31576,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312699,34.91573],[-1.312168,34.915488],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309199,34.914995],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.306387,34.915923],[-1.306114,34.916028],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302773,34.917097],[-1.302292,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300059,34.91817],[-1.300075,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300934,34.919897],[-1.301762,34.920002]],
+        start: {"lat":34.87931758,"lng":-1.3088523600000002},
+        distance: 0,
+        duration: "21m 52s",
+        address: "Lycee Maliha Hamidou",
+    },
+        "1079": {
+        polyline: [],
+        routePolyline: [[-1.303821,34.880956],[-1.303958,34.880886],[-1.304238,34.880763],[-1.304403,34.880697],[-1.304615,34.880628],[-1.305039,34.880506],[-1.305768,34.880334],[-1.307549,34.879745],[-1.308533,34.879433],[-1.309098,34.879233],[-1.309223,34.879162],[-1.310355,34.878702],[-1.310955,34.878469],[-1.311046,34.878429],[-1.311322,34.878279],[-1.311582,34.8781],[-1.311696,34.877929],[-1.311742,34.877752],[-1.311742,34.877571],[-1.311631,34.876577],[-1.311618,34.876299],[-1.31167,34.876168],[-1.311742,34.876034],[-1.311817,34.875981],[-1.311937,34.87592],[-1.313112,34.875585],[-1.313305,34.875491],[-1.313521,34.875375],[-1.313929,34.875117],[-1.313974,34.875122],[-1.314019,34.875116],[-1.314059,34.875098],[-1.314089,34.87507],[-1.314107,34.875036],[-1.31411,34.874999],[-1.314317,34.874938],[-1.315679,34.874865],[-1.317028,34.874769],[-1.319521,34.874628],[-1.321649,34.874493],[-1.322202,34.874444],[-1.322914,34.874359],[-1.323357,34.874278],[-1.323687,34.874253],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328312,34.873726],[-1.32852,34.873688],[-1.32908,34.873564],[-1.32933,34.873513],[-1.329692,34.873422],[-1.330154,34.87332],[-1.330159,34.873348],[-1.330173,34.87337],[-1.330144,34.873491],[-1.330136,34.873602],[-1.330141,34.873802],[-1.3302,34.874117],[-1.330233,34.874255],[-1.330426,34.874712],[-1.330626,34.875272],[-1.330706,34.875525],[-1.33081,34.875769],[-1.330967,34.876121],[-1.331012,34.876231],[-1.331199,34.876684],[-1.331465,34.877311],[-1.331547,34.877505],[-1.331633,34.877717],[-1.331677,34.877823],[-1.331802,34.878145],[-1.331916,34.878379],[-1.332078,34.8787],[-1.332305,34.87917],[-1.33242,34.879427],[-1.332497,34.87966],[-1.332556,34.879912],[-1.3327,34.880634],[-1.332745,34.881073],[-1.332723,34.881114],[-1.332717,34.881157],[-1.332561,34.881297],[-1.332438,34.881438],[-1.332325,34.881605],[-1.3322,34.88179],[-1.332108,34.881971],[-1.331905,34.882349],[-1.331809,34.882507],[-1.331685,34.882658],[-1.33158,34.882764],[-1.331806,34.883299],[-1.331904,34.883531],[-1.331955,34.883701],[-1.331974,34.883799],[-1.331971,34.883897],[-1.331945,34.883994],[-1.331894,34.88413],[-1.33172,34.884327],[-1.331219,34.884868],[-1.331135,34.884982],[-1.331098,34.885057],[-1.33108,34.885137],[-1.331079,34.885218],[-1.331097,34.885298],[-1.33114,34.885409],[-1.331354,34.885777],[-1.331426,34.886004],[-1.331445,34.88614],[-1.33144,34.886205],[-1.331435,34.886261],[-1.33139,34.886572],[-1.331379,34.886642],[-1.331228,34.88685],[-1.331095,34.887024],[-1.330884,34.887229],[-1.330623,34.887434],[-1.330399,34.88761],[-1.330253,34.887725],[-1.329606,34.888248],[-1.329466,34.888363],[-1.329155,34.888732],[-1.328816,34.88911],[-1.328532,34.889468],[-1.328257,34.889952],[-1.32822,34.889938],[-1.32818,34.889933],[-1.32814,34.889937],[-1.328102,34.88995],[-1.32807,34.889971],[-1.328046,34.889998],[-1.328037,34.890016],[-1.32803,34.890047],[-1.328032,34.890079],[-1.328045,34.890109],[-1.328067,34.890135],[-1.328083,34.890193],[-1.32809,34.890246],[-1.328095,34.890299],[-1.328097,34.890352],[-1.327851,34.890954],[-1.327777,34.891141],[-1.327611,34.891602],[-1.327138,34.892509],[-1.32686,34.892749],[-1.326751,34.892844],[-1.326533,34.893044],[-1.326376,34.893188],[-1.325973,34.893554],[-1.325691,34.893809],[-1.325672,34.893831],[-1.3256,34.893911],[-1.325407,34.894058],[-1.325353,34.894085],[-1.325324,34.894077],[-1.325293,34.894075],[-1.325241,34.894081],[-1.325194,34.894102],[-1.325157,34.894133],[-1.325135,34.894173],[-1.32513,34.894216],[-1.325134,34.89424],[-1.325144,34.894263],[-1.325159,34.894284],[-1.325183,34.894306],[-1.325237,34.894461],[-1.325317,34.894568],[-1.325351,34.894613],[-1.325421,34.894719],[-1.32551,34.89489],[-1.325704,34.895685],[-1.325769,34.895899],[-1.325784,34.895937],[-1.325889,34.896201],[-1.325923,34.896287],[-1.325968,34.89642],[-1.325978,34.896448],[-1.326182,34.896967],[-1.326534,34.897801],[-1.327079,34.899271],[-1.327227,34.899609],[-1.327284,34.899718],[-1.327352,34.899821],[-1.327448,34.89995],[-1.327598,34.900155],[-1.327794,34.900391],[-1.32804,34.900693],[-1.328149,34.900823],[-1.328861,34.901565],[-1.329342,34.902054],[-1.329633,34.902326],[-1.329884,34.90252],[-1.330142,34.902704],[-1.330467,34.902915],[-1.330894,34.903148],[-1.331274,34.903348],[-1.331367,34.903399],[-1.332171,34.903834],[-1.332428,34.903977],[-1.332645,34.904143],[-1.333027,34.90453],[-1.333064,34.904556],[-1.333056,34.904589],[-1.333059,34.904622],[-1.333071,34.904654],[-1.3331,34.904688],[-1.333139,34.904713],[-1.333186,34.904726],[-1.333241,34.904727],[-1.333316,34.90481],[-1.333555,34.905023],[-1.333683,34.905156],[-1.334343,34.905885],[-1.334636,34.906191],[-1.335783,34.907452],[-1.336416,34.908225],[-1.336175,34.90835],[-1.335175,34.908735],[-1.335219,34.90884],[-1.336085,34.909701],[-1.336088,34.909816],[-1.336069,34.909893],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331773,34.910967],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328611,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.322818,34.915101],[-1.322784,34.91508],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322444,34.915114],[-1.322288,34.915097],[-1.321382,34.915099],[-1.320153,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.31576,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312699,34.91573],[-1.312168,34.915488],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309199,34.914995],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.306387,34.915923],[-1.306114,34.916028],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302773,34.917097],[-1.302292,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300059,34.91817],[-1.300075,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300934,34.919897],[-1.301762,34.920002]],
+        start: {"lat":34.8735154,"lng":-1.32854104},
+        distance: 0,
+        duration: "1m 0s",
+        address: null,
+    },
+        "802": {
+        polyline: [],
+        routePolyline: [[-1.355274,34.893158],[-1.35519,34.893742],[-1.355187,34.893782],[-1.355253,34.893789],[-1.355346,34.893796],[-1.355551,34.893804],[-1.355598,34.893815],[-1.355642,34.893831],[-1.355684,34.893852],[-1.355721,34.893877],[-1.35573,34.893894],[-1.355721,34.89399],[-1.355704,34.894401],[-1.355665,34.894626],[-1.355574,34.895258],[-1.355528,34.895677],[-1.355449,34.896012],[-1.35539,34.89621],[-1.355329,34.896385],[-1.355277,34.896523],[-1.355191,34.896748],[-1.355036,34.897082],[-1.354778,34.897495],[-1.354514,34.897878],[-1.354256,34.898212],[-1.354071,34.898419],[-1.353837,34.89864],[-1.353531,34.898915],[-1.353123,34.899243],[-1.352765,34.899439],[-1.352464,34.899596],[-1.352117,34.89975],[-1.351758,34.899896],[-1.351369,34.900018],[-1.350958,34.900143],[-1.350371,34.900287],[-1.350091,34.90036],[-1.34992,34.900418],[-1.349701,34.900498],[-1.34933,34.900655],[-1.348964,34.900872],[-1.348575,34.901093],[-1.348341,34.901265],[-1.348065,34.901457],[-1.347711,34.901761],[-1.347394,34.90212],[-1.346908,34.902602],[-1.346165,34.90332],[-1.345007,34.904479],[-1.344939,34.904547],[-1.34482,34.904662],[-1.344702,34.904775],[-1.344476,34.904994],[-1.343208,34.906267],[-1.342389,34.9071],[-1.341838,34.907586],[-1.341655,34.907763],[-1.341532,34.907881],[-1.341232,34.908146],[-1.340999,34.908323],[-1.340705,34.908495],[-1.340649,34.90853],[-1.340357,34.908712],[-1.339908,34.908918],[-1.339529,34.909112],[-1.339119,34.909243],[-1.338916,34.909297],[-1.338684,34.909343],[-1.338399,34.909355],[-1.338226,34.909307],[-1.338113,34.909246],[-1.337982,34.909216],[-1.337872,34.909216],[-1.337765,34.909238],[-1.337654,34.909289],[-1.337564,34.909363],[-1.337517,34.909429],[-1.337487,34.909502],[-1.337476,34.909589],[-1.337284,34.909671],[-1.337215,34.909697],[-1.337073,34.909751],[-1.336623,34.909828],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331774,34.910967],[-1.331475,34.911084],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330333,34.911731],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328612,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328255,34.913957],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325737,34.914742],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.323031,34.915092],[-1.322818,34.915101],[-1.322805,34.91509],[-1.322784,34.91508],[-1.322757,34.915076],[-1.322645,34.915076],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322455,34.91509],[-1.322447,34.915103],[-1.322445,34.915114],[-1.322288,34.915097],[-1.322213,34.915093],[-1.322145,34.915096],[-1.321382,34.915099],[-1.321074,34.915104],[-1.320154,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.315761,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.31447,34.916145],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312969,34.915846],[-1.3127,34.91573],[-1.312168,34.915488],[-1.31186,34.915383],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309731,34.915009],[-1.309451,34.915003],[-1.309199,34.914995],[-1.308895,34.914993],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.307258,34.915529],[-1.306669,34.9158],[-1.306388,34.915923],[-1.306114,34.916028],[-1.305814,34.916138],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302835,34.91709],[-1.302773,34.917097],[-1.302697,34.917116],[-1.302449,34.917189],[-1.302293,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300163,34.917868],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.299997,34.917937],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300044,34.918168],[-1.300059,34.91817],[-1.300061,34.918214],[-1.300067,34.918257],[-1.300076,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300872,34.919886],[-1.300934,34.919897],[-1.301762,34.92]],
+        start: {"lat":34.92696626,"lng":-1.32115678},
+        distance: 1316,
+        duration: "\u2014",
+        address: "Rond point abou techfine",
+    },
+        "811": {
+        polyline: [],
+        routePolyline: [[-1.355274,34.893158],[-1.35519,34.893742],[-1.355187,34.893782],[-1.355253,34.893789],[-1.355346,34.893796],[-1.355551,34.893804],[-1.355598,34.893815],[-1.355642,34.893831],[-1.355684,34.893852],[-1.355721,34.893877],[-1.35573,34.893894],[-1.355721,34.89399],[-1.355704,34.894401],[-1.355665,34.894626],[-1.355574,34.895258],[-1.355528,34.895677],[-1.355449,34.896012],[-1.35539,34.89621],[-1.355329,34.896385],[-1.355277,34.896523],[-1.355191,34.896748],[-1.355036,34.897082],[-1.354778,34.897495],[-1.354514,34.897878],[-1.354256,34.898212],[-1.354071,34.898419],[-1.353837,34.89864],[-1.353531,34.898915],[-1.353123,34.899243],[-1.352765,34.899439],[-1.352464,34.899596],[-1.352117,34.89975],[-1.351758,34.899896],[-1.351369,34.900018],[-1.350958,34.900143],[-1.350371,34.900287],[-1.350091,34.90036],[-1.34992,34.900418],[-1.349701,34.900498],[-1.34933,34.900655],[-1.348964,34.900872],[-1.348575,34.901093],[-1.348341,34.901265],[-1.348065,34.901457],[-1.347711,34.901761],[-1.347394,34.90212],[-1.346908,34.902602],[-1.346165,34.90332],[-1.345007,34.904479],[-1.344939,34.904547],[-1.34482,34.904662],[-1.344702,34.904775],[-1.344476,34.904994],[-1.343208,34.906267],[-1.342389,34.9071],[-1.341838,34.907586],[-1.341655,34.907763],[-1.341532,34.907881],[-1.341232,34.908146],[-1.340999,34.908323],[-1.340705,34.908495],[-1.340649,34.90853],[-1.340357,34.908712],[-1.339908,34.908918],[-1.339529,34.909112],[-1.339119,34.909243],[-1.338916,34.909297],[-1.338684,34.909343],[-1.338399,34.909355],[-1.338226,34.909307],[-1.338113,34.909246],[-1.337982,34.909216],[-1.337872,34.909216],[-1.337765,34.909238],[-1.337654,34.909289],[-1.337564,34.909363],[-1.337517,34.909429],[-1.337487,34.909502],[-1.337476,34.909589],[-1.337284,34.909671],[-1.337215,34.909697],[-1.337073,34.909751],[-1.336623,34.909828],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331774,34.910967],[-1.331475,34.911084],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330333,34.911731],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328612,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328255,34.913957],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325737,34.914742],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.323031,34.915092],[-1.322818,34.915101],[-1.322805,34.91509],[-1.322784,34.91508],[-1.322757,34.915076],[-1.322645,34.915076],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322455,34.91509],[-1.322447,34.915103],[-1.322445,34.915114],[-1.322288,34.915097],[-1.322213,34.915093],[-1.322145,34.915096],[-1.321382,34.915099],[-1.321074,34.915104],[-1.320154,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.315761,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.31447,34.916145],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312969,34.915846],[-1.3127,34.91573],[-1.312168,34.915488],[-1.31186,34.915383],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309731,34.915009],[-1.309451,34.915003],[-1.309199,34.914995],[-1.308895,34.914993],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.307258,34.915529],[-1.306669,34.9158],[-1.306388,34.915923],[-1.306114,34.916028],[-1.305814,34.916138],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302835,34.91709],[-1.302773,34.917097],[-1.302697,34.917116],[-1.302449,34.917189],[-1.302293,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300163,34.917868],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.299997,34.917937],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300044,34.918168],[-1.300059,34.91817],[-1.300061,34.918214],[-1.300067,34.918257],[-1.300076,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300872,34.919886],[-1.300934,34.919897],[-1.301762,34.92]],
+        start: {"lat":34.91517623,"lng":-1.32241488},
+        distance: 0,
+        duration: "2m 2s",
+        address: null,
+    },
+        "1555": {
+        polyline: [],
+        routePolyline: [],
+        start: {"lat":34.8735154,"lng":-1.32854104},
+        distance: 0,
+        duration: "44s",
+        address: null,
+    },
+        "250": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.89873685,"lng":-1.36119435},
+        distance: 2467,
+        duration: "\u2014",
+        address: "Pole universitaire Imama",
+    },
+        "245": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.87892951,"lng":-1.34886393},
+        distance: 0,
+        duration: "32s",
+        address: null,
+    },
+        "248": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.86342368,"lng":-1.35482223},
+        distance: 1514,
+        duration: "\u2014",
+        address: "Pole universitaire Imama",
+    },
+        "257": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.893115349999995,"lng":-1.35486331},
+        distance: 0,
+        duration: "21m 22s",
+        address: "nouveau pole universitaire (La Rocade)",
+    },
+        "1559": {
+        polyline: [],
+        routePolyline: [],
+        start: {"lat":34.8735154,"lng":-1.32854104},
+        distance: 0,
+        duration: "48s",
+        address: null,
+    },
+        "810": {
+        polyline: [],
+        routePolyline: [[-1.355274,34.893158],[-1.35519,34.893742],[-1.355187,34.893782],[-1.355253,34.893789],[-1.355346,34.893796],[-1.355551,34.893804],[-1.355598,34.893815],[-1.355642,34.893831],[-1.355684,34.893852],[-1.355721,34.893877],[-1.35573,34.893894],[-1.355721,34.89399],[-1.355704,34.894401],[-1.355665,34.894626],[-1.355574,34.895258],[-1.355528,34.895677],[-1.355449,34.896012],[-1.35539,34.89621],[-1.355329,34.896385],[-1.355277,34.896523],[-1.355191,34.896748],[-1.355036,34.897082],[-1.354778,34.897495],[-1.354514,34.897878],[-1.354256,34.898212],[-1.354071,34.898419],[-1.353837,34.89864],[-1.353531,34.898915],[-1.353123,34.899243],[-1.352765,34.899439],[-1.352464,34.899596],[-1.352117,34.89975],[-1.351758,34.899896],[-1.351369,34.900018],[-1.350958,34.900143],[-1.350371,34.900287],[-1.350091,34.90036],[-1.34992,34.900418],[-1.349701,34.900498],[-1.34933,34.900655],[-1.348964,34.900872],[-1.348575,34.901093],[-1.348341,34.901265],[-1.348065,34.901457],[-1.347711,34.901761],[-1.347394,34.90212],[-1.346908,34.902602],[-1.346165,34.90332],[-1.345007,34.904479],[-1.344939,34.904547],[-1.34482,34.904662],[-1.344702,34.904775],[-1.344476,34.904994],[-1.343208,34.906267],[-1.342389,34.9071],[-1.341838,34.907586],[-1.341655,34.907763],[-1.341532,34.907881],[-1.341232,34.908146],[-1.340999,34.908323],[-1.340705,34.908495],[-1.340649,34.90853],[-1.340357,34.908712],[-1.339908,34.908918],[-1.339529,34.909112],[-1.339119,34.909243],[-1.338916,34.909297],[-1.338684,34.909343],[-1.338399,34.909355],[-1.338226,34.909307],[-1.338113,34.909246],[-1.337982,34.909216],[-1.337872,34.909216],[-1.337765,34.909238],[-1.337654,34.909289],[-1.337564,34.909363],[-1.337517,34.909429],[-1.337487,34.909502],[-1.337476,34.909589],[-1.337284,34.909671],[-1.337215,34.909697],[-1.337073,34.909751],[-1.336623,34.909828],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331774,34.910967],[-1.331475,34.911084],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330333,34.911731],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328612,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328255,34.913957],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325737,34.914742],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.323031,34.915092],[-1.322818,34.915101],[-1.322805,34.91509],[-1.322784,34.91508],[-1.322757,34.915076],[-1.322645,34.915076],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322455,34.91509],[-1.322447,34.915103],[-1.322445,34.915114],[-1.322288,34.915097],[-1.322213,34.915093],[-1.322145,34.915096],[-1.321382,34.915099],[-1.321074,34.915104],[-1.320154,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.315761,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.31447,34.916145],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312969,34.915846],[-1.3127,34.91573],[-1.312168,34.915488],[-1.31186,34.915383],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309731,34.915009],[-1.309451,34.915003],[-1.309199,34.914995],[-1.308895,34.914993],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.307258,34.915529],[-1.306669,34.9158],[-1.306388,34.915923],[-1.306114,34.916028],[-1.305814,34.916138],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302835,34.91709],[-1.302773,34.917097],[-1.302697,34.917116],[-1.302449,34.917189],[-1.302293,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300163,34.917868],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.299997,34.917937],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300044,34.918168],[-1.300059,34.91817],[-1.300061,34.918214],[-1.300067,34.918257],[-1.300076,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300872,34.919886],[-1.300934,34.919897],[-1.301762,34.92]],
+        start: {"lat":34.91517323,"lng":-1.32243988},
+        distance: 0,
+        duration: "21m 40s",
+        address: "Rond point abou techfine",
+    },
+        "1790": {
+        polyline: [],
+        routePolyline: [[-1.358844,34.876642],[-1.357749,34.877276],[-1.35673,34.877886],[-1.35515,34.878803],[-1.354716,34.879003],[-1.354103,34.87917],[-1.353598,34.879255],[-1.353631,34.879224],[-1.353651,34.879187],[-1.353658,34.879146],[-1.353649,34.879105],[-1.353072,34.878318],[-1.352925,34.878188],[-1.352758,34.878094],[-1.352613,34.878044],[-1.352418,34.878013],[-1.352203,34.877996],[-1.350949,34.878059],[-1.350777,34.87808],[-1.349338,34.87848],[-1.349275,34.878478],[-1.349082,34.878557],[-1.348933,34.878648],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348536,34.87879],[-1.348543,34.878832],[-1.348563,34.878871],[-1.348597,34.878903],[-1.348657,34.87893],[-1.348703,34.878937],[-1.348749,34.878933],[-1.348792,34.878919],[-1.348792,34.878919],[-1.34883,34.878897],[-1.348859,34.878866],[-1.348877,34.87883],[-1.348883,34.878791],[-1.348874,34.87875],[-1.348851,34.878713],[-1.348819,34.878684],[-1.348751,34.878657],[-1.348675,34.878655],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353934,34.887365],[-1.354271,34.887932],[-1.354425,34.888203],[-1.35445,34.888248],[-1.35459,34.888519],[-1.354764,34.888927],[-1.355172,34.889955],[-1.355366,34.890513],[-1.355496,34.89101],[-1.355574,34.891475],[-1.355594,34.891623],[-1.355744,34.892446],[-1.355797,34.893103],[-1.355794,34.893616],[-1.355799,34.894047],[-1.355779,34.8944],[-1.355743,34.894725],[-1.355623,34.895258],[-1.355528,34.895677],[-1.355449,34.896012],[-1.35539,34.89621],[-1.355329,34.896385],[-1.355277,34.896523],[-1.355191,34.896748],[-1.355036,34.897082],[-1.354778,34.897495],[-1.354514,34.897878],[-1.354256,34.898212],[-1.354071,34.898419],[-1.353837,34.89864],[-1.353531,34.898915],[-1.353123,34.899243],[-1.352765,34.899439],[-1.352464,34.899596],[-1.352117,34.89975],[-1.351758,34.899896],[-1.351369,34.900018],[-1.350958,34.900143],[-1.350371,34.900287],[-1.350091,34.90036],[-1.34992,34.900418],[-1.349701,34.900498],[-1.34933,34.900655],[-1.348964,34.900872],[-1.348575,34.901093],[-1.348341,34.901265],[-1.348065,34.901457],[-1.347711,34.901761],[-1.347394,34.90212],[-1.346908,34.902602],[-1.346165,34.90332],[-1.345007,34.904479],[-1.344939,34.904547],[-1.34482,34.904662],[-1.344702,34.904775],[-1.344476,34.904994],[-1.343208,34.906267],[-1.342389,34.9071],[-1.341838,34.907586],[-1.341655,34.907763],[-1.341532,34.907881],[-1.341232,34.908146],[-1.340999,34.908323],[-1.340705,34.908495],[-1.340649,34.90853],[-1.340357,34.908712],[-1.339908,34.908918],[-1.339529,34.909112],[-1.339119,34.909243],[-1.338916,34.909297],[-1.338684,34.909343],[-1.338399,34.909355],[-1.338226,34.909307],[-1.338113,34.909246],[-1.337982,34.909216],[-1.337872,34.909216],[-1.337765,34.909238],[-1.337654,34.909289],[-1.337564,34.909363],[-1.337517,34.909429],[-1.337487,34.909502],[-1.337476,34.909589],[-1.337284,34.909671],[-1.337215,34.909697],[-1.337073,34.909751],[-1.336623,34.909828],[-1.335932,34.910004],[-1.334136,34.910411],[-1.332597,34.910741],[-1.332137,34.910848],[-1.331774,34.910967],[-1.331475,34.911084],[-1.33106,34.911251],[-1.330769,34.911391],[-1.330518,34.911549],[-1.330333,34.911731],[-1.330089,34.911964],[-1.32911,34.913083],[-1.32879,34.913468],[-1.328612,34.913665],[-1.328499,34.913769],[-1.328371,34.913871],[-1.328255,34.913957],[-1.328131,34.914044],[-1.327938,34.914142],[-1.327662,34.914268],[-1.327174,34.914417],[-1.326421,34.914599],[-1.325737,34.914742],[-1.325432,34.914802],[-1.324955,34.914897],[-1.324222,34.915014],[-1.323753,34.915064],[-1.323413,34.915083],[-1.323031,34.915092],[-1.322818,34.915101],[-1.322805,34.91509],[-1.322784,34.91508],[-1.322757,34.915076],[-1.322645,34.915076],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322455,34.91509],[-1.322447,34.915103],[-1.322445,34.915114],[-1.322288,34.915097],[-1.322213,34.915093],[-1.322145,34.915096],[-1.321382,34.915099],[-1.321074,34.915104],[-1.320154,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.315761,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.31447,34.916145],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312969,34.915846],[-1.3127,34.91573],[-1.312168,34.915488],[-1.31186,34.915383],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309731,34.915009],[-1.309451,34.915003],[-1.309199,34.914995],[-1.308895,34.914993],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.307258,34.915529],[-1.306669,34.9158],[-1.306388,34.915923],[-1.306114,34.916028],[-1.305814,34.916138],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302835,34.91709],[-1.302773,34.917097],[-1.302697,34.917116],[-1.302449,34.917189],[-1.302293,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300163,34.917868],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.299997,34.917937],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300044,34.918168],[-1.300059,34.91817],[-1.300061,34.918214],[-1.300067,34.918257],[-1.300076,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300872,34.919886],[-1.300934,34.919897],[-1.301762,34.92]],
+        start: {"lat":34.87892951,"lng":-1.34886393},
+        distance: 0,
+        duration: "33s",
+        address: null,
+    },
+        "522": {
+        polyline: [],
+        routePolyline: [[-1.303821,34.880956],[-1.303958,34.880886],[-1.304238,34.880763],[-1.304403,34.880697],[-1.304615,34.880628],[-1.305039,34.880506],[-1.305768,34.880334],[-1.307549,34.879745],[-1.308533,34.879433],[-1.309098,34.879233],[-1.309223,34.879162],[-1.310355,34.878702],[-1.310955,34.878469],[-1.311046,34.878429],[-1.311322,34.878279],[-1.311582,34.8781],[-1.311696,34.877929],[-1.311742,34.877752],[-1.311742,34.877571],[-1.311631,34.876577],[-1.311618,34.876299],[-1.31167,34.876168],[-1.311742,34.876034],[-1.311817,34.875981],[-1.311937,34.87592],[-1.313112,34.875585],[-1.313305,34.875491],[-1.313521,34.875375],[-1.313929,34.875117],[-1.313974,34.875122],[-1.314019,34.875116],[-1.314059,34.875098],[-1.314089,34.87507],[-1.314107,34.875036],[-1.31411,34.874999],[-1.314317,34.874938],[-1.315679,34.874865],[-1.317028,34.874769],[-1.319521,34.874628],[-1.321649,34.874493],[-1.322202,34.874444],[-1.322914,34.874359],[-1.323357,34.874278],[-1.323687,34.874253],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328312,34.873726],[-1.32852,34.873688],[-1.32908,34.873564],[-1.32933,34.873513],[-1.329692,34.873422],[-1.330154,34.87332],[-1.330159,34.873348],[-1.330173,34.87337],[-1.330194,34.873387],[-1.33022,34.873399],[-1.330249,34.873404],[-1.330279,34.873402],[-1.330307,34.873392],[-1.33033,34.873377],[-1.330348,34.873355],[-1.330356,34.87333],[-1.330354,34.873303],[-1.330499,34.873231],[-1.330757,34.873213],[-1.331099,34.873251],[-1.331352,34.873251],[-1.332047,34.873261],[-1.33214,34.873261],[-1.332262,34.873261],[-1.33253,34.873244],[-1.332795,34.873228],[-1.334157,34.87318],[-1.334528,34.873163],[-1.335057,34.873078],[-1.336326,34.872834],[-1.337446,34.872538],[-1.337956,34.872397],[-1.338331,34.872243],[-1.338728,34.87208],[-1.339039,34.871904],[-1.339667,34.871535],[-1.340139,34.871238],[-1.340588,34.870988],[-1.34096,34.870844],[-1.341378,34.870712],[-1.341755,34.870611],[-1.342117,34.870519],[-1.342393,34.870436],[-1.342752,34.870266],[-1.343443,34.869887],[-1.343641,34.869793],[-1.345362,34.868968],[-1.345666,34.86882],[-1.34578,34.86879],[-1.346041,34.868711],[-1.346494,34.868577],[-1.347132,34.868463],[-1.34748,34.868353],[-1.347747,34.868257],[-1.348036,34.868044],[-1.348623,34.867556],[-1.34888,34.867427],[-1.348943,34.867401],[-1.348992,34.867379],[-1.349042,34.867349],[-1.349073,34.867322],[-1.349084,34.867327],[-1.349118,34.867371],[-1.349163,34.867427],[-1.349223,34.867508],[-1.349277,34.867577],[-1.349323,34.867651],[-1.349458,34.867898],[-1.349641,34.868354],[-1.349777,34.868823],[-1.349857,34.869298],[-1.349883,34.869771],[-1.349871,34.870363],[-1.34981,34.870935],[-1.349689,34.871506],[-1.34964,34.871867],[-1.349391,34.873682],[-1.349158,34.875503],[-1.348919,34.877158],[-1.348902,34.877281],[-1.348898,34.877308],[-1.348806,34.878151],[-1.348794,34.878248],[-1.348778,34.87834],[-1.348752,34.878431],[-1.348714,34.878518],[-1.348665,34.878602],[-1.348606,34.878681],[-1.34857,34.878711],[-1.348546,34.878748],[-1.348537,34.87879],[-1.348543,34.878832],[-1.348564,34.878871],[-1.348598,34.878903],[-1.348615,34.878914],[-1.34863,34.879314],[-1.348648,34.87946],[-1.348672,34.879595],[-1.348742,34.87984],[-1.348842,34.880083],[-1.349083,34.880597],[-1.349273,34.880974],[-1.349339,34.881114],[-1.349365,34.881151],[-1.349543,34.881414],[-1.349939,34.881947],[-1.350174,34.882262],[-1.350225,34.882324],[-1.35039,34.882522],[-1.350781,34.883042],[-1.351483,34.884004],[-1.351596,34.884149],[-1.35186,34.884543],[-1.351878,34.884571],[-1.351895,34.884602],[-1.35191,34.884628],[-1.351928,34.884669],[-1.351928,34.884688],[-1.351928,34.884694],[-1.351935,34.884719],[-1.351949,34.884741],[-1.351968,34.88476],[-1.351993,34.884775],[-1.352007,34.884779],[-1.352021,34.884784],[-1.352043,34.884806],[-1.35206,34.884824],[-1.352088,34.884853],[-1.352103,34.88487],[-1.352126,34.884895],[-1.352334,34.885129],[-1.352686,34.885624],[-1.353671,34.886931],[-1.353847,34.887226],[-1.353689,34.887283],[-1.354529,34.888826],[-1.354632,34.889166],[-1.355089,34.891241],[-1.35524,34.891927],[-1.355285,34.892158],[-1.355072,34.892254],[-1.355047,34.892447],[-1.354961,34.893126]],
+        start: {"lat":34.8735154,"lng":-1.32854104},
+        distance: 0,
+        duration: "1m 7s",
+        address: null,
+    },
+        "1332": {
+        polyline: [],
+        routePolyline: [[-1.326326,34.877781],[-1.326282,34.877846],[-1.325737,34.877604],[-1.325372,34.877461],[-1.325086,34.87733],[-1.324992,34.87728],[-1.324895,34.877152],[-1.324915,34.877125],[-1.324924,34.877063],[-1.324892,34.877008],[-1.324864,34.876988],[-1.324822,34.876861],[-1.324766,34.87677],[-1.324764,34.876633],[-1.324809,34.874981],[-1.324845,34.874427],[-1.324889,34.874322],[-1.324929,34.87427],[-1.325033,34.874189],[-1.326162,34.874085],[-1.327769,34.873822],[-1.328312,34.873726],[-1.328261,34.873579],[-1.328291,34.873665],[-1.328005,34.873718],[-1.32613,34.874024],[-1.325519,34.874081],[-1.324738,34.874131],[-1.324785,34.874421],[-1.324782,34.874676],[-1.324809,34.874981],[-1.324764,34.876633],[-1.324766,34.87677],[-1.324725,34.8769],[-1.324711,34.876991],[-1.324665,34.877037],[-1.324655,34.877067],[-1.324656,34.877104],[-1.324673,34.877138],[-1.324702,34.877167],[-1.324731,34.877182],[-1.324798,34.877193],[-1.32489,34.877564],[-1.324964,34.877758],[-1.325508,34.879033],[-1.32573,34.879687],[-1.325906,34.880125],[-1.326025,34.880478],[-1.3261,34.880757],[-1.326286,34.881071],[-1.326283,34.88165],[-1.326385,34.882254],[-1.326434,34.882627],[-1.326582,34.883677],[-1.326642,34.88429],[-1.325477,34.884418],[-1.325098,34.884504],[-1.323183,34.884758],[-1.322639,34.884842],[-1.322135,34.88493],[-1.321758,34.885023],[-1.321395,34.885097],[-1.321365,34.88506],[-1.321323,34.885051],[-1.321283,34.885064],[-1.32126,34.885095],[-1.321259,34.885114],[-1.320439,34.885283],[-1.320082,34.885319],[-1.319995,34.885318],[-1.319886,34.885304],[-1.319872,34.885291],[-1.319813,34.885265],[-1.319747,34.885271],[-1.319698,34.885301],[-1.319332,34.885483],[-1.318406,34.886071],[-1.318241,34.886211],[-1.317634,34.886561],[-1.317403,34.886754],[-1.317233,34.886885],[-1.316888,34.887212],[-1.316562,34.887501],[-1.315483,34.888503],[-1.313865,34.889958],[-1.31398,34.890229],[-1.313975,34.890471],[-1.313948,34.891021],[-1.313927,34.891246],[-1.313905,34.891378],[-1.313825,34.891615],[-1.313809,34.891712],[-1.313819,34.891826],[-1.313846,34.891963],[-1.313991,34.892209],[-1.314115,34.892346],[-1.314292,34.892495],[-1.314849,34.892856],[-1.314902,34.892897],[-1.315389,34.893161],[-1.315669,34.89325],[-1.315933,34.89332],[-1.316062,34.893344],[-1.316421,34.893454],[-1.316545,34.89352],[-1.316625,34.893582],[-1.316646,34.893629],[-1.316624,34.893689],[-1.316569,34.893782],[-1.316545,34.893877],[-1.316534,34.893974],[-1.316542,34.894191],[-1.316589,34.894502],[-1.316609,34.894763],[-1.316495,34.895154],[-1.316369,34.895468],[-1.316098,34.896208],[-1.315859,34.896661],[-1.315804,34.896843],[-1.315805,34.896987],[-1.315831,34.897397],[-1.31581,34.898026],[-1.315808,34.898392],[-1.315831,34.898566],[-1.315926,34.898826],[-1.316105,34.899139],[-1.316486,34.899887],[-1.316571,34.90001],[-1.316716,34.900151],[-1.317204,34.900578],[-1.317526,34.900877],[-1.317698,34.901088],[-1.31837,34.902091],[-1.319001,34.902892],[-1.31949,34.903477],[-1.320284,34.904251],[-1.320723,34.904665],[-1.320879,34.904797],[-1.321228,34.90503],[-1.32184,34.905499],[-1.322,34.905681],[-1.322177,34.905773],[-1.321807,34.906226],[-1.322132,34.906434],[-1.321701,34.907163],[-1.321312,34.90798],[-1.321215,34.908232],[-1.320961,34.909232],[-1.320735,34.910349],[-1.32056,34.911062],[-1.320546,34.911161],[-1.320356,34.912042],[-1.320091,34.913151],[-1.319999,34.913593],[-1.320017,34.913745],[-1.321305,34.913954],[-1.321984,34.914044],[-1.321954,34.914071],[-1.321892,34.914153],[-1.321851,34.914327],[-1.321851,34.91448],[-1.321906,34.914657],[-1.321945,34.914717],[-1.322297,34.915028],[-1.322376,34.915077],[-1.322446,34.915103],[-1.322447,34.915144],[-1.322449,34.91517],[-1.322466,34.915192],[-1.322489,34.915203],[-1.322797,34.91521],[-1.322828,34.915187],[-1.322833,34.915127],[-1.322818,34.915101],[-1.322784,34.91508],[-1.32249,34.915076],[-1.322469,34.915081],[-1.322444,34.915114],[-1.322288,34.915097],[-1.321382,34.915099],[-1.320153,34.915136],[-1.319548,34.915183],[-1.318972,34.915247],[-1.318668,34.915293],[-1.318356,34.91535],[-1.317817,34.915464],[-1.317143,34.915647],[-1.316607,34.915822],[-1.316134,34.915962],[-1.31576,34.916057],[-1.315458,34.916113],[-1.315114,34.916138],[-1.314782,34.916152],[-1.314217,34.91614],[-1.313929,34.916112],[-1.313609,34.916058],[-1.313285,34.915977],[-1.312699,34.91573],[-1.312168,34.915488],[-1.311474,34.915255],[-1.311234,34.91519],[-1.310937,34.915122],[-1.310595,34.915074],[-1.310197,34.915029],[-1.309199,34.914995],[-1.308725,34.914997],[-1.308518,34.915025],[-1.308351,34.91507],[-1.30819,34.915127],[-1.307769,34.9153],[-1.306387,34.915923],[-1.306114,34.916028],[-1.304905,34.91646],[-1.303988,34.91676],[-1.303084,34.917068],[-1.302773,34.917097],[-1.302292,34.917235],[-1.30187,34.917368],[-1.300199,34.917855],[-1.300124,34.917884],[-1.300062,34.917919],[-1.300028,34.917925],[-1.29997,34.917954],[-1.299945,34.917982],[-1.299929,34.918014],[-1.299924,34.918049],[-1.299932,34.918083],[-1.29995,34.918114],[-1.299978,34.918141],[-1.300014,34.918159],[-1.300059,34.91817],[-1.300075,34.918299],[-1.300277,34.918802],[-1.300236,34.919319],[-1.300344,34.919581],[-1.300592,34.919819],[-1.300934,34.919897],[-1.301762,34.920002]],
+        start: {"lat":34.9196838,"lng":-1.3018023},
+        distance: 0,
+        duration: "20m 20s",
+        address: "Pole universitaire chetouane",
+    },
+        "1557": {
+        polyline: [],
+        routePolyline: [],
+        start: {"lat":34.8735154,"lng":-1.32854104},
+        distance: 0,
+        duration: "45s",
+        address: null,
+    },
+    };
+
+let _devMap = null;
+
+function openDeviationMap(id) {
+    const dev = deviationData[id];
+    if (!dev) return;
+
+    document.getElementById('deviationMapTitle').innerHTML =
+        '<i class="fas fa-route me-2">Deviation #' + id;
+    document.getElementById('deviationMapMeta').textContent =
+        'Max distance off route: ' + dev.distance + ' m  &bull;  Duration: ' + dev.duration +
+        (dev.address ? '  &bull;  ' + dev.address : '');
+
+    const overlay = document.getElementById('deviationMapOverlay');
+    overlay.style.display = 'flex';
+
+    if (_devMap) { _devMap.remove(); _devMap = null; }
+    _devMap = L.map('deviationMap');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19, attribution: '&copy; OpenStreetMap'
+    }).addTo(_devMap);
+
+    const layers = [];
+
+    if (dev.routePolyline.length > 1) {
+        const route = dev.routePolyline.map(p => [p[1], p[0]]);
+        layers.push(L.polyline(route, { color: '#6c757d', weight: 4, opacity: 0.7 }).addTo(_devMap));
+    }
+
+    const devLine = (dev.polyline || []).map(p => [p[1], p[0]]);
+    let devLayer = null;
+    if (devLine.length > 0) {
+        devLayer = L.polyline(devLine, { color: '#dc3545', weight: 5, opacity: 0.95 }).addTo(_devMap);
+        layers.push(devLayer);
+        L.circleMarker(devLine[0], { radius: 7, color: '#dc3545', fillColor: '#dc3545', fillOpacity: 1 })
+            .bindTooltip('Deviation start').addTo(_devMap);
+        if (devLine.length > 1) {
+            L.circleMarker(devLine[devLine.length - 1], { radius: 7, color: '#198754', fillColor: '#198754', fillOpacity: 1 })
+                .bindTooltip('Back on route').addTo(_devMap);
+        }
+    } else if (dev.start) {
+        L.marker([dev.start.lat, dev.start.lng]).addTo(_devMap);
+    }
+
+    const fitTarget = devLayer || (layers.length ? L.featureGroup(layers) : null);
+    if (fitTarget) {
+        _devMap.fitBounds(fitTarget.getBounds(), { padding: [30, 30] });
+    } else if (dev.start) {
+        _devMap.setView([dev.start.lat, dev.start.lng], 15);
+    }
+
+    setTimeout(() => _devMap.invalidateSize(), 100);
+}
+
+function closeDeviationMap() {
+    document.getElementById('deviationMapOverlay').style.display = 'none';
+    if (_devMap) { _devMap.remove(); _devMap = null; }
+}
+
+document.getElementById('deviationMapOverlay').addEventListener('click', function (e) {
+    if (e.target === this) closeDeviationMap();
+});
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDeviationMap();
+});
+</script>
+<!-- END: Page JS-->
+
+<!-- app JS -->
+<link rel="preload" as="style" href="build/assets/app-DpkoVDcM.css"><link rel="modulepreload" as="script" href="build/assets/app-B8m7fOOw.js"><link rel="modulepreload" as="script" href="build/assets/_plugin-vue_export-helper-CEJ4TrU7.js"><link rel="stylesheet" href="build/assets/app-DpkoVDcM.css"><script type="module" src="build/assets/app-B8m7fOOw.js"></script><!-- END: app JS-->
+
+<!-- Notifications JS -->
+<script src="assets/js/notifications.js"></script>
+<!-- END: Notifications JS-->
+
+<!-- Theme Toggle JS -->
+<script src="assets/js/theme-toggle.js"></script>
+<!-- END: Theme Toggle JS-->
+
+    <!-- Mobile sidebar toggle (direct capture-phase handler) -->
+    <script>
+    (function () {
+        var html = document.documentElement;
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('.layout-menu-toggle');
+            if (!btn) return;
+            if (window.innerWidth >= 1200) return;
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (html.classList.contains('layout-menu-expanded')) {
+                html.classList.remove('layout-menu-expanded');
+            } else {
+                html.classList.add('layout-menu-expanded');
+            }
+        }, true);
+    })();
+    </script>
+
+
+
+<!----><button data-v-621cb8d4="" class="admin-chatbot-fab" title="Open AI Assistant"><i data-v-621cb8d4="" class="ri ri-chat-3-line"></i></button>
+<style>
+@keyframes __bc_back_pulse { 0%,100%{ box-shadow:0 4px 18px rgba(216,58,122,.55),0 0 0 0 rgba(216,58,122,.5); } 50%{ box-shadow:0 4px 22px rgba(216,58,122,.75),0 0 0 8px rgba(216,58,122,0); } }
+#__bc_back_pill { animation: __bc_back_pulse 2.2s ease-in-out infinite; }
+#__bc_back_pill:hover { animation: none; transform: scale(1.04); }
+</style>
+<a id="__bc_back_pill" href="/projects/buscatcher" style="position:fixed;bottom:16px;left:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:26px;background:#D83A7A;border:2px solid #fff;color:#fff;font:700 15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 4px 18px rgba(216,58,122,.55);transition:transform .15s;">&larr; back to portfolio</a>
+
+</body></html>

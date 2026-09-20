@@ -34,6 +34,49 @@
         <p>{{ $project['body'] }}</p>
     </div>
 
+    @if (! empty($project['sketch']))
+        @php
+            $sketchUrl = asset($project['sketch']);
+            $finalUrl = asset($project['hero']);
+            $sketchAlt = $project['sketch_alt'] ?? '';
+            $finalAlt = $project['hero_alt'] ?? '';
+        @endphp
+        <figure class="project-detail__sketch" x-data="sketchCompare({{ \Illuminate\Support\Js::from([$sketchUrl, $finalUrl]) }})" @keydown.window="onKey($event)">
+            <div class="project-detail__sketch-pair">
+                <button type="button" class="project-detail__sketch-thumb" @click="open(0)">
+                    <img src="{{ $sketchUrl }}" alt="{{ $sketchAlt }}" loading="lazy">
+                </button>
+                <button type="button" class="project-detail__sketch-thumb" @click="open(1)">
+                    <img src="{{ $finalUrl }}" alt="{{ $finalAlt }}" loading="lazy">
+                </button>
+            </div>
+            <figcaption>{{ $project['sketch_caption'] ?? '' }}</figcaption>
+
+            {{-- desktop: both images enlarged together, side by side --}}
+            <template x-teleport="body">
+                <div class="lightbox" x-show="pairOpen" x-cloak x-transition.opacity.duration.150ms
+                     @click.self="closePair()" data-screen-label="sketch compare lightbox (pair)">
+                    <button type="button" class="lightbox__close" @click="closePair()" aria-label="close">&times;</button>
+                    <div class="lightbox__pair">
+                        <img :src="images[0]" alt="{{ $sketchAlt }}">
+                        <img :src="images[1]" alt="{{ $finalAlt }}">
+                    </div>
+                </div>
+            </template>
+
+            {{-- mobile: one at a time, with prev/next between the two --}}
+            <template x-teleport="body">
+                <div class="lightbox" x-show="single !== null" x-cloak x-transition.opacity.duration.150ms
+                     @click.self="closeSingle()" data-screen-label="sketch compare lightbox (single)">
+                    <button type="button" class="lightbox__close" @click="closeSingle()" aria-label="close">&times;</button>
+                    <button type="button" class="lightbox__nav lightbox__nav--prev" @click="prev()" aria-label="previous">&larr;</button>
+                    <img class="lightbox__img" :src="single !== null ? images[single] : ''" alt="">
+                    <button type="button" class="lightbox__nav lightbox__nav--next" @click="next()" aria-label="next">&rarr;</button>
+                </div>
+            </template>
+        </figure>
+    @endif
+
     <div class="project-detail__facts">
         <div class="fact-card">
             <div class="fact-card__label">{{ __('site.resume.roles_label') }}</div>

@@ -486,6 +486,53 @@ Alpine.data('gallery', (screens = []) => ({
     },
 }));
 
+// sketch-vs-final comparison (e.g. Plannari's concept sketch next to the
+// finished illustration) — desktop has room to enlarge both together, but
+// at the same <768px width where the layout below already stacks them
+// (see .project-detail__sketch-pair in app.css), enlarging both at once
+// would just repeat the stacked thumbnails at a bigger size, so mobile gets
+// the one-at-a-time gallery lightbox instead.
+Alpine.data('sketchCompare', (images = []) => ({
+    images,
+    pairOpen: false,
+    single: null,
+
+    open(i) {
+        if (window.innerWidth > 767) {
+            this.pairOpen = true;
+        } else {
+            this.single = i;
+        }
+    },
+
+    closePair() {
+        this.pairOpen = false;
+    },
+
+    closeSingle() {
+        this.single = null;
+    },
+
+    next() {
+        this.single = (this.single + 1) % this.images.length;
+    },
+
+    prev() {
+        this.single = (this.single + this.images.length - 1) % this.images.length;
+    },
+
+    onKey(event) {
+        if (event.key === 'Escape') {
+            this.closePair();
+            this.closeSingle();
+            return;
+        }
+        if (this.single === null) return;
+        if (event.key === 'ArrowRight') this.next();
+        if (event.key === 'ArrowLeft') this.prev();
+    },
+}));
+
 Alpine.data('mobile', (initialTab = 'about') => ({
     // --- state -------------------------------------------------------
     // Per design_handoff_mobile_nav: the whole nav store is just `tab`.

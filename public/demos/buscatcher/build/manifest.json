@@ -1,0 +1,154 @@
+{
+  "__commonjsHelpers-Cpj98o6Y.js": {
+    "file": "assets/_commonjsHelpers-Cpj98o6Y.js",
+    "name": "_commonjsHelpers"
+  },
+  "__plugin-vue_export-helper-CEJ4TrU7.js": {
+    "file": "assets/_plugin-vue_export-helper-CEJ4TrU7.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "resources/assets/css/demo.css": {
+    "file": "assets/demo-B9Pxs1C6.css",
+    "src": "resources/assets/css/demo.css",
+    "isEntry": true,
+    "name": "demo",
+    "names": [
+      "demo.css"
+    ]
+  },
+  "resources/assets/js/config.js": {
+    "file": "assets/config-CQjA4MVn.js",
+    "name": "config",
+    "src": "resources/assets/js/config.js",
+    "isEntry": true
+  },
+  "resources/assets/js/main.js": {
+    "file": "assets/main-B5wckTSW.js",
+    "name": "main",
+    "src": "resources/assets/js/main.js",
+    "isEntry": true
+  },
+  "resources/assets/vendor/fonts/iconify/iconify.css": {
+    "file": "assets/iconify-gmF8Ppqf.css",
+    "src": "resources/assets/vendor/fonts/iconify/iconify.css",
+    "isEntry": true,
+    "name": "iconify",
+    "names": [
+      "iconify.css"
+    ]
+  },
+  "resources/assets/vendor/js/bootstrap.js": {
+    "file": "assets/bootstrap-DGM5oX2B.js",
+    "name": "bootstrap",
+    "src": "resources/assets/vendor/js/bootstrap.js",
+    "isEntry": true
+  },
+  "resources/assets/vendor/js/helpers.js": {
+    "file": "assets/helpers-xuwOQqll.js",
+    "name": "helpers",
+    "src": "resources/assets/vendor/js/helpers.js",
+    "isEntry": true
+  },
+  "resources/assets/vendor/js/menu.js": {
+    "file": "assets/menu-Bldkajpn.js",
+    "name": "menu",
+    "src": "resources/assets/vendor/js/menu.js",
+    "isEntry": true
+  },
+  "resources/assets/vendor/libs/jquery/jquery.js": {
+    "file": "assets/jquery-BLVPd0pO.js",
+    "name": "jquery",
+    "src": "resources/assets/vendor/libs/jquery/jquery.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-Cpj98o6Y.js"
+    ]
+  },
+  "resources/assets/vendor/libs/node-waves/node-waves.js": {
+    "file": "assets/node-waves-rJO3qC03.js",
+    "name": "node-waves",
+    "src": "resources/assets/vendor/libs/node-waves/node-waves.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-Cpj98o6Y.js"
+    ]
+  },
+  "resources/assets/vendor/libs/node-waves/node-waves.scss": {
+    "file": "assets/node-waves-VJmmnFRE.css",
+    "src": "resources/assets/vendor/libs/node-waves/node-waves.scss",
+    "isEntry": true,
+    "name": "node-waves",
+    "names": [
+      "node-waves.css"
+    ]
+  },
+  "resources/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js": {
+    "file": "assets/perfect-scrollbar-BPWyZo71.js",
+    "name": "perfect-scrollbar",
+    "src": "resources/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-Cpj98o6Y.js"
+    ]
+  },
+  "resources/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.scss": {
+    "file": "assets/perfect-scrollbar-D1VS3Q33.css",
+    "src": "resources/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.scss",
+    "isEntry": true,
+    "name": "perfect-scrollbar",
+    "names": [
+      "perfect-scrollbar.css"
+    ]
+  },
+  "resources/assets/vendor/libs/popper/popper.js": {
+    "file": "assets/popper-DH7wS8as.js",
+    "name": "popper",
+    "src": "resources/assets/vendor/libs/popper/popper.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-Cpj98o6Y.js"
+    ]
+  },
+  "resources/assets/vendor/scss/core.scss": {
+    "file": "assets/core-Dlin8M9s.css",
+    "src": "resources/assets/vendor/scss/core.scss",
+    "isEntry": true,
+    "name": "core",
+    "names": [
+      "core.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DeNs1JBR.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-B8m7fOOw.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-CEJ4TrU7.js"
+    ],
+    "css": [
+      "assets/app-DpkoVDcM.css"
+    ]
+  },
+  "resources/js/university-dashboard.js": {
+    "file": "assets/university-dashboard-bAH62ty5.js",
+    "name": "university-dashboard",
+    "src": "resources/js/university-dashboard.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-CEJ4TrU7.js"
+    ],
+    "css": [
+      "assets/university-dashboard-CTZQjAlY.css"
+    ]
+  }
+}

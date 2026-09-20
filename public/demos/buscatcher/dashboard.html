@@ -1,0 +1,2154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="http://127.0.0.1:8030/assets/" dir="ltr" data-skin="default" data-base-url="http://127.0.0.1:8030" data-framework="laravel" data-bs-theme="dark" data-template="vertical-menu-template"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>
+        university Dashboard | Bus Catcher
+    </title>
+    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5, bootstrap 5 free, free admin template">
+    <meta property="og:title" content="Materio Bootstrap 5 HTML + Laravel Admin Template by ThemeSelection">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+    <meta property="og:image" content="https://ts-assets.b-cdn.net/ts-assets/materio/materio-bootstrap-laravel-admin-template/marketing/materio-bootstrap-laravel-admin-template-smm.png">
+    <meta property="og:description" content="Most Powerful &amp; Comprehensive Bootstrap 5 + Laravel HTML Admin Dashboard Template built for developers!">
+    <meta property="og:site_name" content="ThemeSelection">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- laravel CRUD token -->
+    <meta name="csrf-token" content="jdJR2NaS86y91A6ckcB2IVys0AWoZ9Pu1Gz0PZsW">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/item/materio-dashboard-pro-laravel/">
+
+    <!-- Apply theme immediately to prevent white flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme-mode');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
+    <!-- Favicon -->
+            <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+    
+    <!-- Include Styles -->
+    <!-- BEGIN: Theme CSS-->
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  /* Force Outfit font to override any compiled Bootstrap/Theme styles */
+  body, html, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, span, p, div, a, button, input, select, textarea, label, li, ul, ol, th, td, pre, code, .btn, .form-control, .dropdown-item, .nav-link {
+    font-family: 'Outfit', sans-serif !important;
+  }
+</style>
+
+<!-- Font Awesome Icons (for admin views) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- Fonts Icons (Materio - Remix Icons via Iconify) -->
+<link rel="preload" as="style" href="build/assets/iconify-gmF8Ppqf.css"><link rel="stylesheet" href="build/assets/iconify-gmF8Ppqf.css">
+<!-- BEGIN: Vendor CSS-->
+<link rel="preload" as="style" href="build/assets/node-waves-VJmmnFRE.css"><link rel="stylesheet" href="build/assets/node-waves-VJmmnFRE.css">
+
+<!-- Core CSS -->
+<link rel="preload" as="style" href="build/assets/core-Dlin8M9s.css"><link rel="preload" as="style" href="build/assets/demo-B9Pxs1C6.css"><link rel="stylesheet" href="build/assets/core-Dlin8M9s.css"><link rel="stylesheet" href="build/assets/demo-B9Pxs1C6.css">
+<!-- Dark Theme CSS -->
+<link rel="stylesheet" href="assets/css/dark-theme.css">
+
+<!-- Vendor Styles -->
+<link rel="preload" as="style" href="build/assets/perfect-scrollbar-D1VS3Q33.css"><link rel="stylesheet" href="build/assets/perfect-scrollbar-D1VS3Q33.css">
+<!-- Page Styles -->
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 0;
+    }
+    .stat-card {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-left: 4px solid;
+    }
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .stat-card.primary { border-left-color: #667eea; }
+    .stat-card.success { border-left-color: #48bb78; }
+    .stat-card.warning { border-left-color: #ed8936; }
+    .stat-card.info { border-left-color: #4299e1; }
+    .stat-card h3 {
+        color: #718096;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+    }
+    .stat-card .value {
+        font-size: 36px;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 8px;
+    }
+</style>
+        <style>
+            .notification-row {
+                transition: background-color 0.2s ease;
+            }
+            .notification-row:hover {
+                background-color: rgba(74, 63, 184, 0.05) !important;
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<!-- app CSS -->
+<link rel="preload" as="style" href="build/assets/app-DeNs1JBR.css"><link rel="stylesheet" href="build/assets/app-DeNs1JBR.css"><!-- END: app CSS-->
+    <!-- Include Scripts for customizer, helper, analytics, config -->
+    <!-- laravel style -->
+<link rel="modulepreload" as="script" href="build/assets/helpers-xuwOQqll.js"><script type="module" src="build/assets/helpers-xuwOQqll.js"></script>
+<!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+<link rel="modulepreload" as="script" href="build/assets/config-CQjA4MVn.js"><script type="module" src="build/assets/config-CQjA4MVn.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async="" defer src="https://buttons.github.io/buttons.js"></script><style type="text/css">
+.layout-menu-fixed .layout-navbar-full .layout-menu,
+.layout-page {
+  padding-top: 0px !important;
+}
+.content-wrapper {
+  padding-bottom: 0px !important;
+}</style><style>
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+        .card, .navbar, .sidebar, .menu-inner, input, textarea, select, table {
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+    </style></head>
+
+<body>
+    <!-- Layout Content -->
+    <div class="layout-wrapper layout-content-navbar ">
+    <div class="layout-container">
+
+                <aside id="layout-menu" class="layout-menu menu-vertical menu" data-bg-class="null">
+
+    <!-- ! Hide app brand if navbar-full -->
+    <div class="app-brand demo">
+        <a href="#" class="app-brand-link">
+                            <span class="app-brand-logo demo me-1">
+                    <span class="text-primary">
+  <svg width="30" height="24" viewbox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z" fill="currentColor"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z" fill="black"></path>
+    <path opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z" fill="black"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z" fill="white" fill-opacity="0.15"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="currentColor"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z" fill="white" fill-opacity="0.3"></path>
+  </svg>
+</span>
+                </span>
+                        <span class="app-brand-text demo menu-text fw-semibold ms-2">Bus Catcher</span>
+        </a>
+
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1 ps">
+                        
+
+        
+        
+        
+        
+        
+        <li class="menu-item active">
+            <a href="dashboard.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-home-smile-line"></i>
+                                <div>Dashboard</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Management</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="students.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-line"></i>
+                                <div>Students</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="bus-stops.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-user-line"></i>
+                                <div>Bus Stops</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="buses.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-bus-line"></i>
+                                <div>Buses</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="drivers.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-steering-2-line"></i>
+                                <div>Drivers</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="operators.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-user-settings-line"></i>
+                                <div>Operators</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="devices.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-router-line"></i>
+                                <div>Devices</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="routes.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Routes</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="routes.html" class="menu-link">
+                    <div>All Routes</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="#" class="menu-link">
+                    <div>Create Route</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="trips.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-route-line"></i>
+                                <div>Trips</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="trips.html" class="menu-link">
+                    <div>Management</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="journey-logs.html" class="menu-link">
+                    <div>Journey Logs</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="deviations.html" class="menu-link">
+                    <div>Deviations</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Tracking &amp; Reports</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="tracking.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-map-pin-line"></i>
+                                <div>Live Tracking</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="statistics-month.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-pie-chart-2-line"></i>
+                                <div>Statistics</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="reports.html" class="menu-link menu-toggle">
+                                <i class="menu-icon icon-base ri ri-bar-chart-line"></i>
+                                <div>Reports</div>
+                            </a>
+
+            
+                        <ul class="menu-sub">
+      
+    
+    
+      <li class="menu-item ">
+        <a href="reports.html" class="menu-link">
+                    <div>Overview</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="complaints.html" class="menu-link">
+                    <div>Complaints</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="ratings.html" class="menu-link">
+                    <div>Ratings</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="driver-scores.html" class="menu-link">
+                    <div>Driver Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="bus-scores.html" class="menu-link">
+                    <div>Bus Scores</div>
+                  </a>
+
+        
+              </li>
+    
+    
+    
+      <li class="menu-item ">
+        <a href="route-stats.html" class="menu-link">
+                    <div>Route Statistics</div>
+                  </a>
+
+        
+              </li>
+      </ul>
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="emails.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-mail-send-line"></i>
+                                <div>Emails</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="notifications.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-notification-line"></i>
+                                <div>Notifications</div>
+                            </a>
+
+            
+                    </li>
+                                
+
+        
+                <li class="menu-header mt-7">
+            <span class="menu-header-text">Settings</span>
+        </li>
+                                
+
+        
+        
+        
+        
+        
+        <li class="menu-item ">
+            <a href="settings.html" class="menu-link">
+                                <i class="menu-icon icon-base ri ri-settings-3-line"></i>
+                                <div>Settings</div>
+                            </a>
+
+            
+                    </li>
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
+
+</aside>
+        
+
+        <!-- Layout page -->
+        <div class="layout-page">
+
+            
+            
+
+            <!-- BEGIN: Navbar-->
+            <div id="navbar-app" data-v-app=""><nav class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar"><div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none"><a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)"><i class="icon-base ri ri-menu-line icon-md"></i></a></div><div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"><ul class="navbar-nav flex-row align-items-center ms-auto"><li class="nav-item navbar-dropdown dropdown-notifications dropdown me-3"><a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="icon-base ri ri-notification-2-line icon-md"></i><span class="position-absolute top-0 start-100 translate-middle badge badge-center rounded-pill bg-danger"><span>7</span></span></a><ul class="dropdown-menu dropdown-menu-end p-0"><li class="dropdown-header border-bottom py-3 px-4"><div class="d-flex justify-content-between align-items-center"><h6 class="mb-0">Notifications</h6><a href="javascript:void(0);" onclick="markAllNotificationsAsRead(event)" class="small text-primary">Mark all as read</a></div></li><li class="dropdown-divider m-0"><li class="dropdown-item border-bottom notification-item" data-notification-id="79" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/79'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-bus-2-line text-success icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128652; Trip Started</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R11-BUS-07 started its journey on trip #7.</small><small class="text-muted">20 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="76" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/76'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#8505;&#65039; System Notice</h6><small class="d-block text-body-secondary mb-1">Routine status update for bus TLE-R5-BUS-08.</small><small class="text-muted">16 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item bg-light" data-notification-id="77" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/77'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">Speed Limit Exceeded</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-02 exceeded the configured speed limit.</small><small class="text-muted">13 hours from now</small></div><div class="flex-shrink-0"><span class="badge bg-primary rounded-pill">New</span></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="80" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/80'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-map-pin-line text-info icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128205; Bus Approaching Stop</h6><small class="d-block text-body-secondary mb-1">Bus TLE-R6-BUS-06 is approaching the next stop on trip #8.</small><small class="text-muted">12 hours from now</small></div></div></li><li class="dropdown-item border-bottom notification-item" data-notification-id="78" onclick="window.location.href='http://127.0.0.1:8030/university/notifications/78'" style="cursor: pointer;"><div class="d-flex"><div class="flex-shrink-0 me-3"><i class="icon-base ri ri-notification-line text-secondary icon-md"></i></div><div class="flex-grow-1"><h6 class="mb-1 small">&#128226; Service Announcement</h6><small class="d-block text-body-secondary mb-1">Schedule adjustments may apply this week due to maintenance work.</small><small class="text-muted">12 hours from now</small></div></div></li><li class="dropdown-divider m-0"><li class="dropdown-header border-top py-3 px-4"><a href="notifications.html" class="text-primary small">View all notifications</a></li></ul></li><li data-v-621cb8d4="" class="nav-item me-3" title="AI Assistant"><button data-v-621cb8d4="" class="nav-link" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: none; cursor: pointer;"><i data-v-621cb8d4="" class="icon-base ri ri-chat-3-line icon-md" style="color: rgb(102, 102, 102);"></i><!----></button></li><li class="nav-item navbar-dropdown me-3"><a class="nav-link p-0" href="javascript:void(0);" id="theme-toggle-btn" title="Switch to Light Mode"><i class="icon-base ri icon-md ri-moon-line" id="theme-toggle-icon"></i></a></li><li class="nav-item navbar-dropdown dropdown-user dropdown"><a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="rounded-circle"></div></a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="javascript:void(0);"><div class="d-flex"><div class="flex-shrink-0 me-3"><div class="avatar avatar-online"><img src="assets/img/avatars/1.png" alt="alt" class="w-px-40 h-auto rounded-circle"></div></div><div class="flex-grow-1"><h6 class="mb-0">Mohamed Benbrahim</h6><small class="text-body-secondary">University admin</small></div></div></a></li><li><div class="dropdown-divider my-1"></div></li><li><a class="dropdown-item" href="#"><i class="icon-base ri ri-user-3-line icon-md me-3"></i><span>My Profile</span></a></li><li><a class="dropdown-item" href="settings.html"><i class="icon-base ri ri-settings-4-line icon-md me-4"></i><span>Settings</span></a></li><li><div class="dropdown-divider my-1"></div></li><li><div class="d-grid px-4 pt-2 pb-1"><form method="POST" action="http://127.0.0.1:8030/university/logout" style="display: contents;"><input type="hidden" name="_token" autocomplete="off" value="jdJR2NaS86y91A6ckcB2IVys0AWoZ9Pu1Gz0PZsW"> <button type="submit" class="btn btn-danger d-flex w-100 justify-content-center align-items-center" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none;"><small class="align-middle">Logout</small><i class="ri ri-logout-box-r-line ms-2 icon-xs"></i></button></form></div></li></ul></li></ul></div></nav></div>
+            <!-- END: Navbar-->
+
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+
+                <!-- Content -->
+                                    <div class="container-xxl flex-grow-1 container-p-y">
+                        
+                        
+
+<!-- Page Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-bold mb-1">Dashboard Overview</h4>
+        <p class="text-muted mb-0">Welcome back, Mohamed Benbrahim - Universit&eacute; Abou Bakr Belka&iuml;d Tlemcen (UABT)</p>
+    </div>
+    <div>
+        <a href="#" class="btn btn-primary">
+            <i class="fas fa-plus me-1"></i>Create Trip
+        </a>
+    </div>
+</div>
+
+
+
+<!-- Quick Stats -->
+<div class="stats-grid">
+    
+
+    <div class="stat-card success">
+        <h3>Total Buses</h3>
+        <div class="value">73</div>
+        <div class="text-muted">
+            <i class="fas fa-bus me-1"></i>
+            73 active
+        </div>
+    </div>
+
+    <div class="stat-card warning">
+        <h3>Total Drivers</h3>
+        <div class="value">73</div>
+        <div class="text-muted">
+            <i class="fas fa-user-tie me-1"></i>
+            73 active
+        </div>
+    </div>
+
+    <div class="stat-card info">
+        <h3>Journeys Today</h3>
+        <div class="value">0</div>
+        <div class="text-muted">
+            <i class="fas fa-bus me-1"></i>
+            0 in progress
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="row g-4 mt-4">
+    <!-- Live Map -->
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-map-marker-alt me-2"></i>Live Map
+                </h5>
+                <a href="tracking.html" class="btn btn-sm btn-outline-primary">
+                    View Full Map <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+            <div class="card-body p-0">
+                <div id="universityDashboardMap" style="height: 460px; width: 100%; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="https://b.tile.openstreetmap.org/13/4065/3247.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(189px, 54px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4066/3247.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(445px, 54px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4065/3246.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(189px, -202px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4066/3246.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(445px, -202px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4065/3248.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(189px, 310px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4066/3248.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(445px, 310px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4064/3247.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-67px, 54px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4067/3247.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(701px, 54px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4064/3246.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-67px, -202px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4067/3246.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(701px, -202px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4064/3248.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-67px, 310px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4067/3248.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(701px, 310px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(209px, 376px, 0px); z-index: 376;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(267px, 360px, 0px); z-index: 360;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(232px, 259px, 0px); z-index: 259;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(530px, 345px, 0px); z-index: 345;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(500px, 357px, 0px); z-index: 357;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(386px, 398px, 0px); z-index: 398;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(232px, 259px, 0px); z-index: 259;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(232px, 259px, 0px); z-index: 259;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(421px, 102px, 0px); z-index: 102;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(530px, 345px, 0px); z-index: 345;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(500px, 357px, 0px); z-index: 357;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(386px, 398px, 0px); z-index: 398;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(350px, 166px, 0px); z-index: 166;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(396px, 369px, 0px); z-index: 369;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(386px, 398px, 0px); z-index: 398;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(421px, 102px, 0px); z-index: 102;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(541px, 70px, 0px); z-index: 70;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(466px, 359px, 0px); z-index: 359;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(386px, 398px, 0px); z-index: 398;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(209px, 376px, 0px); z-index: 376;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(267px, 360px, 0px); z-index: 360;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(421px, 102px, 0px); z-index: 102;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(541px, 70px, 0px); z-index: 70;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#0d6efd;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#0d6efd;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(543px, 359px, 0px); z-index: 359;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(392px, 275px, 0px); z-index: 275;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(221px, 227px, 0px); z-index: 227;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -11px; margin-top: -33px; width: 22px; height: 33px; transform: translate3d(378px, 61px, 0px); z-index: 61;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:#1976D2;color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewbox="0 0 24 24" width="14" height="14" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"></path>
+              </svg>
+            </div>
+            <div style="width:2px;height:7px;background:#1976D2;"></div>
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;"></div>
+          </div></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.04083e+06px, 831408px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">&minus;</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewbox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> &copy; OpenStreetMap contributors</div></div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+
+        <!-- Recent Notifications -->
+        <div class="card mb-4" data-notification-container="">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-bell me-2"></i>Recent Notifications
+                </h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover mb-0">
+                        <tbody><tr class="notification-row" style="cursor: pointer;">
+                                <td style="width: 30px;">
+                                    <span class="badge bg-warning">
+                                        <i class="ri ri-notification-line"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        <strong class="d-block">&#128652; Trip Started</strong>
+                                        <small class="text-muted">20 hours from now</small>
+                                    </div>
+                                </td>
+                            </tr><tr class="notification-row" style="cursor: pointer;">
+                                <td style="width: 30px;">
+                                    <span class="badge bg-warning">
+                                        <i class="ri ri-notification-line"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        <strong class="d-block">&#8505;&#65039; System Notice</strong>
+                                        <small class="text-muted">16 hours from now</small>
+                                    </div>
+                                </td>
+                            </tr><tr class="notification-row" style="cursor: pointer;">
+                                <td style="width: 30px;">
+                                    <span class="badge bg-danger">
+                                        <i class="ri ri-notification-line"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        <strong class="d-block">Speed Limit Exceeded</strong>
+                                        <small class="text-muted">13 hours from now</small>
+                                    </div>
+                                </td>
+                            </tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <!-- Buses Needing Attention -->
+            </div>
+</div>
+
+<!-- Recent Journeys -->
+<div class="row g-4 mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-history me-2"></i>Recent Journeys
+                </h5>
+            </div>
+            <div class="card-body p-0">
+                                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Journey</th>
+                                    <th>Bus</th>
+                                    <th>Driver</th>
+                                    <th>Route</th>
+                                    <th>Status</th>
+                                    <th>Started</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#12828</span>
+                                    </td>
+                                    <td>
+                                        TLE-R12-BUS-09
+                                    </td>
+                                    <td>
+                                        Youcef Meziane
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>medecine - centrale
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:41
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#8544</span>
+                                    </td>
+                                    <td>
+                                        TLE-R8-BUS-09
+                                    </td>
+                                    <td>
+                                        Boualem Selmi
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>centre ville - chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:38
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#4256</span>
+                                    </td>
+                                    <td>
+                                        TLE-R6-BUS-10
+                                    </td>
+                                    <td>
+                                        Amine Saidi
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>centre ville - Nouv pole
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:37
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#4244</span>
+                                    </td>
+                                    <td>
+                                        TLE-R6-BUS-09
+                                    </td>
+                                    <td>
+                                        Reda Bouchama
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>centre ville - Nouv pole
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:37
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#6378</span>
+                                    </td>
+                                    <td>
+                                        TLE-R7-BUS-08
+                                    </td>
+                                    <td>
+                                        Djamel Bensalah
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>nouv pole - chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:37
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#14987</span>
+                                    </td>
+                                    <td>
+                                        TLE-R14-BUS-10
+                                    </td>
+                                    <td>
+                                        Amine Saidi
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>Centrale - Chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:37
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#8557</span>
+                                    </td>
+                                    <td>
+                                        TLE-R8-BUS-10
+                                    </td>
+                                    <td>
+                                        Mustapha Bendjedid
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>centre ville - chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:36
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#4221</span>
+                                    </td>
+                                    <td>
+                                        TLE-R6-BUS-07
+                                    </td>
+                                    <td>
+                                        Walid Maazouzi
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>centre ville - Nouv pole
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:36
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#6390</span>
+                                    </td>
+                                    <td>
+                                        TLE-R7-BUS-09
+                                    </td>
+                                    <td>
+                                        Noureddine Aouadi
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>nouv pole - chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:36
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <span class="badge bg-info">#10685</span>
+                                    </td>
+                                    <td>
+                                        TLE-R11-BUS-09
+                                    </td>
+                                    <td>
+                                        Larbi Tlemceni
+                                    </td>
+                                    <td>
+                                                                                    <span class="badge bg-light text-dark border">
+                                                <i class="fas fa-route me-1 text-primary"></i>ecole superieure - chetouene
+                                            </span>
+                                                                            </td>
+                                    <td>
+                                                                                <span class="badge bg-success">Completed</span>
+                                    </td>
+                                    <td>
+                                        <small>
+                                                                                            Sep 17, 17:35
+                                                                                    </small>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" title="View Trip">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Reports Quick Access -->
+<div class="row g-4 mt-4">
+    <div class="col-12">
+        <h5 class="fw-bold mb-3"><i class="ri ri-file-chart-line me-2"></i>Reports</h5>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="mb-3"><i class="ri ri-error-warning-line text-danger" style="font-size:2.5rem;"></i></div>
+                    <h5 class="fw-bold mb-2">Complaints</h5>
+                    <p class="text-muted small mb-4">View and manage student complaints categorized by type. Track status and resolution progress.</p>
+                </div>
+                <a href="complaints.html" class="btn btn-danger w-100">View All Complaints</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="mb-3"><i class="ri ri-medal-line text-success" style="font-size:2.5rem;"></i></div>
+                    <h5 class="fw-bold mb-2">Driver Scores</h5>
+                    <p class="text-muted small mb-4">Performance scores per driver based on journeys, deviations, SOS alerts and safety record.</p>
+                </div>
+                <a href="driver-scores.html" class="btn btn-success w-100">View Driver Scores</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="mb-3"><i class="ri ri-bus-line text-primary" style="font-size:2.5rem;"></i></div>
+                    <h5 class="fw-bold mb-2">Bus Scores</h5>
+                    <p class="text-muted small mb-4">Performance scores per bus based on journey completion and route deviations, independent of driver changes.</p>
+                </div>
+                <a href="bus-scores.html" class="btn btn-primary w-100">View Bus Scores</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <div>
+                    <div class="mb-3"><i class="ri ri-route-line text-secondary" style="font-size:2.5rem;"></i></div>
+                    <h5 class="fw-bold mb-2">Route Statistics</h5>
+                    <p class="text-muted small mb-4">Journeys, complaints, deviations, SOS alerts, dwell time and speed incidents broken down per route.</p>
+                </div>
+                <a href="route-stats.html" class="btn btn-secondary w-100">View Route Stats</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                    <!-- / Content -->
+
+                    <!-- Footer -->
+                                        <!-- Footer-->
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl">
+        <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+            <div class="text-body">
+                                    &copy;
+                    2026
+                    <span class="footer-text me-2">Bus Catcher</span>
+                    <span class="text-muted">All rights reserved</span>
+                            </div>
+            <div class="d-none d-lg-inline-block">
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-home-smile-line me-1"></i>Dashboard
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-school-line me-1"></i>universities
+                </a>
+                <a href="#" class="footer-link me-4">
+                    <i class="ri ri-settings-3-line me-1"></i>Settings
+                </a>
+                <a href="javascript:void(0)" class="footer-link d-none d-sm-inline-block" onclick="alert('Support: support@universitybustracking.com')">
+                    <i class="ri ri-customer-service-line me-1"></i>Support
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ Footer-->
+                                        <!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!--/ Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+                <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+                <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+        <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!--/ Layout Content -->
+
+    
+
+    <!-- Include Scripts -->
+    <!-- BEGIN: Vendor JS-->
+
+<link rel="modulepreload" as="script" href="build/assets/jquery-BLVPd0pO.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/popper-DH7wS8as.js"><link rel="modulepreload" as="script" href="build/assets/bootstrap-DGM5oX2B.js"><link rel="modulepreload" as="script" href="build/assets/node-waves-rJO3qC03.js"><script type="module" src="build/assets/jquery-BLVPd0pO.js"></script><script type="module" src="build/assets/popper-DH7wS8as.js"></script><script type="module" src="build/assets/bootstrap-DGM5oX2B.js"></script><script type="module" src="build/assets/node-waves-rJO3qC03.js"></script>
+<link rel="modulepreload" as="script" href="build/assets/perfect-scrollbar-BPWyZo71.js"><link rel="modulepreload" as="script" href="build/assets/_commonjsHelpers-Cpj98o6Y.js"><link rel="modulepreload" as="script" href="build/assets/menu-Bldkajpn.js"><script type="module" src="build/assets/perfect-scrollbar-BPWyZo71.js"></script><script type="module" src="build/assets/menu-Bldkajpn.js"></script>
+<!-- END: Page Vendor JS-->
+<!-- BEGIN: Theme JS-->
+<link rel="modulepreload" as="script" href="build/assets/main-B5wckTSW.js"><script type="module" src="build/assets/main-B5wckTSW.js"></script>
+<!-- END: Theme JS-->
+<!-- Pricing Modal JS-->
+<!-- END: Pricing Modal JS-->
+<!-- BEGIN: Page JS-->
+        <script>
+            // Auto-refresh notifications every 15 seconds
+            function refreshNotifications() {
+                fetch('http://127.0.0.1:8030/university/dashboard/notifications')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tbody = document.querySelector('[data-notification-container] tbody');
+                        if (!tbody || !data.notifications) return;
+
+                        // Clear existing rows
+                        tbody.innerHTML = '';
+
+                        // Add new notification rows
+                        data.notifications.forEach(notification => {
+                            const row = document.createElement('tr');
+                            row.className = 'notification-row';
+                            row.style.cursor = 'pointer';
+                            row.onclick = function() {
+                                window.location.href = notification.url;
+                            };
+
+                            row.innerHTML = `
+                                <td style="width: 30px;">
+                                    <span class="badge bg-${notification.color}">
+                                        <i class="ri ${notification.icon}">
+                                    
+                                
+                                <td>
+                                    <div>
+                                        <strong class="d-block">${notification.message}
+                                        <small class="text-muted">${notification.time_ago}
+                                    
+                                
+                            `;
+
+                            tbody.appendChild(row);
+                        });
+
+                        // If no notifications, show empty state
+                        if (data.notifications.length === 0) {
+                            tbody.parentElement.innerHTML = `
+                                <div class="text-center py-4">
+                                    <i class="fas fa-bell-slash text-muted" style="font-size: 2rem; margin-bottom: 1rem; display: block;">
+                                    <p class="text-muted mb-0">No recent notifications
+                                
+                            `;
+                        }
+                    })
+                    .catch(error => console.log('Notification refresh error:', error));
+            }
+
+            // Refresh immediately and then every 15 seconds
+            refreshNotifications();
+            setInterval(refreshNotifications, 15000);
+        </script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+let universityDashboardMap;
+let universityBusMarkers = {};
+const mapProvider = 'openstreetmap';
+const mapApiKey = '';
+const defaultZoom = 11;
+const defaultLat = 35.2889;
+const defaultLng = -0.6401;
+const allBusStops = [{"id":39,"bus_stop_id":67,"name":"Pole universitaire Imama","address":"Universit\u00e9 de Tlemcen -P\u00f4le Imama-, Rue Barka Ahmed, Imama, B\u00e9ni Boubl\u00e8ne, Mansourah, Mansourah District, Tlemcen, Algeria","lat":34.87663503,"lng":-1.3588367,"order":1,"route_id":5,"route_name":"centrale - nouveau pole"},{"id":40,"bus_stop_id":66,"name":"imama","address":"Tlemcen, Mansourah, imama","lat":34.87892951,"lng":-1.34886393,"order":2,"route_id":5,"route_name":"centrale - nouveau pole"},{"id":41,"bus_stop_id":21,"name":"nouveau pole universitaire (La Rocade)","address":"Fablab Universit\u00e9 de Tlemcen, Evitement Ouest de Tlemcen, El Koudia, Mansourah, Mansourah District, Tlemcen, 13000, Algeria","lat":34.89311735,"lng":-1.35485331,"order":3,"route_id":5,"route_name":"centrale - nouveau pole"},{"id":14,"bus_stop_id":57,"name":"Elkhassa Zianide","address":"Les Zianides, Rue Khedim Ali, Riat El Hammar, Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8809567,"lng":-1.30378425,"order":1,"route_id":6,"route_name":"centre ville - Nouv pole"},{"id":15,"bus_stop_id":58,"name":"Lycee Maliha Hamidou","address":"El-Hartoun, Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.87929158,"lng":-1.30886436,"order":2,"route_id":6,"route_name":"centre ville - Nouv pole"},{"id":16,"bus_stop_id":32,"name":"CHU Tlemcen (Hopitale Tidjani)","address":"Seigneurie studio peinture, 22, Boulevard de L\u0027ALN, Faubourg Bel-Air, Boudghene, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8735154,"lng":-1.32854104,"order":3,"route_id":6,"route_name":"centre ville - Nouv pole"},{"id":17,"bus_stop_id":21,"name":"nouveau pole universitaire (La Rocade)","address":"Fablab Universit\u00e9 de Tlemcen, Evitement Ouest de Tlemcen, El Koudia, Mansourah, Mansourah District, Tlemcen, 13000, Algeria","lat":34.89311735,"lng":-1.35485331,"order":4,"route_id":6,"route_name":"centre ville - Nouv pole"},{"id":18,"bus_stop_id":21,"name":"nouveau pole universitaire (La Rocade)","address":"Fablab Universit\u00e9 de Tlemcen, Evitement Ouest de Tlemcen, El Koudia, Mansourah, Mansourah District, Tlemcen, 13000, Algeria","lat":34.89311735,"lng":-1.35485331,"order":1,"route_id":7,"route_name":"nouv pole - chetouene"},{"id":19,"bus_stop_id":56,"name":"Rond point abou techfine","address":"Evitement Nord de Tlemcen, Abou Tachfine, Tlemcen, Tlemcen District, Tlemcen, 13048, Algeria","lat":34.91517623,"lng":-1.32241488,"order":2,"route_id":7,"route_name":"nouv pole - chetouene"},{"id":21,"bus_stop_id":57,"name":"Elkhassa Zianide","address":"Les Zianides, Rue Khedim Ali, Riat El Hammar, Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8809567,"lng":-1.30378425,"order":1,"route_id":8,"route_name":"centre ville - chetouene"},{"id":22,"bus_stop_id":58,"name":"Lycee Maliha Hamidou","address":"El-Hartoun, Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.87929158,"lng":-1.30886436,"order":2,"route_id":8,"route_name":"centre ville - chetouene"},{"id":23,"bus_stop_id":32,"name":"CHU Tlemcen (Hopitale Tidjani)","address":"Seigneurie studio peinture, 22, Boulevard de L\u0027ALN, Faubourg Bel-Air, Boudghene, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8735154,"lng":-1.32854104,"order":3,"route_id":8,"route_name":"centre ville - chetouene"},{"id":24,"bus_stop_id":28,"name":"Gare routi\u00e8re Tlemcen","address":"RN 22, Abou Tachfine, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.90619224,"lng":-1.33463502,"order":4,"route_id":8,"route_name":"centre ville - chetouene"},{"id":42,"bus_stop_id":26,"name":"Ecole Sup\u00e9rieure en Sciences Appliqu\u00e9es","address":"Ecole Sup\u00e9rieure en Sciences Appliqu\u00e9es de Tlemcen, Boulevard A\u00efn Sbaa Ali, Bel Horizon, Boudghene, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8776419,"lng":-1.3267514,"order":1,"route_id":11,"route_name":"ecole superieure - chetouene"},{"id":43,"bus_stop_id":32,"name":"CHU Tlemcen (Hopitale Tidjani)","address":"Seigneurie studio peinture, 22, Boulevard de L\u0027ALN, Faubourg Bel-Air, Boudghene, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8735154,"lng":-1.32854104,"order":2,"route_id":11,"route_name":"ecole superieure - chetouene"},{"id":44,"bus_stop_id":56,"name":"Rond point abou techfine","address":"Evitement Nord de Tlemcen, Abou Tachfine, Tlemcen, Tlemcen District, Tlemcen, 13048, Algeria","lat":34.91517623,"lng":-1.32241488,"order":3,"route_id":11,"route_name":"ecole superieure - chetouene"},{"id":45,"bus_stop_id":68,"name":"Pole universitaire chetouane","address":"University of Abou Bekr Belka\u00efd, Evitement Nord de Tlemcen, A\u00efn Defla, Ouzidane, Chetouane, Tlemcen, 13000, Algeria","lat":34.9196638,"lng":-1.3018243,"order":4,"route_id":11,"route_name":"ecole superieure - chetouene"},{"id":33,"bus_stop_id":25,"name":"Facult\u00e9 de m\u00e9decine","address":"Facult\u00e9 de m\u00e9decine Dr Benzerdjeb Benaouda, 12, Rue Hamri Ahmed, Bastion 18, Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.87898507,"lng":-1.31477849,"order":1,"route_id":12,"route_name":"medecine - centrale"},{"id":34,"bus_stop_id":32,"name":"CHU Tlemcen (Hopitale Tidjani)","address":"Seigneurie studio peinture, 22, Boulevard de L\u0027ALN, Faubourg Bel-Air, Boudghene, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8735154,"lng":-1.32854104,"order":2,"route_id":12,"route_name":"medecine - centrale"},{"id":52,"bus_stop_id":67,"name":"Pole universitaire Imama","address":"Universit\u00e9 de Tlemcen -P\u00f4le Imama-, Rue Barka Ahmed, Imama, B\u00e9ni Boubl\u00e8ne, Mansourah, Mansourah District, Tlemcen, Algeria","lat":34.87663503,"lng":-1.3588367,"order":1,"route_id":14,"route_name":"Centrale - Chetouene"},{"id":53,"bus_stop_id":66,"name":"imama","address":"Tlemcen, Mansourah, imama","lat":34.87892951,"lng":-1.34886393,"order":2,"route_id":14,"route_name":"Centrale - Chetouene"},{"id":54,"bus_stop_id":56,"name":"Rond point abou techfine","address":"Evitement Nord de Tlemcen, Abou Tachfine, Tlemcen, Tlemcen District, Tlemcen, 13048, Algeria","lat":34.91517623,"lng":-1.32241488,"order":3,"route_id":14,"route_name":"Centrale - Chetouene"},{"id":55,"bus_stop_id":68,"name":"Pole universitaire chetouane","address":"University of Abou Bekr Belka\u00efd, Evitement Nord de Tlemcen, A\u00efn Defla, Ouzidane, Chetouane, Tlemcen, 13000, Algeria","lat":34.9196638,"lng":-1.3018243,"order":4,"route_id":14,"route_name":"Centrale - Chetouene"},{"id":"bs_29","bus_stop_id":29,"name":"Centre ville Tlemcen","address":"Historic Town Centre, Tlemcen, Tlemcen District, Tlemcen, Algeria","lat":34.87909949,"lng":-1.3014586,"order":0,"route_id":null,"route_name":""},{"id":"bs_30","bus_stop_id":30,"name":"R\u00e9sidence universitaire Hassiba Ben Bouali (Kiffane)","address":"R\u00e9sidence universitaire Hassiba Ben Bouali, Rue Mourad Benchouk, Cit\u00e9 des Oliviers, El Kifane, Tlemcen, Tlemcen District, Tlemcen, 13000, Algeria","lat":34.8908674,"lng":-1.3274003,"order":0,"route_id":null,"route_name":""},{"id":"bs_31","bus_stop_id":31,"name":"R\u00e9sidence Universitaire Mansourah 4 (la rocade)","address":"R\u00e9sidence Universitaire Mansourah 4 ( Ahmed Mohamed), Imama, Mansourah, Mansourah District, Tlemcen, Algeria","lat":34.8976732,"lng":-1.3568199,"order":0,"route_id":null,"route_name":""},{"id":"bs_37","bus_stop_id":37,"name":"Oudjlida","address":"Oudjlida, Tlemcen, Tlemcen District, Tlemcen, 13048, Algeria","lat":34.92092948,"lng":-1.32985516,"order":0,"route_id":null,"route_name":""}];
+
+// Debug: Log map settings
+console.log('Map Provider:', mapProvider);
+console.log('Map API Key:', mapApiKey ? 'SET' : 'NOT SET');
+console.log('Use Google Maps:', false);
+
+// Initialize map immediately if not using Google Maps
+document.addEventListener('DOMContentLoaded', function() {
+    inituniversityDashboardMap();
+});
+
+function inituniversityDashboardMap() {
+    // Centre on bus stops if available, otherwise use configured default
+    initializeuniversityDashboardMapWithLocation(defaultLat, defaultLng);
+}
+
+function initializeuniversityDashboardMapWithLocation(centerLat, centerLng) {
+    // Check if Google Maps is configured and available
+    const useGoogleMaps = mapProvider === 'google_maps' && mapApiKey;
+    
+    if (useGoogleMaps) {
+        // Wait for Google Maps to load
+        if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+            // Initialize Google Maps
+            console.log('Initializing Google Maps');
+            universityDashboardMap = new google.maps.Map(document.getElementById('universityDashboardMap'), {
+                center: { lat: centerLat, lng: centerLng },
+                zoom: defaultZoom,
+                mapTypeId: 'roadmap'
+            });
+            
+            loaduniversityBusLocations();
+            // Real-time updates - poll every 3 seconds for dashboard
+            setInterval(loaduniversityBusLocations, 3000);
+            setupuniversityDashboardRealtimeListener();
+        } else {
+            // Google Maps script not loaded yet, wait a bit and retry
+            console.log('Waiting for Google Maps to load...');
+            setTimeout(function() {
+                if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+                    universityDashboardMap = new google.maps.Map(document.getElementById('universityDashboardMap'), {
+                        center: { lat: centerLat, lng: centerLng },
+                        zoom: defaultZoom,
+                        mapTypeId: 'roadmap'
+                    });
+                    loaduniversityBusLocations();
+                    setInterval(loaduniversityBusLocations, 3000);
+                    setupuniversityDashboardRealtimeListener();
+                } else {
+                    // Fallback to OpenStreetMap if Google Maps fails to load
+                    console.warn('Google Maps failed to load, falling back to OpenStreetMap');
+                    initializeOpenStreetMap(centerLat, centerLng);
+                }
+            }, 1000);
+        }
+    } else {
+        // Use OpenStreetMap
+        initializeOpenStreetMap(centerLat, centerLng);
+    }
+}
+
+function initializeOpenStreetMap(centerLat, centerLng) {
+    if (typeof L === 'undefined') {
+        console.error('Leaflet library not loaded');
+        return;
+    }
+    universityDashboardMap = L.map('universityDashboardMap').setView([centerLat, centerLng], defaultZoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(universityDashboardMap);
+
+    // Render bus stops and fit map to them immediately
+    renderDashboardBusStops();
+
+    loaduniversityBusLocations();
+    setInterval(loaduniversityBusLocations, 5000);
+    setupuniversityDashboardRealtimeListener();
+}
+
+// &#9472;&#9472; Bus stop icon (sign board on a pole) &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
+function busStopIcon(isEndpoint) {
+    const bg = isEndpoint ? '#0d6efd' : '#1976D2';
+    return L.divIcon({
+        html: `
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="
+              background:${bg};color:#fff;
+              border:2px solid #fff;border-radius:5px;
+              width:22px;height:22px;
+              display:flex;align-items:center;justify-content:center;
+              box-shadow:0 2px 6px rgba(0,0,0,.4);">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="white"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0
+                  1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55
+                  1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83
+                  0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5
+                  17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5
+                  1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/>
+              
+            
+            <div style="width:2px;height:7px;background:${bg};">
+            <div style="width:6px;height:2px;background:#888;border-radius:1px;">
+          `,
+        iconSize:   [22, 33],
+        iconAnchor: [11, 33],
+        className:  '',
+    });
+}
+
+function renderDashboardBusStops() {
+    if (!universityDashboardMap || !allBusStops || allBusStops.length === 0) return;
+
+    const byRoute   = {};
+    const standalone = [];
+    const allLatLngs = [];
+
+    allBusStops.forEach(stop => {
+        allLatLngs.push([stop.lat, stop.lng]);
+        if (stop.route_id) {
+            if (!byRoute[stop.route_id]) byRoute[stop.route_id] = [];
+            byRoute[stop.route_id].push(stop);
+        } else {
+            standalone.push(stop);
+        }
+    });
+
+    // Routed stops: ordered markers (polyline removed for cleaner map)
+    Object.values(byRoute).forEach(stops => {
+        stops.sort((a, b) => a.order - b.order);
+
+        stops.forEach((stop, idx) => {
+            const isEndpoint = idx === 0 || idx === stops.length - 1;
+            L.marker([stop.lat, stop.lng], { icon: busStopIcon(isEndpoint) })
+                .addTo(universityDashboardMap)
+                .bindTooltip(
+                    `<strong>${stop.name}` +
+                    (stop.address    ? `<br><small>${stop.address}`                        : '') +
+                    (stop.route_name ? `<br><small class="text-muted">${stop.route_name}` : ''),
+                    { direction: 'top', offset: [0, -35] }
+                );
+        });
+    });
+
+    // Standalone stops &mdash; same bus-stop icon
+    standalone.forEach(stop => {
+        L.marker([stop.lat, stop.lng], { icon: busStopIcon(false) })
+            .addTo(universityDashboardMap)
+            .bindTooltip(
+                `<strong>${stop.name}` +
+                (stop.address ? `<br><small>${stop.address}` : ''),
+                { direction: 'top', offset: [0, -35] }
+            );
+    });
+
+    // Fit map to all stops
+    if (allLatLngs.length === 1) {
+        universityDashboardMap.setView(allLatLngs[0], 15);
+    } else if (allLatLngs.length > 1) {
+        universityDashboardMap.fitBounds(L.latLngBounds(allLatLngs).pad(0.15));
+    }
+}
+
+// Set up real-time WebSocket listener for university dashboard (optional)
+function setupuniversityDashboardRealtimeListener() {
+    // Check if Laravel Echo is available
+    if (typeof Echo !== 'undefined') {
+        try {
+            // Listen to university buses channel for all bus updates
+            Echo.channel('university.1.buses')
+                .listen('.location.updated', (e) => {
+                    // Update specific bus marker immediately when location is updated via WebSocket
+                    if (e.bus_id && universityBusMarkers[e.bus_id]) {
+                        if (mapProvider === 'google_maps' && mapApiKey) {
+                            universityBusMarkers[e.bus_id].setPosition({ lat: e.lat, lng: e.lng });
+                        } else {
+                            universityBusMarkers[e.bus_id].setLatLng([e.lat, e.lng]);
+                        }
+                    }
+                });
+            console.log('university dashboard real-time WebSocket listener connected');
+        } catch (error) {
+            console.log('WebSocket not available, using polling fallback');
+        }
+    }
+}
+
+let isLoadinguniversityDashboardLocations = false;
+function loaduniversityBusLocations() {
+    // Prevent multiple simultaneous requests
+    if (isLoadinguniversityDashboardLocations) return;
+    
+    isLoadinguniversityDashboardLocations = true;
+    fetch('http://127.0.0.1:8030/university/tracking/locations')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('university bus locations response:', data);
+            if (data.success && data.buses) {
+                console.log(`Found ${data.buses.length} buses with active trips for university 1`);
+                updateuniversityBusMarkers(data.buses);
+            } else {
+                console.warn('No buses found or invalid response:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading bus locations:', error);
+        })
+        .finally(() => {
+            isLoadinguniversityDashboardLocations = false;
+        });
+}
+
+function updateuniversityBusMarkers(buses) {
+    console.log('Updating university bus markers:', buses.length, 'buses');
+    
+    if (!universityDashboardMap) {
+        console.error('university dashboard map not initialized');
+        return;
+    }
+    
+    if (mapProvider === 'google_maps' && mapApiKey) {
+        // Google Maps implementation
+        const bounds = new google.maps.LatLngBounds();
+        
+        // Remove old markers
+        Object.keys(universityBusMarkers).forEach(busId => {
+            if (!buses.find(bus => String(bus.id) === busId)) {
+                universityBusMarkers[busId].setMap(null);
+                delete universityBusMarkers[busId];
+                console.log(`Removed marker for bus ID: ${busId}`);
+            }
+        });
+        
+        // Add/update markers
+        buses.forEach(bus => {
+            if (bus.latitude && bus.longitude) {
+                const position = { lat: parseFloat(bus.latitude), lng: parseFloat(bus.longitude) };
+                bounds.extend(position);
+                const color = bus.status === 'active' ? '#28a745' : 
+                              bus.status === 'in_transit' ? '#007bff' :
+                              bus.status === 'maintenance' ? '#ffc107' : '#dc3545';
+                
+                // Ensure bus.id is treated as string for consistent key matching
+                const busId = String(bus.id);
+                
+                if (universityBusMarkers[busId]) {
+                    universityBusMarkers[busId].setPosition(position);
+                    console.log(`Updated marker for bus ${bus.bus_number} (ID: ${busId}) at ${bus.latitude}, ${bus.longitude}`);
+                } else {
+                    console.log(`Creating new marker for bus ${bus.bus_number} (ID: ${busId}) at ${bus.latitude}, ${bus.longitude}`);
+                    // Create bus icon using emoji/svg
+                    const busIcon = {
+                        url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="${color}" stroke="#ffffff" stroke-width="3"/>
+                                <text x="20" y="26" font-family="Arial" font-size="20" fill="white" text-anchor="middle">&#128652;
+                            
+                        `),
+                        scaledSize: new google.maps.Size(40, 40),
+                        anchor: new google.maps.Point(20, 20)
+                    };
+                    
+                    const marker = new google.maps.Marker({
+                        position: position,
+                        map: universityDashboardMap,
+                        title: bus.bus_number,
+                        icon: busIcon
+                    });
+                    
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `
+                            <div>
+                                <strong>${bus.bus_number}<br>
+                                ${bus.driver ? bus.driver.name : 'No Driver'}<br>
+                                ${(bus.speed !== null && bus.speed !== undefined) ? '<small>&#128652; Speed: <b>' + Math.round(bus.speed) + ' km/h<br>' : ''}
+                                <small>Status: ${bus.status}
+                            
+                        `
+                    });
+
+                    marker.addListener('click', function() {
+                        infoWindow.open(universityDashboardMap, marker);
+                    });
+                    
+                    universityBusMarkers[busId] = marker;
+                    console.log(`Marker created and stored for bus ${bus.bus_number} (ID: ${busId})`);
+                }
+            }
+        });
+        
+        // Fit bounds (only on first load to prevent constant re-centering)
+        if (Object.keys(universityBusMarkers).length > 0) {
+            if (!universityDashboardMap._initialBoundsSet) {
+                // Add padding to prevent excessive zoom
+                universityDashboardMap.fitBounds(bounds, {
+                    padding: { top: 100, right: 100, bottom: 100, left: 100 }
+                });
+                // Set max zoom to prevent zooming in too much
+                const currentZoom = universityDashboardMap.getZoom();
+                if (currentZoom > 15) {
+                    universityDashboardMap.setZoom(15);
+                }
+                // Set min zoom if only one marker
+                if (Object.keys(universityBusMarkers).length === 1 && currentZoom > 13) {
+                    universityDashboardMap.setZoom(13);
+                }
+                universityDashboardMap._initialBoundsSet = true;
+                console.log('Map bounds set to fit all bus markers with padding');
+            }
+        } else {
+            console.warn('No bus markers to display');
+        }
+    } else {
+        // Leaflet (OpenStreetMap) implementation
+        // Remove old markers
+        Object.keys(universityBusMarkers).forEach(busId => {
+            if (!buses.find(bus => String(bus.id) === busId)) {
+                universityDashboardMap.removeLayer(universityBusMarkers[busId]);
+                delete universityBusMarkers[busId];
+                console.log(`Removed Leaflet marker for bus ID: ${busId}`);
+            }
+        });
+        
+        // Add/update markers
+        buses.forEach(bus => {
+            if (bus.latitude && bus.longitude) {
+                const position = [parseFloat(bus.latitude), parseFloat(bus.longitude)];
+                const color = bus.status === 'active' ? 'green' : 
+                              bus.status === 'in_transit' ? 'blue' :
+                              bus.status === 'maintenance' ? 'orange' : 'red';
+                
+                // Ensure bus.id is treated as string for consistent key matching
+                const busId = String(bus.id);
+                
+                if (universityBusMarkers[busId]) {
+                    universityBusMarkers[busId].setLatLng(position);
+                    universityBusMarkers[busId].setPopupContent(`
+                        <div>
+                            <strong>${bus.bus_number}<br>
+                            ${bus.driver ? bus.driver.name : 'No Driver'}<br>
+                            ${(bus.speed !== null && bus.speed !== undefined) ? '<small>&#128652; Speed: <b>' + Math.round(bus.speed) + ' km/h<br>' : ''}
+                            <small>Status: ${bus.status}
+                        
+                    `);
+                    console.log(`Updated Leaflet marker for bus ${bus.bus_number} (ID: ${busId}) at ${bus.latitude}, ${bus.longitude}`);
+                } else {
+                    console.log(`Creating new Leaflet marker for bus ${bus.bus_number} (ID: ${busId}) at ${bus.latitude}, ${bus.longitude}`);
+                    const marker = L.marker(position, {
+                        icon: L.divIcon({
+                            className: 'bus-marker',
+                            html: `<div style="background: ${color}; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"><i class="fas fa-bus">`,
+                            iconSize: [30, 30],
+                            iconAnchor: [15, 15]
+                        })
+                    }).addTo(universityDashboardMap);
+                    
+                    marker.bindPopup(`
+                        <div>
+                            <strong>${bus.bus_number}<br>
+                            ${bus.driver ? bus.driver.name : 'No Driver'}<br>
+                            ${(bus.speed !== null && bus.speed !== undefined) ? '<small>&#128652; Speed: <b>' + Math.round(bus.speed) + ' km/h<br>' : ''}
+                            <small>Status: ${bus.status}
+                        
+                    `);
+
+                    universityBusMarkers[busId] = marker;
+                    console.log(`Leaflet marker created and stored for bus ${bus.bus_number} (ID: ${busId})`);
+                }
+            }
+        });
+        
+        // Fit bounds (only on first load to prevent constant re-centering)
+        if (Object.keys(universityBusMarkers).length > 0) {
+            if (!universityDashboardMap._initialBoundsSet) {
+                const group = new L.featureGroup(Object.values(universityBusMarkers));
+                const bounds = group.getBounds();
+                // Add more padding for single marker to prevent excessive zoom
+                const padding = Object.keys(universityBusMarkers).length === 1 ? 0.05 : 0.1;
+                universityDashboardMap.fitBounds(bounds.pad(padding));
+                // Set max zoom to prevent zooming in too much
+                const currentZoom = universityDashboardMap.getZoom();
+                if (currentZoom > 15) {
+                    universityDashboardMap.setZoom(15);
+                }
+                // Set min zoom if only one marker
+                if (Object.keys(universityBusMarkers).length === 1 && currentZoom > 13) {
+                    universityDashboardMap.setZoom(13);
+                }
+                universityDashboardMap._initialBoundsSet = true;
+                console.log('Leaflet map bounds set to fit all bus markers with padding');
+            }
+        } else {
+            console.warn('No Leaflet bus markers to display');
+        }
+    }
+}
+</script>
+<!-- END: Page JS-->
+
+<!-- app JS -->
+<link rel="preload" as="style" href="build/assets/app-DpkoVDcM.css"><link rel="modulepreload" as="script" href="build/assets/app-B8m7fOOw.js"><link rel="modulepreload" as="script" href="build/assets/_plugin-vue_export-helper-CEJ4TrU7.js"><link rel="stylesheet" href="build/assets/app-DpkoVDcM.css"><script type="module" src="build/assets/app-B8m7fOOw.js"></script><!-- END: app JS-->
+
+<!-- Notifications JS -->
+<script src="assets/js/notifications.js"></script>
+<!-- END: Notifications JS-->
+
+<!-- Theme Toggle JS -->
+<script src="assets/js/theme-toggle.js"></script>
+<!-- END: Theme Toggle JS-->
+
+    <!-- Mobile sidebar toggle (direct capture-phase handler) -->
+    <script>
+    (function () {
+        var html = document.documentElement;
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('.layout-menu-toggle');
+            if (!btn) return;
+            if (window.innerWidth >= 1200) return;
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (html.classList.contains('layout-menu-expanded')) {
+                html.classList.remove('layout-menu-expanded');
+            } else {
+                html.classList.add('layout-menu-expanded');
+            }
+        }, true);
+    })();
+    </script>
+
+
+
+<!----><button data-v-621cb8d4="" class="admin-chatbot-fab" title="Open AI Assistant"><i data-v-621cb8d4="" class="ri ri-chat-3-line"></i></button><script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('mock-tracking-sw.js').catch(() => {});
+}
+</script>
+<style>
+@keyframes __bc_back_pulse { 0%,100%{ box-shadow:0 4px 18px rgba(216,58,122,.55),0 0 0 0 rgba(216,58,122,.5); } 50%{ box-shadow:0 4px 22px rgba(216,58,122,.75),0 0 0 8px rgba(216,58,122,0); } }
+#__bc_back_pill { animation: __bc_back_pulse 2.2s ease-in-out infinite; }
+#__bc_back_pill:hover { animation: none; transform: scale(1.04); }
+</style>
+<a id="__bc_back_pill" href="/projects/buscatcher" style="position:fixed;bottom:16px;left:16px;z-index:2147483647;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:26px;background:#D83A7A;border:2px solid #fff;color:#fff;font:700 15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 4px 18px rgba(216,58,122,.55);transition:transform .15s;">&larr; back to portfolio</a>
+
+</body></html>

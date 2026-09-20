@@ -7,6 +7,11 @@
     <title>{{ config('portfolio.name') }} — {{ __('site.meta.title') }}</title>
     <meta name="description" content="{{ __('site.meta.description') }}">
 
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    <link rel="icon" href="{{ asset('favicon-32.png') }}" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ asset('favicon-192.png') }}" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}" sizes="180x180">
+
     <link rel="preload" as="image" href="/images/wallpaper-city.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -424,13 +429,7 @@
     {{-- ============ taskbar ============ --}}
     <div class="taskbar" data-screen-label="taskbar">
         <button type="button" class="taskbar__start" @click.stop="toggleStart">
-            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                <rect x="1" y="1" width="5.4" height="5.4" fill="#F2B8DC" stroke="#4A3D73" stroke-width="1"/>
-                <rect x="7.6" y="1" width="5.4" height="5.4" fill="#A9E2DA" stroke="#4A3D73" stroke-width="1"/>
-                <rect x="1" y="7.6" width="5.4" height="5.4" fill="#C9BAEC" stroke="#4A3D73" stroke-width="1"/>
-                <rect x="7.6" y="7.6" width="5.4" height="5.4" fill="#9D8FD6" stroke="#4A3D73" stroke-width="1"/>
-            </svg>
-            <span>start</span>
+            @include('partials.logo', ['variant' => 'small'])
         </button>
 
         <div class="taskbar__divider"></div>
