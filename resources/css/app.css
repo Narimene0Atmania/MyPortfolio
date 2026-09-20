@@ -2107,14 +2107,6 @@ button {
 
 .boot--fading { opacity: 0; }
 
-.boot__title {
-  font-family: 'VT323', monospace;
-  font-size: 16px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #43305F;
-}
-
 .boot__track {
   width: 220px;
   height: 9px;
@@ -2286,6 +2278,16 @@ button {
 @media (max-width: 767px) {
   .mobile { display: flex; }
   .desktop { display: none !important; }
+}
+
+/* in normal flow (not fixed like .mobile-nav below) so .mobile-scroll just
+   shrinks to fit under it — no per-panel top padding to compensate for */
+.mobile-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: calc(10px + env(safe-area-inset-top)) 18px 10px;
+  background: var(--page-bg);
 }
 
 .mobile-scroll {

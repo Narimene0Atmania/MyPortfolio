@@ -46,7 +46,7 @@
          :class="{ 'boot--fading': bootFading }"
          x-ref="boot"
          data-screen-label="boot splash">
-        <div class="boot__title">narimene os</div>
+        @include('partials.logo', ['variant' => 'large'])
         <div class="boot__track">
             <div class="boot__fill" x-ref="bootFill"></div>
         </div>
@@ -492,6 +492,10 @@
     [$mobileFirstName, $mobileLastName] = array_pad(explode(' ', config('portfolio.name'), 2), 2, null);
 @endphp
 <div class="mobile" x-data="mobile('{{ request()->routeIs('projects.*') ? 'projects' : 'about' }}')">
+
+    <div class="mobile-header" data-screen-label="mobile header">
+        @include('partials.logo', ['variant' => 'small'])
+    </div>
 
     <div class="mobile-scroll" x-ref="scroller" data-screen-label="mobile scroll container">
 
