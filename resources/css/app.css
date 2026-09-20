@@ -827,19 +827,31 @@ button {
 .status-pill--grey .status-pill__dot { background: var(--status-grey-dot); }
 
 /* the one status pill that's actually a link (to the live demo) rather than
-   a static badge — same pink used by the site's other "live" affordances */
+   a static badge. Solid color + a soft pulsing glow rather than the site's
+   usual pastel gradient — this one needs to actually get noticed and
+   clicked, not blend in as another static badge. */
+@keyframes status-pill-live-pulse {
+  0%, 100% { box-shadow: 0 2px 10px rgba(197, 39, 105, 0.6), 0 0 0 0 rgba(197, 39, 105, 0.5); }
+  50% { box-shadow: 0 2px 14px rgba(197, 39, 105, 0.8), 0 0 0 6px rgba(197, 39, 105, 0); }
+}
+
 .status-pill--live {
-  border-color: #C96E98;
-  background: linear-gradient(#FFDBEA, #F6B7D3);
-  color: #7C2F57;
+  border-color: #fff;
+  background: #C52769;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.1s;
+  animation: status-pill-live-pulse 2.2s ease-in-out infinite;
 }
 
-.status-pill--live .status-pill__dot { background: #7C2F57; }
+.status-pill--live .status-pill__dot { background: #fff; }
 
-.status-pill--live:hover { background: linear-gradient(#FFE6F0, #F9C4DA); }
+.status-pill--live:hover {
+  background: #D8407C;
+  animation: none;
+  transform: scale(1.05);
+}
 
 .status-pill--live:active { transform: translateY(1px); }
 
@@ -849,9 +861,8 @@ button {
   z-index: 2;
   top: 8px;
   right: 8px;
-  padding: 3px 9px;
-  font-size: 11px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  padding: 4px 11px;
+  font-size: 12px;
 }
 
 .project-detail__body {
