@@ -25,6 +25,13 @@
             'invalid' => __('site.contact.status.invalid'),
             'error' => __('site.contact.status.error'),
             'network' => __('site.contact.status.network'),
+            'success' => __('site.contact.status.success'),
+            'errors' => [
+                'name' => __('site.contact.errors.name'),
+                'email' => __('site.contact.errors.email'),
+                'emailInvalid' => __('site.contact.errors.email_invalid'),
+                'message' => __('site.contact.errors.message'),
+            ],
         ];
     @endphp
     <script>
@@ -34,6 +41,18 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+{{-- Netlify detects forms by parsing the deployed HTML at build time, but
+     the real contact forms below are Alpine-driven and submit via fetch,
+     so there's nothing static for it to find. This hidden copy is what
+     registers the form; the visible ones post to it by name. --}}
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <textarea name="message"></textarea>
+    <input type="text" name="bot-field">
+</form>
+
 <div class="desktop"
      x-data="desktop('{{ request()->routeIs('projects.*') ? 'projects' : '' }}')"
      @keydown.escape.window="startOpen = false"
@@ -351,7 +370,7 @@
                 <div class="resume__text">laravel · php · react · js · rest api · flutter</div>
             </div>
             <div class="resume__footer">
-                <a class="btn-pink" href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}" target="_blank" rel="noopener">{{ __('site.resume.download_label') }}</a>
+                <a class="btn-pink" href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}" target="_blank" rel="noopener nofollow">{{ __('site.resume.download_label') }}</a>
             </div>
         </div>
     </div>
@@ -412,7 +431,7 @@
             <a class="notif__btn notif__btn--download"
                href="{{ $resumeUrl }}"
                target="_blank"
-               rel="noopener"
+               rel="noopener nofollow"
                @click="dismissNotif">{{ __('site.notif.download') }}</a>
         </div>
     </div>
@@ -456,7 +475,7 @@
 
         <div class="taskbar__lang" role="group" aria-label="{{ __('site.lang_switcher.label') }}">
             @foreach (config('portfolio.locales') as $code => $label)
-                <a href="{{ route('locale.switch', $code) }}"
+                <a href="{{ $localeUrls[$code] }}" hreflang="{{ $code }}"
                    class="taskbar__lang-btn {{ app()->getLocale() === $code ? 'taskbar__lang-btn--active' : '' }}">{{ strtoupper($code) }}</a>
             @endforeach
         </div>
@@ -565,7 +584,7 @@
 
             <a class="mobile-btn-primary"
                href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}"
-               target="_blank" rel="noopener">{{ __('site.resume.download_label') }}</a>
+               target="_blank" rel="noopener nofollow">{{ __('site.resume.download_label') }}</a>
         </div>
 
         {{-- ============ panel: contact ============ --}}

@@ -13,6 +13,7 @@
 /.vscode
 /.zed
 /auth.json
+/dist
 /node_modules
 /public/build
 /public/hot
@@ -23,3 +24,5 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# Word writes these lock files next to an open .docx
+~$*

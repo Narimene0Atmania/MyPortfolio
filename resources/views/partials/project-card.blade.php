@@ -16,7 +16,7 @@
             <span class="project-card__placeholder-tag">{{ __('site.projects.no_screenshot') }}</span>
         @endif
         @if (! empty($project['links']['live']))
-            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener" class="status-pill status-pill--live status-pill--card">
+            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener nofollow" class="status-pill status-pill--live status-pill--card">
                 <span class="status-pill__dot" aria-hidden="true"></span>{{ __('projects.live') }}
             </a>
         @endif

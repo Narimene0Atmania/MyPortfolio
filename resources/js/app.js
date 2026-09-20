@@ -38,7 +38,55 @@ const I18N = window.PORTFOLIO_I18N ?? {
     invalid: 'please check the form.',
     error: 'something went wrong. try again?',
     network: 'network error. try again?',
+    success: 'thanks — message sent!',
+    errors: {
+        name: 'your name, please.',
+        email: 'an email address, please.',
+        emailInvalid: "that doesn't look like an email address.",
+        message: 'a message would help.',
+    },
 };
+
+// The site is served as static files, so there's no backend to validate
+// against — the browser checks the fields and Netlify's form endpoint
+// takes the submission. Shared by the desktop window and the mobile panel,
+// which run the same form in two different shells.
+const CONTACT_FORM_NAME = 'contact';
+
+function validateContact(form) {
+    const errors = {};
+
+    if (!form.name.trim()) errors.name = I18N.errors.name;
+
+    if (!form.email.trim()) {
+        errors.email = I18N.errors.email;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+        errors.email = I18N.errors.emailInvalid;
+    }
+
+    if (!form.message.trim()) errors.message = I18N.errors.message;
+
+    return errors;
+}
+
+// Netlify expects a urlencoded POST carrying the form's name, sent to any
+// path on the site — the page's own URL is the convention.
+async function submitContactForm(form) {
+    const body = new URLSearchParams({
+        'form-name': CONTACT_FORM_NAME,
+        name: form.name,
+        email: form.email,
+        message: form.message,
+    });
+
+    const res = await fetch(window.location.pathname, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+    });
+
+    if (!res.ok) throw new Error(`form endpoint returned ${res.status}`);
+}
 
 Alpine.data('desktop', (focusedWindow = '') => {
     const defaults = {
@@ -411,38 +459,19 @@ Alpine.data('desktop', (focusedWindow = '') => {
 
     // --- contact form ---------------------------------------------------
     async submitContact() {
-        this.formErrors = {};
+        this.formErrors = validateContact(this.form);
         this.formStatus = null;
+
+        if (Object.keys(this.formErrors).length) {
+            this.formStatus = { ok: false, message: I18N.invalid };
+            return;
+        }
+
         this.formSubmitting = true;
 
         try {
-            const token = document.querySelector('meta[name="csrf-token"]')?.content;
-            const res = await fetch('/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                    'X-CSRF-TOKEN': token ?? '',
-                },
-                body: JSON.stringify(this.form),
-            });
-
-            const data = await res.json();
-
-            if (res.status === 422) {
-                this.formErrors = Object.fromEntries(
-                    Object.entries(data.errors ?? {}).map(([k, v]) => [k, v[0]])
-                );
-                this.formStatus = { ok: false, message: I18N.invalid };
-                return;
-            }
-
-            if (!res.ok) {
-                this.formStatus = { ok: false, message: I18N.error };
-                return;
-            }
-
-            this.formStatus = { ok: true, message: data.message ?? 'message sent!' };
+            await submitContactForm(this.form);
+            this.formStatus = { ok: true, message: I18N.success };
             this.form = { name: '', email: '', message: '' };
         } catch (e) {
             this.formStatus = { ok: false, message: I18N.network };
@@ -556,34 +585,19 @@ Alpine.data('mobile', (initialTab = 'about') => ({
 
     // --- contact form (same endpoint/flow as the desktop component) ----
     async submitContact() {
-        this.formErrors = {};
+        this.formErrors = validateContact(this.form);
         this.formStatus = null;
+
+        if (Object.keys(this.formErrors).length) {
+            this.formStatus = { ok: false, message: I18N.invalid };
+            return;
+        }
+
         this.formSubmitting = true;
 
         try {
-            const res = await fetch('/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content ?? '',
-                },
-                body: JSON.stringify(this.form),
-            });
-
-            const data = await res.json();
-
-            if (data.errors) {
-                this.formErrors = data.errors;
-                this.formStatus = { ok: false, message: I18N.invalid };
-                return;
-            }
-
-            if (!res.ok) {
-                this.formStatus = { ok: false, message: I18N.error };
-                return;
-            }
-
-            this.formStatus = { ok: true, message: data.message ?? 'message sent!' };
+            await submitContactForm(this.form);
+            this.formStatus = { ok: true, message: I18N.success };
             this.form = { name: '', email: '', message: '' };
         } catch (e) {
             this.formStatus = { ok: false, message: I18N.network };

@@ -30,8 +30,8 @@ return [
     | Supported locales
     |--------------------------------------------------------------------------
     |
-    | Single source of truth for the locale-switching middleware/controller
-    | and the taskbar language switcher UI.
+    | Single source of truth for the /{locale} route prefix, the SetLocale
+    | middleware, and the taskbar language switcher UI.
     |
     */
 

@@ -51,6 +51,14 @@ return [
             'network' => 'network error. try again?',
             'success' => 'thanks — message sent!',
         ],
+        // validated in the browser: the form posts to Netlify's form
+        // endpoint, which accepts the submission rather than validating it
+        'errors' => [
+            'name' => 'your name, please.',
+            'email' => 'an email address, please.',
+            'email_invalid' => 'that doesn\'t look like an email address.',
+            'message' => 'a message would help.',
+        ],
         'footer' => [
             'email' => 'email',
             'github' => 'github',

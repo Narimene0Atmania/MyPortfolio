@@ -29,6 +29,29 @@ class AppServiceProvider extends ServiceProvider
                 'changelogItems',
                 ChangelogReader::read(base_path('docs/Portfolio_Issues_and_Fixes.docx'))
             );
+
+            // the taskbar language switcher points at the current page in
+            // each other language, so switching keeps you where you are
+            $view->with('localeUrls', $this->localeUrls());
         });
+    }
+
+    /**
+     * The current route's URL in every supported locale.
+     *
+     * @return array<string, string>
+     */
+    private function localeUrls(): array
+    {
+        $route = request()->route();
+        $urls = [];
+
+        foreach (array_keys(config('portfolio.locales')) as $code) {
+            $urls[$code] = $route
+                ? route($route->getName(), [...$route->parameters(), 'locale' => $code])
+                : url('/'.$code);
+        }
+
+        return $urls;
     }
 }

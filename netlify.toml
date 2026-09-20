@@ -1,0 +1,11 @@
+# The site is a Laravel app exported to static HTML with
+# `php artisan export` (see config/export.php), so Netlify has nothing to
+# build — it publishes the pre-built dist/ folder as-is.
+#
+# Netlify's build image has no PHP, so the export has to run before the
+# deploy, either locally (`php artisan export` then `netlify deploy --prod`)
+# or in CI. See .github/workflows/deploy.yml.
+
+[build]
+  publish = "dist"
+  command = ""

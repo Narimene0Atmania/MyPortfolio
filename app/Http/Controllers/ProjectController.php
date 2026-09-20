@@ -20,7 +20,9 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show(string $slug): View
+    // $locale is consumed by the SetLocale middleware, but it's the first
+    // route parameter so it has to be accepted here for $slug to line up
+    public function show(string $locale, string $slug): View
     {
         $projects = $this->allProjects();
         $project = collect($projects)->firstWhere('slug', $slug);

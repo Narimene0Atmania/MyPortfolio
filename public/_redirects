@@ -1,0 +1,4 @@
+# "/" has no language of its own, so send it to the default locale.
+# The "!" forces the rule to win over the redirect stub the export writes
+# at dist/index.html.
+/    /en/    302!

@@ -51,6 +51,14 @@ return [
             'network' => 'erreur réseau. réessayer ?',
             'success' => 'merci — message envoyé !',
         ],
+        // validé côté navigateur : le formulaire est envoyé au point de
+        // terminaison Netlify, qui accepte l'envoi sans le valider
+        'errors' => [
+            'name' => 'votre nom, s\'il vous plaît.',
+            'email' => 'une adresse email, s\'il vous plaît.',
+            'email_invalid' => 'cela ne ressemble pas à une adresse email.',
+            'message' => 'un message serait utile.',
+        ],
         'footer' => [
             'email' => 'email',
             'github' => 'github',
