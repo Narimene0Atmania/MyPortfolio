@@ -26,3 +26,6 @@ Homestead.yaml
 Thumbs.db
 # Word writes these lock files next to an open .docx
 ~$*
+
+# Local Netlify folder
+.netlify

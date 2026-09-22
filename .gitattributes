@@ -9,3 +9,11 @@
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+
+# public/demos holds captured or compiled builds of the *other* projects the
+# portfolio links to -- static HTML snapshots, a Flutter web bundle, vendor
+# JS. It is output, not source for this repo, but it dwarfs everything else
+# by volume, so GitHub reported this as 49% HTML / 47% JavaScript and only
+# 1.8% PHP. Marking it vendored keeps it out of the language stats so the
+# repo reads as the Laravel app it actually is.
+public/demos/** linguist-vendored
