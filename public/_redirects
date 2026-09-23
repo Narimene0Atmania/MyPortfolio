@@ -2,3 +2,10 @@
 # The "!" forces the rule to win over the redirect stub the export writes
 # at dist/index.html.
 /    /en/    302!
+
+# Locale-less project URLs. Every page lives under /{locale} now, but
+# /projects/buscatcher is the URL someone would guess, and it was also what
+# the demos' "back to portfolio" links pointed at before the locale prefix
+# existed. Send those to the default locale rather than a 404.
+/projects           /en/projects        301
+/projects/*         /en/projects/:splat 301
