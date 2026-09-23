@@ -1,5 +1,11 @@
 # Narimene Atmania — Portfolio
 
+**Live at [narimene.com](https://narimene.com)** — including working demos of all four
+projects: [BusCatcher](https://narimene.com/demos/buscatcher/dashboard.html) ·
+[Plannari](https://narimene.com/demos/plannari/) ·
+[Meal Plannari](https://narimene.com/demos/mealplannari/home.html) ·
+[AI Consultant Portfolio](https://narimene.com/demos/loai-atmania/)
+
 Retro "desktop OS" portfolio, built from the `design_handoff_retro_desktop_portfolio` mockup
 (v2 — Y2K pastel purple, interactive). Laravel renders a single Blade view; [Alpine.js](https://alpinejs.dev)
 drives all the window/taskbar/start-menu state, mirroring the mockup's `Component` class 1:1.
@@ -42,11 +48,21 @@ This rebuilds the assets, crawls every page in every language, and writes the re
 rewrites the absolute URLs Laravel generates into root-relative ones, so the same bundle
 works on any domain, including Netlify's per-commit preview URLs.
 
-Deployment runs through `.github/workflows/deploy.yml`: every push to `main` exports the site
-in CI and publishes `dist/` to Netlify. Netlify's build image has no PHP, which is why the
-export happens in the workflow rather than on Netlify itself.
+Publishing is currently manual, from a folder already linked to the Netlify site:
 
-Two repository secrets are required: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
+```bash
+php artisan export
+netlify deploy --prod
+```
+
+`.github/workflows/deploy.yml` does the same thing on every push to `main`, but it is not
+active yet — it needs `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID` as repository secrets and
+has never run. Netlify's own build image has no PHP, which is why the export happens either
+locally or in the workflow, never on Netlify.
+
+The domain is registered with Cloudflare and points at Netlify with two CNAMEs — apex to
+`apex-loadbalancer.netlify.com`, `www` to the site's `.netlify.app` address — both set to
+**DNS only**. Proxying them breaks Netlify's certificate issuance.
 
 ## Languages
 
