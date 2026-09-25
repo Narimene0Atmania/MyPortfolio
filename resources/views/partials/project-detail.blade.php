@@ -23,7 +23,8 @@
             <div class="project-detail__meta">{{ $project['year'] }} · {{ $project['scope'] }} · {{ $project['stack'] }}</div>
         </div>
         @if (! empty($project['links']['live']))
-            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener nofollow" class="status-pill status-pill--live">
+            <a href="{{ $project['links']['live'] }}" target="_blank" rel="noopener nofollow" class="status-pill status-pill--live"
+               data-umami-event="demo-open" data-umami-event-project="{{ $project['slug'] }}" data-umami-event-from="detail">
                 <span class="status-pill__dot" aria-hidden="true"></span>{{ __('projects.live') }}
             </a>
         @endif

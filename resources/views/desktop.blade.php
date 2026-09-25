@@ -39,6 +39,14 @@
     </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- Umami: cookieless, so no consent banner. Only rendered when the id is
+         configured, which keeps local builds out of the stats. --}}
+    @if (config('portfolio.umami_website_id'))
+        <script defer
+                src="{{ config('portfolio.umami_script_url') }}"
+                data-website-id="{{ config('portfolio.umami_website_id') }}"></script>
+    @endif
 </head>
 <body>
 {{-- Netlify detects forms by parsing the deployed HTML at build time, but
@@ -370,7 +378,8 @@
                 <div class="resume__text">laravel · php · react · js · rest api · flutter</div>
             </div>
             <div class="resume__footer">
-                <a class="btn-pink" href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}" target="_blank" rel="noopener nofollow">{{ __('site.resume.download_label') }}</a>
+                <a class="btn-pink" href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}" target="_blank" rel="noopener nofollow"
+                   data-umami-event="cv-download" data-umami-event-locale="{{ app()->getLocale() }}" data-umami-event-from="resume-window">{{ __('site.resume.download_label') }}</a>
             </div>
         </div>
     </div>
@@ -432,6 +441,7 @@
                href="{{ $resumeUrl }}"
                target="_blank"
                rel="noopener nofollow"
+               data-umami-event="cv-download" data-umami-event-locale="{{ app()->getLocale() }}" data-umami-event-from="notification"
                @click="dismissNotif">{{ __('site.notif.download') }}</a>
         </div>
     </div>
@@ -584,7 +594,8 @@
 
             <a class="mobile-btn-primary"
                href="{{ config('portfolio.resume_urls.'.app()->getLocale(), config('portfolio.resume_urls.en')) }}"
-               target="_blank" rel="noopener nofollow">{{ __('site.resume.download_label') }}</a>
+               target="_blank" rel="noopener nofollow"
+               data-umami-event="cv-download" data-umami-event-locale="{{ app()->getLocale() }}" data-umami-event-from="mobile">{{ __('site.resume.download_label') }}</a>
         </div>
 
         {{-- ============ panel: contact ============ --}}

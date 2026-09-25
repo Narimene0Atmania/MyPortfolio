@@ -41,4 +41,20 @@ return [
         'ar' => 'العربية',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Analytics
+    |--------------------------------------------------------------------------
+    |
+    | Umami website id. The tracking script only renders when this is set, so
+    | local development and any build made without it stay out of the stats.
+    | It is baked into the HTML at export time, so it has to be present in
+    | the environment when `php artisan export` runs — not just at deploy.
+    |
+    */
+
+    'umami_website_id' => env('UMAMI_WEBSITE_ID'),
+
+    'umami_script_url' => env('UMAMI_SCRIPT_URL', 'https://cloud.umami.is/script.js'),
+
 ];
