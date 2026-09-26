@@ -86,6 +86,11 @@ async function submitContactForm(form) {
     });
 
     if (!res.ok) throw new Error(`form endpoint returned ${res.status}`);
+
+    // the message itself arrives by email; this only puts it on the
+    // dashboard next to the other engagement signals. Optional chaining
+    // because the tracking script isn't loaded on local builds.
+    window.umami?.track('contact-submit');
 }
 
 Alpine.data('desktop', (focusedWindow = '') => {

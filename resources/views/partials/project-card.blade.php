@@ -8,7 +8,7 @@
     $chipVariants = ['laravel' => 'pink', 'php' => 'lavender', 'react' => 'blue', 'js' => 'yellow', 'ts' => 'mint', 'rest api' => 'mint', 'flutter' => 'blue', 'vue' => 'mint'];
 @endphp
 <div class="project-card">
-    <a href="{{ route('projects.show', $project['slug']) }}" class="project-card__link" aria-label="{{ $project['title'] }}"></a>
+    <a href="{{ route('projects.show', $project['slug']) }}" class="project-card__link" data-umami-event="project-open" data-umami-event-project="{{ $project['slug'] }}" aria-label="{{ $project['title'] }}"></a>
     <div class="project-card__thumb">
         @if ($project['hero'])
             <img src="{{ asset($project['hero']) }}" alt="{{ $project['hero_alt'] ?? $project['title'] }}" loading="lazy">

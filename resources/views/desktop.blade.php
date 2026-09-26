@@ -90,7 +90,7 @@
 
     {{-- ============ desktop icons ============ --}}
     <div class="desktop-icons">
-        <button type="button" class="desktop-icon" @click="focus('about')">
+        <button type="button" class="desktop-icon" @click="focus('about')" data-umami-event="open-window" data-umami-event-window="about" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <rect x="6" y="6" width="30" height="22" fill="#C9BAEC" stroke="#4A3D73" stroke-width="1.5"/>
                 <rect x="10" y="10" width="22" height="14" fill="#FBF9FE" stroke="#4A3D73" stroke-width="1.5"/>
@@ -100,7 +100,7 @@
             <span class="desktop-icon__label desktop-icon__label--selected">about.txt</span>
         </button>
 
-        <button type="button" class="desktop-icon" @click="focus('projects')">
+        <button type="button" class="desktop-icon" @click="focus('projects')" data-umami-event="open-window" data-umami-event-window="projects" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <path d="M6 9h12l3 4h15v20H6z" fill="#F2B8DC" stroke="#4A3D73" stroke-width="1.5"/>
                 <path d="M6 15h30" stroke="#4A3D73" stroke-width="1.5"/>
@@ -108,7 +108,7 @@
             <span class="desktop-icon__label">projects/</span>
         </button>
 
-        <button type="button" class="desktop-icon" @click="focus('skills')">
+        <button type="button" class="desktop-icon" @click="focus('skills')" data-umami-event="open-window" data-umami-event-window="skills" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <path d="M16 7v4M21 7v4M26 7v4M16 31v4M21 31v4M26 31v4M7 16h4M7 21h4M7 26h4M31 16h4M31 21h4M31 26h4" stroke="#4A3D73" stroke-width="1.5"/>
                 <rect x="11" y="11" width="20" height="20" fill="#A9E2DA" stroke="#4A3D73" stroke-width="1.5"/>
@@ -117,7 +117,7 @@
             <span class="desktop-icon__label">skills.dll</span>
         </button>
 
-        <button type="button" class="desktop-icon" @click="focus('resume')">
+        <button type="button" class="desktop-icon" @click="focus('resume')" data-umami-event="open-window" data-umami-event-window="resume" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <path d="M10 5h16l6 6v26H10z" fill="#FBF9FE" stroke="#4A3D73" stroke-width="1.5"/>
                 <path d="M26 5v6h6z" fill="#C9BAEC" stroke="#4A3D73" stroke-width="1.5"/>
@@ -127,7 +127,7 @@
             <span class="desktop-icon__label">resume.pdf</span>
         </button>
 
-        <button type="button" class="desktop-icon" @click="focus('contact')">
+        <button type="button" class="desktop-icon" @click="focus('contact')" data-umami-event="open-window" data-umami-event-window="contact" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <rect x="5" y="11" width="32" height="22" fill="#F2B8DC" stroke="#4A3D73" stroke-width="1.5"/>
                 <path d="M5 11l16 13 16-13" fill="none" stroke="#4A3D73" stroke-width="1.5"/>
@@ -136,7 +136,7 @@
             <span class="desktop-icon__label">contact.exe</span>
         </button>
 
-        <button type="button" class="desktop-icon" @click="focus('changelog')">
+        <button type="button" class="desktop-icon" @click="focus('changelog')" data-umami-event="open-window" data-umami-event-window="changelog" data-umami-event-from="desktop-icon">
             <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
                 <rect x="9" y="7" width="24" height="30" fill="#FBF9FE" stroke="#4A3D73" stroke-width="1.5"/>
                 <rect x="15" y="4" width="12" height="6" rx="1.5" fill="#A9E2DA" stroke="#4A3D73" stroke-width="1.5"/>
@@ -230,8 +230,8 @@
                  x-show="formStatus"
                  x-text="formStatus?.message"></div>
             <div class="contact__footer">
-                <a class="link-btn" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.contact.footer.email') }}</a>
-                <a class="link-btn" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.contact.footer.github') }}</a>
+                <a class="link-btn" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="contact-window" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.contact.footer.email') }}</a>
+                <a class="link-btn" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="contact-window" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.contact.footer.github') }}</a>
                 <button type="submit" class="btn-pink" :disabled="formSubmitting">
                     <span x-text="formSubmitting ? '{{ __('site.contact.status.sending') }}' : '{{ __('site.contact.status.send') }}'"></span>
                 </button>
@@ -464,12 +464,12 @@
         <div class="taskbar__divider"></div>
 
         <div class="taskbar__sections">
-            <button type="button" class="taskbar__section-btn" @click="focus('about')">{{ __('site.taskbar.sections.about') }}</button>
-            <button type="button" class="taskbar__section-btn" @click="focus('skills')">{{ __('site.taskbar.sections.skills') }}</button>
-            <button type="button" class="taskbar__section-btn" @click="focus('projects')">{{ __('site.taskbar.sections.projects') }}</button>
-            <button type="button" class="taskbar__section-btn" @click="focus('resume')">{{ __('site.taskbar.sections.resume') }}</button>
-            <button type="button" class="taskbar__section-btn" @click="focus('contact')">{{ __('site.taskbar.sections.contact') }}</button>
-            <button type="button" class="taskbar__section-btn" @click="focus('changelog')">{{ __('site.taskbar.sections.changelog') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('about')" data-umami-event="open-window" data-umami-event-window="about" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.about') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('skills')" data-umami-event="open-window" data-umami-event-window="skills" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.skills') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('projects')" data-umami-event="open-window" data-umami-event-window="projects" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.projects') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('resume')" data-umami-event="open-window" data-umami-event-window="resume" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.resume') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('contact')" data-umami-event="open-window" data-umami-event-window="contact" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.contact') }}</button>
+            <button type="button" class="taskbar__section-btn" @click="focus('changelog')" data-umami-event="open-window" data-umami-event-window="changelog" data-umami-event-from="taskbar">{{ __('site.taskbar.sections.changelog') }}</button>
         </div>
 
         <div class="taskbar__divider"></div>
@@ -485,7 +485,7 @@
 
         <div class="taskbar__lang" role="group" aria-label="{{ __('site.lang_switcher.label') }}">
             @foreach (config('portfolio.locales') as $code => $label)
-                <a href="{{ $localeUrls[$code] }}" hreflang="{{ $code }}"
+                <a href="{{ $localeUrls[$code] }}" hreflang="{{ $code }}" data-umami-event="locale-switch" data-umami-event-to="{{ $code }}"
                    class="taskbar__lang-btn {{ app()->getLocale() === $code ? 'taskbar__lang-btn--active' : '' }}">{{ strtoupper($code) }}</a>
             @endforeach
         </div>
@@ -502,15 +502,15 @@
                 <span class="start-menu__rail-label">{{ __('site.start_menu.rail_label') }}</span>
             </div>
             <div class="start-menu__list">
-                <button type="button" class="start-menu__item" @click="focus('about')">about.txt</button>
-                <button type="button" class="start-menu__item" @click="focus('skills')">skills.dll</button>
-                <button type="button" class="start-menu__item" @click="focus('projects')">projects/</button>
-                <button type="button" class="start-menu__item" @click="focus('resume')">resume.pdf</button>
-                <button type="button" class="start-menu__item" @click="focus('contact')">contact.exe</button>
-                <button type="button" class="start-menu__item" @click="focus('changelog')">changelog.txt</button>
+                <button type="button" class="start-menu__item" @click="focus('about')" data-umami-event="open-window" data-umami-event-window="about" data-umami-event-from="start-menu">about.txt</button>
+                <button type="button" class="start-menu__item" @click="focus('skills')" data-umami-event="open-window" data-umami-event-window="skills" data-umami-event-from="start-menu">skills.dll</button>
+                <button type="button" class="start-menu__item" @click="focus('projects')" data-umami-event="open-window" data-umami-event-window="projects" data-umami-event-from="start-menu">projects/</button>
+                <button type="button" class="start-menu__item" @click="focus('resume')" data-umami-event="open-window" data-umami-event-window="resume" data-umami-event-from="start-menu">resume.pdf</button>
+                <button type="button" class="start-menu__item" @click="focus('contact')" data-umami-event="open-window" data-umami-event-window="contact" data-umami-event-from="start-menu">contact.exe</button>
+                <button type="button" class="start-menu__item" @click="focus('changelog')" data-umami-event="open-window" data-umami-event-window="changelog" data-umami-event-from="start-menu">changelog.txt</button>
                 <div class="start-menu__divider"></div>
-                <a class="start-menu__item" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.start_menu.email') }}</a>
-                <a class="start-menu__item" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.start_menu.github') }}</a>
+                <a class="start-menu__item" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="start-menu" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.start_menu.email') }}</a>
+                <a class="start-menu__item" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="start-menu" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.start_menu.github') }}</a>
             </div>
         </div>
     </div>
@@ -629,8 +629,8 @@
             </form>
 
             <div class="mobile-social">
-                <a href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener" class="mobile-social__tile">{{ __('site.contact.footer.github') }}</a>
-                <a href="mailto:{{ config('portfolio.contact_email') }}" class="mobile-social__tile">{{ __('site.contact.footer.email') }}</a>
+                <a href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener" class="mobile-social__tile" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="mobile">{{ __('site.contact.footer.github') }}</a>
+                <a href="mailto:{{ config('portfolio.contact_email') }}" class="mobile-social__tile" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="mobile">{{ __('site.contact.footer.email') }}</a>
             </div>
         </div>
 
@@ -639,7 +639,7 @@
     {{-- ============ bottom tab bar ============ --}}
     <nav class="mobile-nav" aria-label="{{ __('site.nav.label') }}">
         <div class="mobile-nav__bar">
-            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'about' }"
+            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'about' }" data-umami-event="open-window" data-umami-event-window="about" data-umami-event-from="mobile-nav"
                     :aria-current="tab === 'about' ? 'page' : null" @click="go('about')">
                 <svg class="mobile-nav__icon" width="24" height="20" viewBox="0 0 42 42" aria-hidden="true">
                     <rect x="6" y="6" width="30" height="22" fill="#C9BAEC" stroke="#4A3D73" stroke-width="1.5"/>
@@ -649,7 +649,7 @@
                 </svg>
                 <span class="mobile-nav__label">{{ __('site.taskbar.sections.about') }}</span>
             </button>
-            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'projects' }"
+            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'projects' }" data-umami-event="open-window" data-umami-event-window="projects" data-umami-event-from="mobile-nav"
                     :aria-current="tab === 'projects' ? 'page' : null" @click="go('projects')">
                 <svg class="mobile-nav__icon" width="24" height="20" viewBox="0 0 42 42" aria-hidden="true">
                     <path d="M6 9h12l3 4h15v20H6z" fill="#F2B8DC" stroke="#4A3D73" stroke-width="1.5"/>
@@ -657,7 +657,7 @@
                 </svg>
                 <span class="mobile-nav__label">{{ __('site.taskbar.sections.projects') }}</span>
             </button>
-            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'resume' }"
+            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'resume' }" data-umami-event="open-window" data-umami-event-window="resume" data-umami-event-from="mobile-nav"
                     :aria-current="tab === 'resume' ? 'page' : null" @click="go('resume')">
                 <svg class="mobile-nav__icon" width="24" height="20" viewBox="0 0 42 42" aria-hidden="true">
                     <path d="M10 5h16l6 6v26H10z" fill="#FBF9FE" stroke="#4A3D73" stroke-width="1.5"/>
@@ -667,7 +667,7 @@
                 </svg>
                 <span class="mobile-nav__label">{{ __('site.taskbar.sections.resume') }}</span>
             </button>
-            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'contact' }"
+            <button type="button" class="mobile-nav__tab" :class="{ 'mobile-nav__tab--active': tab === 'contact' }" data-umami-event="open-window" data-umami-event-window="contact" data-umami-event-from="mobile-nav"
                     :aria-current="tab === 'contact' ? 'page' : null" @click="go('contact')">
                 <svg class="mobile-nav__icon" width="24" height="20" viewBox="0 0 42 42" aria-hidden="true">
                     <rect x="5" y="11" width="32" height="22" fill="#F2B8DC" stroke="#4A3D73" stroke-width="1.5"/>
