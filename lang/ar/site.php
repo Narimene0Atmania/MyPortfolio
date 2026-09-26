@@ -62,6 +62,8 @@ return [
         'footer' => [
             'email' => 'البريد',
             'github' => 'github',
+            'linkedin' => 'linkedin',
+            'copied' => 'تم النسخ!',
         ],
     ],
 
@@ -102,6 +104,8 @@ return [
         'rail_label' => 'narimene.os',
         'email' => 'البريد',
         'github' => 'github',
+        'linkedin' => 'linkedin',
+        'copied' => 'تم النسخ!',
     ],
 
     'nav' => [

@@ -19,6 +19,8 @@ return [
 
     'github_url' => env('PORTFOLIO_GITHUB_URL', 'https://github.com/'),
 
+    'linkedin_url' => env('PORTFOLIO_LINKEDIN_URL'),
+
     'resume_urls' => [
         'en' => env('PORTFOLIO_RESUME_URL_EN', '/resume/Atmania_Narimene_CV_EN.pdf'),
         'fr' => env('PORTFOLIO_RESUME_URL_FR', '/resume/Atmania_Narimene_CV_FR.pdf'),

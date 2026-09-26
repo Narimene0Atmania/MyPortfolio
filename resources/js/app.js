@@ -567,6 +567,29 @@ Alpine.data('sketchCompare', (images = []) => ({
     },
 }));
 
+// A mailto: link does nothing at all when the visitor has no mail client
+// configured, which is common on desktop and gives no feedback whatsoever.
+// Copying the address on click means the interaction always does something
+// visible. The default isn't prevented, so anyone who does have a mail
+// client still gets a compose window.
+Alpine.data('emailLink', () => ({
+    copied: false,
+
+    async copy(event) {
+        const address = (event.currentTarget.getAttribute('href') || '').replace(/^mailto:/, '');
+        if (!address) return;
+
+        try {
+            await navigator.clipboard.writeText(address);
+            this.copied = true;
+            setTimeout(() => { this.copied = false; }, 2000);
+        } catch (e) {
+            // clipboard refused (permissions, insecure context) — the address
+            // is printed in the contact window, so it's still reachable
+        }
+    },
+}));
+
 Alpine.data('mobile', (initialTab = 'about') => ({
     // --- state -------------------------------------------------------
     // Per design_handoff_mobile_nav: the whole nav store is just `tab`.

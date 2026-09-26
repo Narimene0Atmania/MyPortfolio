@@ -229,9 +229,18 @@
                  :class="formStatus?.ok ? 'contact__status--ok' : 'contact__status--err'"
                  x-show="formStatus"
                  x-text="formStatus?.message"></div>
+            {{-- printed in full so the address is reachable even if the
+                 clipboard is refused and no mail client is configured --}}
+            <div class="contact__address">{{ config('portfolio.contact_email') }}</div>
             <div class="contact__footer">
-                <a class="link-btn" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="contact-window" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.contact.footer.email') }}</a>
+                <a class="link-btn" x-data="emailLink" @click="copy($event)"
+                   data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="contact-window"
+                   href="mailto:{{ config('portfolio.contact_email') }}"
+                   x-text="copied ? '{{ __('site.contact.footer.copied') }}' : '{{ __('site.contact.footer.email') }}'">{{ __('site.contact.footer.email') }}</a>
                 <a class="link-btn" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="contact-window" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.contact.footer.github') }}</a>
+                @if (config('portfolio.linkedin_url'))
+                    <a class="link-btn" data-umami-event="contact-click" data-umami-event-target="linkedin" data-umami-event-from="contact-window" href="{{ config('portfolio.linkedin_url') }}" target="_blank" rel="noopener">{{ __('site.contact.footer.linkedin') }}</a>
+                @endif
                 <button type="submit" class="btn-pink" :disabled="formSubmitting">
                     <span x-text="formSubmitting ? '{{ __('site.contact.status.sending') }}' : '{{ __('site.contact.status.send') }}'"></span>
                 </button>
@@ -509,8 +518,11 @@
                 <button type="button" class="start-menu__item" @click="focus('contact')" data-umami-event="open-window" data-umami-event-window="contact" data-umami-event-from="start-menu">contact.exe</button>
                 <button type="button" class="start-menu__item" @click="focus('changelog')" data-umami-event="open-window" data-umami-event-window="changelog" data-umami-event-from="start-menu">changelog.txt</button>
                 <div class="start-menu__divider"></div>
-                <a class="start-menu__item" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="start-menu" href="mailto:{{ config('portfolio.contact_email') }}">{{ __('site.start_menu.email') }}</a>
+                <a class="start-menu__item" x-data="emailLink" @click="copy($event)" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="start-menu" href="mailto:{{ config('portfolio.contact_email') }}" x-text="copied ? '{{ __('site.contact.footer.copied') }}' : '{{ __('site.start_menu.email') }}'">{{ __('site.start_menu.email') }}</a>
                 <a class="start-menu__item" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="start-menu" href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener">{{ __('site.start_menu.github') }}</a>
+                @if (config('portfolio.linkedin_url'))
+                    <a class="start-menu__item" data-umami-event="contact-click" data-umami-event-target="linkedin" data-umami-event-from="start-menu" href="{{ config('portfolio.linkedin_url') }}" target="_blank" rel="noopener">{{ __('site.start_menu.linkedin') }}</a>
+                @endif
             </div>
         </div>
     </div>
@@ -630,7 +642,10 @@
 
             <div class="mobile-social">
                 <a href="{{ config('portfolio.github_url') }}" target="_blank" rel="noopener" class="mobile-social__tile" data-umami-event="contact-click" data-umami-event-target="github" data-umami-event-from="mobile">{{ __('site.contact.footer.github') }}</a>
-                <a href="mailto:{{ config('portfolio.contact_email') }}" class="mobile-social__tile" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="mobile">{{ __('site.contact.footer.email') }}</a>
+                <a href="mailto:{{ config('portfolio.contact_email') }}" class="mobile-social__tile" x-data="emailLink" @click="copy($event)" data-umami-event="contact-click" data-umami-event-target="email" data-umami-event-from="mobile" x-text="copied ? '{{ __('site.contact.footer.copied') }}' : '{{ __('site.contact.footer.email') }}'">{{ __('site.contact.footer.email') }}</a>
+                @if (config('portfolio.linkedin_url'))
+                    <a href="{{ config('portfolio.linkedin_url') }}" target="_blank" rel="noopener" class="mobile-social__tile" data-umami-event="contact-click" data-umami-event-target="linkedin" data-umami-event-from="mobile">{{ __('site.contact.footer.linkedin') }}</a>
+                @endif
             </div>
         </div>
 

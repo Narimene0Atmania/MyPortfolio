@@ -1276,6 +1276,17 @@ button {
   color: #B23B62;
 }
 
+/* the address in plain sight, so it survives a refused clipboard and a
+   machine with no mail client */
+.contact__address {
+  margin-bottom: 8px;
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  color: var(--summary);
+  user-select: all;
+  word-break: break-all;
+}
+
 .contact__footer {
   display: flex;
   align-items: center;
